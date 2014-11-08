@@ -1,0 +1,392 @@
+#compdef nikola
+
+_nikola() {
+    local -a commands tasks
+    # format is 'completion:description'
+    commands=(
+        'help: show help'
+        'check: check links and files in the generated site'
+        'build: run tasks'
+        'install_theme: install theme into current site'
+        'orphans: list all orphans'
+        'new_page: create a new page in the site'
+        'clean: clean action / remove targets'
+        'ignore: ignore task (skip) on subsequent runs'
+        'run: run tasks'
+        'new_post: create a new blog post or site page'
+        'bootswatch_theme: given a swatch name from bootswatch.com and a parent theme, creates a custom theme'
+        'console: start an interactive Python console with access to your site'
+        'list: list tasks from dodo file'
+        'deploy: deploy the site'
+        'tabcompletion: generate script for tab-complention'
+        'dumpdb: dump dependency DB'
+        'serve: start the test webserver'
+        'info: show info about a task'
+        'github_deploy: deploy the site to GitHub pages'
+        'version: print the Nikola version number'
+        'auto: automatically detect site changes, rebuild and optionally refresh a browser'
+        'strace: use strace to list file_deps and targets'
+        'plugin: manage plugins'
+        'doit_auto: automatically execute tasks when a dependency changes'
+        'forget: clear successful run status from internal DB'
+        'init: create a Nikola site in the specified folder'
+        'import_wordpress: import a WordPress dump'
+    )
+
+    # split output by lines to create an array
+    tasks=(
+'render_sources: Copy page sources into the output.'
+'render_posts: Build HTML fragments from metadata and text.'
+'render_archive: Render the post archives.'
+'redirect: Generate redirections'
+'copy_files: Copy static files into the output folder.'
+'render_tags: Render the tag/category pages and feeds.'
+'render_listings: Render pretty listings.'
+'copy_assets: Copy theme assets into output.'
+'render_indexes: Render the blog indexes.'
+'render_pages: Render pages into output.'
+'generate_rss: Generate RSS feeds.'
+'render_site: Group of tasks to render the site.'
+'_scan_locs: '
+'sitemap: Generate a sitemap.'
+'robots_file: Generate a robots.txt.'
+'create_bundles: Bundle assets using WebAssets.'
+'post_render: Group of tasks to be executes after site is rendered.'
+)
+
+    # complete command or task name
+    if (( CURRENT == 2 )); then
+        _arguments -A : '::cmd:(($commands))' '::task:(($tasks))'
+        return
+    fi
+
+    # revome program name from $words and decrement CURRENT
+    local curcontext context state state_desc line
+    _arguments -C '*:: :->'
+
+    # complete sub-command or task options
+    local -a _command_args
+    case "$words[1]" in
+        
+      (help)
+          _command_args=(
+            '--db-file[file used to save successful runs]' \
+            '--backend[Select dependency file backend.Available options dbm, json, sqlite3. [default: %(default)s\]]' \
+            '*::task:(($tasks))'
+            '::cmd:(($commands))'
+            ''
+        )
+      ;;
+
+
+      (check)
+          _command_args=(
+            '(-l|--check-links)'{-l,--check-links}'[Check for dangling links]' \
+            '(-f|--check-files)'{-f,--check-files}'[Check for unknown (orphaned and not generated) files]' \
+            '--clean-files[Remove all unknown files, use with caution]' \
+            '--find-sources[List possible source files for files with broken links.]' \
+            '(-v|--verbose)'{-v,--verbose}'[Be more verbose.]' \
+            ''
+        )
+      ;;
+
+
+      (build)
+          _command_args=(
+            '--db-file[file used to save successful runs]' \
+            '--backend[Select dependency file backend.Available options dbm, json, sqlite3. [default: %(default)s\]]' \
+            '(-a|--always-execute)'{-a,--always-execute}'[always execute tasks even if up-to-date [default: %(default)s\]]' \
+            '(-c|--continue)'{-c,--continue}'[continue executing tasks even after a failure [default: %(default)s\]]' \
+            '(-v|--verbosity)'{-v,--verbosity}'[0 capture (do not print) stdout/stderr from task. 1 capture stdout only. 2 do not capture anything (print everything immediately). [default: 1\]]' \
+            '(-r|--reporter)'{-r,--reporter}'[Choose output reporter. Available: 'default': report output on console 'executed-only': no output for skipped (up-to-date) and group tasks 'json': output result in json format [default: %(default)s\] ]' \
+            '(-o|--output-file)'{-o,--output-file}'[write output into file [default: stdout\]]' \
+            '(-n|--process)'{-n,--process}'[number of subprocesses[default: %(default)s\]]' \
+            '(-P|--parallel-type)'{-P,--parallel-type}'[Tasks can be executed in parallel in different ways: 'process': uses python multiprocessing module 'thread': uses threads [default: %(default)s\] ]' \
+            '--pdb[get into PDB (python debugger) post-mortem in case of unhadled exception]' \
+            '(-s|--single)'{-s,--single}'[Execute only specfied tasks ignoring their task_dep [default: %(default)s\]]' \
+            '--strict[Fail on things that would normally be warnings.]' \
+            '--invariant[Generate invariant output (for testing only!).]' \
+            '(-q|--quiet)'{-q,--quiet}'[Run quietly.]' \
+            '*::task:(($tasks))'
+            ''
+        )
+      ;;
+
+
+      (install_theme)
+          _command_args=(
+            '(-l|--list)'{-l,--list}'[Show list of available themes.]' \
+            '(-u|--url)'{-u,--url}'[URL for the theme repository (default: http://themes.getnikola.com/v7/themes.json)]' \
+            ''
+        )
+      ;;
+
+
+      (orphans)
+          _command_args=(
+            
+            ''
+        )
+      ;;
+
+
+      (new_page)
+          _command_args=(
+            '(-t|--title)'{-t,--title}'[Title for the page.]' \
+            '-1[Create the page with embedded metadata (single file format)]' \
+            '-2[Create the page with separate metadata (two file format)]' \
+            '-e[Open the page (and meta file, if any) in $EDITOR after creation.]' \
+            '(-f|--format)'{-f,--format}'[Markup format for the page, one of rest, markdown, wiki, bbcode, html, textile, txt2tags]' \
+            ''
+        )
+      ;;
+
+
+      (clean)
+          _command_args=(
+            '--db-file[file used to save successful runs]' \
+            '--backend[Select dependency file backend.Available options dbm, json, sqlite3. [default: %(default)s\]]' \
+            '(-c|--clean-dep)'{-c,--clean-dep}'[clean task dependencies too]' \
+            '(-a|--clean-all)'{-a,--clean-all}'[clean all task]' \
+            '(-n|--dry-run)'{-n,--dry-run}'[print actions without really executing them]' \
+            '*::task:(($tasks))'
+            ''
+        )
+      ;;
+
+
+      (ignore)
+          _command_args=(
+            '--db-file[file used to save successful runs]' \
+            '--backend[Select dependency file backend.Available options dbm, json, sqlite3. [default: %(default)s\]]' \
+            '*::task:(($tasks))'
+            ''
+        )
+      ;;
+
+
+      (run)
+          _command_args=(
+            '--db-file[file used to save successful runs]' \
+            '--backend[Select dependency file backend.Available options dbm, json, sqlite3. [default: %(default)s\]]' \
+            '(-a|--always-execute)'{-a,--always-execute}'[always execute tasks even if up-to-date [default: %(default)s\]]' \
+            '(-c|--continue)'{-c,--continue}'[continue executing tasks even after a failure [default: %(default)s\]]' \
+            '(-v|--verbosity)'{-v,--verbosity}'[0 capture (do not print) stdout/stderr from task. 1 capture stdout only. 2 do not capture anything (print everything immediately). [default: 1\]]' \
+            '(-r|--reporter)'{-r,--reporter}'[Choose output reporter. Available: 'default': report output on console 'executed-only': no output for skipped (up-to-date) and group tasks 'json': output result in json format [default: %(default)s\] ]' \
+            '(-o|--output-file)'{-o,--output-file}'[write output into file [default: stdout\]]' \
+            '(-n|--process)'{-n,--process}'[number of subprocesses[default: %(default)s\]]' \
+            '(-P|--parallel-type)'{-P,--parallel-type}'[Tasks can be executed in parallel in different ways: 'process': uses python multiprocessing module 'thread': uses threads [default: %(default)s\] ]' \
+            '--pdb[get into PDB (python debugger) post-mortem in case of unhadled exception]' \
+            '(-s|--single)'{-s,--single}'[Execute only specfied tasks ignoring their task_dep [default: %(default)s\]]' \
+            '*::task:(($tasks))'
+            ''
+        )
+      ;;
+
+
+      (new_post)
+          _command_args=(
+            '(-p|--page)'{-p,--page}'[Create a page instead of a blog post. (see also: `nikola new_page`)]' \
+            '(-t|--title)'{-t,--title}'[Title for the post.]' \
+            '--tags[Comma-separated tags for the post.]' \
+            '-1[Create the post with embedded metadata (single file format)]' \
+            '-2[Create the post with separate metadata (two file format)]' \
+            '-e[Open the post (and meta file, if any) in $EDITOR after creation.]' \
+            '(-f|--format)'{-f,--format}'[Markup format for the post, one of rest, markdown, wiki, bbcode, html, textile, txt2tags]' \
+            '-s[Schedule the post based on recurrence rule]' \
+            ''
+        )
+      ;;
+
+
+      (bootswatch_theme)
+          _command_args=(
+            '(-n|--name)'{-n,--name}'[New theme name (default: custom)]' \
+            '-s[Name of the swatch from bootswatch.com.]' \
+            '(-p|--parent)'{-p,--parent}'[Parent theme name (default: bootstrap3)]' \
+            ''
+        )
+      ;;
+
+
+      (console)
+          _command_args=(
+            '(-b|--bpython)'{-b,--bpython}'[Use bpython]' \
+            '(-i|--plain)'{-i,--plain}'[Use IPython]' \
+            '(-p|--plain)'{-p,--plain}'[Use the plain Python interpreter]' \
+            ''
+        )
+      ;;
+
+
+      (list)
+          _command_args=(
+            '--db-file[file used to save successful runs]' \
+            '--backend[Select dependency file backend.Available options dbm, json, sqlite3. [default: %(default)s\]]' \
+            '--all[list include all sub-tasks from dodo file]' \
+            '(-q|--quiet)'{-q,--quiet}'[print just task name (less verbose than default)]' \
+            '(-s|--status)'{-s,--status}'[print task status (R)un, (U)p-to-date, (I)gnored]' \
+            '(-p|--private)'{-p,--private}'[print private tasks (start with '_')]' \
+            '--deps[print list of dependencies (file dependencies only)]' \
+            '--template[display entries with template]' \
+            '*::task:(($tasks))'
+            ''
+        )
+      ;;
+
+
+      (deploy)
+          _command_args=(
+            
+            ''
+        )
+      ;;
+
+
+      (tabcompletion)
+          _command_args=(
+            '--db-file[file used to save successful runs]' \
+            '--backend[Select dependency file backend.Available options dbm, json, sqlite3. [default: %(default)s\]]' \
+            '(-s|--shell)'{-s,--shell}'[Completion code for SHELL. default: "bash". options: [bash, zsh\]]' \
+            '--hardcode-tasks[Hardcode tasks from current task list.]' \
+            ''
+        )
+      ;;
+
+
+      (dumpdb)
+          _command_args=(
+            '--db-file[file used to save successful runs]' \
+            ''
+        )
+      ;;
+
+
+      (serve)
+          _command_args=(
+            '(-p|--port)'{-p,--port}'[Port nummber (default: 8000)]' \
+            '(-a|--address)'{-a,--address}'[Address to bind (default: 0.0.0.0 – all local interfaces)]' \
+            '(-b|--browser)'{-b,--browser}'[Open the test server in a web browser]' \
+            ''
+        )
+      ;;
+
+
+      (info)
+          _command_args=(
+            '--db-file[file used to save successful runs]' \
+            '--backend[Select dependency file backend.Available options dbm, json, sqlite3. [default: %(default)s\]]' \
+            '*::task:(($tasks))'
+            ''
+        )
+      ;;
+
+
+      (github_deploy)
+          _command_args=(
+            
+            ''
+        )
+      ;;
+
+
+      (version)
+          _command_args=(
+            
+            ''
+        )
+      ;;
+
+
+      (auto)
+          _command_args=(
+            '-b[Start a web browser.]' \
+            '(-p|--port)'{-p,--port}'[Port nummber (default: 8000)]' \
+            ''
+        )
+      ;;
+
+
+      (strace)
+          _command_args=(
+            '--db-file[file used to save successful runs]' \
+            '--backend[Select dependency file backend.Available options dbm, json, sqlite3. [default: %(default)s\]]' \
+            '(-a|--all)'{-a,--all}'[display all files (not only from within CWD path)]' \
+            '--keep[save strace command output into strace.txt]' \
+            '*::task:(($tasks))'
+            ''
+        )
+      ;;
+
+
+      (plugin)
+          _command_args=(
+            '(-i|--install)'{-i,--install}'[Install a plugin.]' \
+            '(-r|--uninstall)'{-r,--uninstall}'[Uninstall a plugin.]' \
+            '(-l|--list)'{-l,--list}'[Show list of available plugins.]' \
+            '(-u|--url)'{-u,--url}'[URL for the plugin repository (default: http://plugins.getnikola.com/v7/plugins.json)]' \
+            '--user[Install user-wide, available for all sites.]' \
+            '--upgrade[Upgrade all installed plugins.]' \
+            '--list-installed[List the installed plugins with their location.]' \
+            ''
+        )
+      ;;
+
+
+      (doit_auto)
+          _command_args=(
+            '--db-file[file used to save successful runs]' \
+            '--backend[Select dependency file backend.Available options dbm, json, sqlite3. [default: %(default)s\]]' \
+            '(-v|--verbosity)'{-v,--verbosity}'[0 capture (do not print) stdout/stderr from task. 1 capture stdout only. 2 do not capture anything (print everything immediately). [default: 1\]]' \
+            
+            '*::task:(($tasks))'
+            ''
+        )
+      ;;
+
+
+      (forget)
+          _command_args=(
+            '--db-file[file used to save successful runs]' \
+            '--backend[Select dependency file backend.Available options dbm, json, sqlite3. [default: %(default)s\]]' \
+            '(-s|--follow-sub)'{-s,--follow-sub}'[forget task dependencies too]' \
+            '*::task:(($tasks))'
+            ''
+        )
+      ;;
+
+
+      (init)
+          _command_args=(
+            '(-q|--quiet)'{-q,--quiet}'[Do not ask questions about config.]' \
+            '(-d|--demo)'{-d,--demo}'[Create a site filled with example data.]' \
+            ''
+        )
+      ;;
+
+
+      (import_wordpress)
+          _command_args=(
+            '(-o|--output-folder)'{-o,--output-folder}'[Location to write imported content.]' \
+            '(-d|--no-drafts)'{-d,--no-drafts}'[Don't import drafts]' \
+            '--squash-newlines[Shorten multiple newlines in a row to only two newlines]' \
+            '--no-downloads[Do not try to download files for the import]' \
+            '--qtranslate[Look for translations generated by qtranslate plugin]' \
+            '--translations_pattern[The pattern for translation files names]' \
+            ''
+        )
+      ;;
+
+
+        # default completes task names
+        (*)
+           _command_args='*::task:(($tasks))'
+        ;;
+    esac
+
+    # -A no options will be completed after the first non-option argument
+    _arguments -A : $_command_args
+    return 0
+}
+
+_nikola
