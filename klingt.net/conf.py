@@ -797,7 +797,7 @@ GLOBAL_CONTEXT = {
         ('nikola', 'http://getnikola.com/'),
         ('purecss', 'http://purecss.io/'),
         ('fontello', 'http://fontello.com/'),
-        ('KaTeX', 'http://khan.github.io/KaTeX/'),
+        # ('KaTeX', 'http://khan.github.io/KaTeX/'),
         ('google fonts', 'https://www.google.com/fonts')
     ],
     'site_url': SITE_URL,

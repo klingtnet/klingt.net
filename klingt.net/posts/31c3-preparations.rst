@@ -1,9 +1,9 @@
 .. title: 31c3 preparations
 .. slug: 31c3-preparations
 .. date: 2014-11-04 19:07:23 UTC+01:00
-.. tags:
+.. tags: 31c3, chaos congress, ccc, preparations, security, firewall, ports, tips
 .. link:
-.. description:
+.. description: A quick guide how I tried to fill some potential security holes on my laptop to prepare it for the 31st Chaos Communication Congress.
 .. type: text
 
 I am going to attend at this years `Chaos Communication Congress <https://events.ccc.de/>`_ for the first time. Because there will be a lot of, maybe talented, hackers with too much spare time and less respect for other peoples data. So I can recommend, if you also take part at this years congress, to check your system for potential security leaks. It is also good possibility to think about encrypting (parts of) your data and setting up or renewing your passwords.

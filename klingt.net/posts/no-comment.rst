@@ -3,7 +3,7 @@
 .. date: 2014-10-25 23:38:13 UTC+02:00
 .. tags: comments, blog, discussion
 .. link:
-.. description:
+.. description: Why I don't want to provide a comment box for this blog.
 .. type: text
 
 

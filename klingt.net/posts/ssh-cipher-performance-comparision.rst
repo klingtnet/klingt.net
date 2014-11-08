@@ -1,9 +1,9 @@
 .. title: SSH cipher performance comparision
 .. slug: ssh-cipher-performance-comparision
 .. date: 2014-10-19 13:34:10 UTC+02:00
-.. tags:
+.. tags: ssh, gnuplot, arcfour, cipher, comparision, aes, chacha20, python
 .. link:
-.. description:
+.. description: I've tried to measure the performance of different OpenSSH cipher algorithms using python.
 .. type: text
 
 OpenSSH disabled in ``sshd`` with version 6.6 some `unsafe algorithms <http://marc.info/?l=openssh-unix-dev&m=141264100821529&w=2>`_ by default:
