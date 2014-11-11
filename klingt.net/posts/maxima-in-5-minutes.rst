@@ -1,4 +1,4 @@
-.. title: maxima in 5 minutes
+.. title: Maxima in 5 minutes
 .. slug: maxima-in-5-minutes
 .. date: 2014-11-10 12:58:58 UTC+01:00
 .. tags: maxima, cas, math, computer algebra system
