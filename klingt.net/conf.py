@@ -804,6 +804,5 @@ GLOBAL_CONTEXT = {
     'about_url': "/pages/about/",
     'github_url': kn_constants.github_url,
     'rss_url': kn_constants.rss_url,
-    'blog_subtitle': 'Music lover, Part time nerd and Computer Science student.'
+    'blog_subtitle': 'Music lover, part time nerd and computer science student.'
 }
-
