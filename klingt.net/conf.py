@@ -300,7 +300,10 @@ REDIRECTIONS = []
 # plugin (`nikola install_plugin ping`).
 # To do manual deployment, set it to []
 DEPLOY_COMMANDS = {
-    'default': ['rsync --archive --stats --delete output/ klingt.net:/var/www/klingt.net/www/']
+    'default': [
+        'rsync --archive --stats --delete output/ klingt.net:/var/www/klingt.net/www/',
+        'rsync --archive imgs/favicon.ico klingt.net:/var/www/klingt.net/www/'
+    ]
 }
 
 
@@ -427,7 +430,7 @@ CODE_COLOR_SCHEME = 'monokai'
 # <link rel="name" href="file" sizes="size"/>
 FAVICONS = {
     ("icon", "/imgs/favicon.ico", "16x16"),
-    ("icon", "/imgs/icon_128.png", "128x128"),
+    ("icon", "/imgs/logo_128.png", "128x128"),
 }
 
 # Show only teasers in the index pages? Defaults to False.
