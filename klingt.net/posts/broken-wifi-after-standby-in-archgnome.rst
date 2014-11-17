@@ -10,5 +10,5 @@ Sometimes my laptop can't connect to the wifi network after waking up from suspe
 
 .. code:: sh
 
-	sudo systemctl kill NetworkManager.service
-	sudo systemctl start NetworkManager.service
+	sudo systemctl kill NetworkManager.service wpa_supplicant.service
+	sudo systemctl start NetworkManager.service wpa_supplicant.service
