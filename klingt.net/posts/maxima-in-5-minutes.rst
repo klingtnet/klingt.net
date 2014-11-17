@@ -1,7 +1,7 @@
 .. title: Maxima in 5 minutes
 .. slug: maxima-in-5-minutes
 .. date: 2014-11-10 12:58:58 UTC+01:00
-.. tags: maxima, cas, math, computer algebra system
+.. tags: maxima, math, CAS
 .. link:
 .. description: Learn how to use the basics of the maxima computer algebra system in 5 minutes.
 .. type: text
