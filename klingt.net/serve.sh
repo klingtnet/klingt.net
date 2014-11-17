@@ -1,3 +1,4 @@
 #!/bin/sh
-echo 'Trying to serve from localhost:8000 ...'
-cd output ; python3 -m http.server &>/dev/null
+PORT=9000
+echo "Trying to serve from localhost:$PORT ..."
+cd output ; python3 -m http.server $PORT &>/dev/null
