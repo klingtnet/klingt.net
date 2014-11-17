@@ -6,7 +6,10 @@
 .. description: A quick guide how I tried to fill some potential security holes on my laptop to prepare it for the 31st Chaos Communication Congress.
 .. type: text
 
-I am going to attend at this years `Chaos Communication Congress <https://events.ccc.de/>`_ for the first time. Because there will be a lot of, maybe talented, hackers with too much spare time and less respect for other peoples data. So I can recommend, if you also take part at this years congress, to check your system for potential security leaks. It is also good possibility to think about encrypting (parts of) your data and setting up or renewing your passwords.
+.. role:: strike
+    :class: strike
+
+I am going to attend at this years `Chaos Communication Congress <https://events.ccc.de/>`_ for the first time. Because there will be a lot of :strike:`hackers` security engineers with too much spare time and less respect for other peoples data. So I can recommend, if you also take part at this years congress, to check your system for potential security leaks. It is also good possibility to think about encrypting (parts of) your data and setting up or renewing your passwords.
 
 I am not a security expert, so use the following commands on your own risk. The sole purpose of this post is to serve as documentation for the next time I have to check my Arch Linux system for potential security holes.
 
@@ -56,7 +59,7 @@ You should ask yourself what services from that list are really essential as wel
 setup a firewall
 ~~~~~~~~~~~~~~~~
 
-foo
+There is an excellent guide how to setup `UFW (Uncomplicated Firewall) at digitalocean <https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server>`_. UFW is a front-end for iptables and makes the configuration dead easy.
 
 network shares
 ~~~~~~~~~~~~~~
