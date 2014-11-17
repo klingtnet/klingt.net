@@ -39,7 +39,7 @@ class NavStories(ConfigPlugin):
         for lang in site.config['NAVIGATION_LINKS'].values:
             new = []
             for p in site.pages:
-                if lang in p.translated_to and not p.meta('hidefromnav'):
+                if lang in p.translated_to and not p.meta('hidefromnav') and not p.meta('draft'):
                     new.append(p)
             new_entries = tuple(sorted([(p.permalink(lang), p.title(lang)) for p in new]))
 
