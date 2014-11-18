@@ -5,7 +5,6 @@
 .. link:
 .. description: The configuration of my digitalocean droplet that serves this blog.
 .. type: text
-.. draft: True
 
 `klingt.net™ <http://www.klingt.net>`_ is back after a long time and this isn't the first post, but nevertheless I will show you in the first part of this series how this blog is served. In the second part I will describe how I configured `nikola`_ and made my custom blog theme using `sass`_.
 
