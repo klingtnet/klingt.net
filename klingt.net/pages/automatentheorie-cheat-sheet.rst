@@ -55,3 +55,6 @@ automaton
 - Wenn :math:`\mathcal{A}` ein endlicher Automat ist dann existiert ein endlicher vollstaendiger und deterministischer Automat :math:`\mathcal{A'}` so dass :math:`L(\mathcal{A'}) = L(\mathcal{A})`. Konstruktion ueber die Potenzmenge der Zustaende des Ausgangsautomaten.
 - Ein Automat wird als **Initialzustandsnormalisiert** bezeichnet falls er nur einen Initialzustand besitzt, analog **Finalzustandsnormalisiert**
 - Ein **normalisierter** Automat besitzt nur jeweils einen Anfangs- und Endzustand und kann das leere Wort nicht mehr erkennen, da :math:`I \cap F = \varnothing`
+
+Monoids
+-------
