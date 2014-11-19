@@ -6,7 +6,7 @@
 .. description: How to open the ports needed by samba for an specific address range in ufw.
 .. type: text
 
-After setting up a iptables firewall using `ufw <https://wiki.archlinux.org/index.php/Uncomplicated_Firewall>`_ on every of my linux machines, I forgot to enable the ports that were used by samba. The first question that came to my mind was, what are the ports that my samba server uses and which of them should be opened? A quick google search revealed this `samba port usage <https://wiki.samba.org/index.php/Samba_port_usage>`_ guide from the official documentation. The solution to get the used ports is netstat with its famous `-tulpn` switch and `egrep`:
+After setting up a iptables firewall using `ufw <https://wiki.archlinux.org/index.php/Uncomplicated_Firewall>`_ on every of my linux machines, I forgot to enable the ports that were used by samba. The first question that came to my mind was, what are the ports that my samba server uses and which of them should be opened? A quick google search revealed this `samba port usage <https://wiki.samba.org/index.php/Samba_port_usage>`_ guide from the official documentation. The solution to get the used ports is netstat with its famous ``-tulpn`` switch and ``egrep``:
 
 .. code:: sh
 
