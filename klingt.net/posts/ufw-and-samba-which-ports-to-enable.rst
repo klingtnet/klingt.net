@@ -12,7 +12,7 @@ After setting up a iptables firewall using `ufw <https://wiki.archlinux.org/inde
 
     netstat -tulpn | egrep "samba|smbd|nmbd|winbind"
 
-This should show you that ``smbd`` is listening on TCP ports **445** and **139** and ``nmbd`` (NetBIOS nameserver daemnon) that listens on the UDP ports **137** and **138**. I've only opened the TCP ports, which is enough to access the samba server from my laptop that is running Arch. But if you are running a windows machine it could be possible that you also have to activate the UDP ports from the NetBIOS daemon. To make sure that the ports are only openend for machines inside my local network I have to use the from directive [1]_:
+This should show you that ``smbd`` is listening on TCP ports **445** and **139** and ``nmbd`` (NetBIOS nameserver daemon) listens on the UDP ports **137** and **138**. I've only opened the TCP ports, which seems to be enough to access the samba server from my laptop that is running Arch Linux. But if you are running a windows machine it could be possible that you also have to activate the UDP ports from the NetBIOS daemon. To make sure that the ports are only openend for machines inside my local network I have to use the ``from`` directive [1]_:
 
 .. code:: sh
 
