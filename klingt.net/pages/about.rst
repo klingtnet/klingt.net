@@ -38,7 +38,7 @@ Technologies
 Why klingt.net?
 ===============
 
-The domain name was an idea of a good friend of mine. The name should have something to do with audio or music, because this was the main topic which I wanted to write about in 2006, when I registered this domain. It's a word play of the german sentence *Das klingt nett.*, what means *That sounds nice*.
+The domain name was an idea of a good friend of mine. The name should have something to do with audio or music, because this was the main topic which I wanted to write about in 2006, when I registered this domain. It's a word play of the german sentence *Das klingt nett*, what means *That sounds nice*.
 
 .. _andreas-linz.de: http://andreas-linz.de/
 .. _spreadshirt: http://www.spreadshirt.com/
