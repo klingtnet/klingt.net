@@ -1,6 +1,6 @@
 .. title: Blog Setup Part 1 - Digitalocean
 .. slug: blog-setup-part-1-digitalocean
-.. date: 2014-11-12 20:34:32 UTC+01:00
+.. date: 2014-11-19 20:20:00 UTC+01:00
 .. tags: digitalocean, vps, ufw, nginx, subdomains, ubuntu
 .. link:
 .. description: The configuration of my digitalocean droplet that serves this blog.
@@ -12,12 +12,12 @@ I've investigated different webhosters before I went to digitalocean, including 
 
 After the bad experience with 1und1 I wanted to try out digitalocean because the people around me always recommended it and second because of the `Student Developer Pack <https://education.github.com/pack>`_ from `GithubEducation <https://education.github.com/>`_.
 
-Before creating the droplet there was the choice of the OS. Currently they are supporting Ubuntu, Debian, CentOS and CoreOS. Unfortunately they don't provide `Arch <https://www.archlinux.org/>`_ anymore, so I decided to choose `Ubuntu <http://www.ubuntu.com/>`_ in version 14.10. Additionally you can specify the datacenter of your droplet, which is Amsterdam in my case. After that it's time to setup your SSH public key on the webinterface for the machine or to `generate a new key-pair <https://help.github.com/articles/generating-ssh-keys/>`_. Now you can ssh into your new droplet and change the timezone according to your location using ``dpkg-reconfigure tzdata``.
+Before creating the droplet there was the choice of the OS. Currently they are supporting Ubuntu, Debian, CentOS and CoreOS. Unfortunately they don't provide `Arch <https://www.archlinux.org/>`_ anymore, so I decided to choose `Ubuntu <http://www.ubuntu.com/>`_ in version 14.10. Additionally you can specify the datacenter to use, which is Amsterdam in my case. After that it's time to setup your SSH public key on the webinterface for the droplet or to `generate a new key-pair <https://help.github.com/articles/generating-ssh-keys/>`_. Now you should be able to ssh into your new droplet and change the timezone according to your location using ``dpkg-reconfigure tzdata`` (quite obvious command for changing the timezone … ).
 
 nginx
 =====
 
-A website is nothing without a webserver so I had to make a choice between `Apache`_ and `nginx`_. For both of them it should be an more than easy task to serve some static content, which is what they have to do for this website, so it's more a matter of personal preferences. I've choosen nginx because the configuration seems to be much easier and the cool kids use it 😎. The `official documentation <http://wiki.nginx.org/Install>`_ has got instructions for all kinds of operating systems and because my droplet runs Ubuntu I will only give the instructions for this system[2]_:
+A website is nothing without a webserver, so I had to make a choice between `Apache`_ and `nginx`_. They are both full-blown webservers, so the choice is more a matter of personal preferences. Lastly I've decided to give nginx a chance because the configuration seems to be much easier (and the cool kids use it 😎). The `official documentation <http://wiki.nginx.org/Install>`_ has got installation instructions for all kinds of operating systems, but my droplet runs Ubuntu, so I will write only the instructions for this system [2]_:
 
 .. code:: sh
 
@@ -25,15 +25,15 @@ A website is nothing without a webserver so I had to make a choice between `Apac
     apt-get update
     apt-get install nginx
 
-It's also a good time to upgrade your packages: ``apt-get update && apt-get upgrade``.
+Now it's a good time to update the packages: ``apt-get update && apt-get upgrade``.
 
-Before I began to configure the webserver I've read about the common `nginx pitfalls`_. One thing they've said in that article, was to distrust every article on the web about nginx configuration. That's what you should do also with this post.
+Before I began to configure the webserver I've read about the common `nginx pitfalls`_. One thing that they've said in this article was to distrust every article on the web about nginx configuration. That's what you also should do regarding this post.
 
-The first thing to do, is to make a folder for each website that should be served. This is one my weblog and another one for my reports that are generated from the nginx logs via `goaccess`_.
+I've created a folder for each website and subdomain that should be served. In my case it's one for my weblog and another one for the reports that will be generated from the nginx logs using `goaccess`_, but more on this later.
 
 .. code:: sh
 
-    mkdir -p /var/www/klingt.net/html/{blog,reports}
+    mkdir -p /var/www/klingt.net/html/{www,reports}
 
 I've changed the ownership of the freshly created directories to ``www-data`` user and group.
 
@@ -41,13 +41,13 @@ I've changed the ownership of the freshly created directories to ``www-data`` us
 
     chown -R www-data:www-data /var/www/klingt.net
 
-Nginx provides a sample configuration file that you can use as a basis for your *server blocks* or virtual host in Apache terms. To put it simply, a server block is a combination of server-name and ip/port indication.
+Nginx provides a sample configuration file that you can use as a basis for your *server blocks* or virtual hosts, to say it in Apache terms. To put it simply, a server block is a combination of server-name and ip/port specification.
 
 .. code:: sh
 
     cp /etc/nginx/sites-available/default /etc/nginx/sites-available/klingt.net
 
-Now we have a copy of the base configuration file that you can edit with the editor of your choice. We only need the last part that begins with ``Virtual Host configuration for example.com``. It's good practice to serve your website from ``www.domain.example`` as well as ``domain.example``. It's possible to configure are redirect via `http status code 301 <http://www.wikiwand.com/en/HTTP_301>`_ from the ``www`` subdomain to the root domain or to add both urls to the ``server_name`` parameter, which is what I've done. My droplet has IPv6 enabled, so I have to add listen directive for this to: ``listen [::]:80``. I also had to change the ``root`` path to the directory I've created before: ``root /var/www/klingt.net/html/blog`` (remember to close all commands with an ``;``).
+Now we have a copy of the base configuration file that you can edit with the editor of your choice. We only need the last part that begins with ``Virtual Host configuration for example.com``. It's good practice to serve your main website from ``www.domain.example`` as well as ``domain.example``. It's possible to configure are redirect via `http status code 301 <http://www.wikiwand.com/en/HTTP_301>`_ from the ``www`` subdomain to the root domain or to add both urls to the ``server_name`` parameter, which is what I've done. Don't forget to change the ``root`` path to the directory you've created before: ``root /var/www/klingt.net/html/www;``.
 Now the configuration file should look something like this:
 
 .. code-block:: sh
@@ -55,11 +55,11 @@ Now the configuration file should look something like this:
 
     server {
         listen 80;
-        listen [::]:80;
+        listen [::]:80; # IPv6
 
         server_name klingt.net www.klingt.net;
 
-        root /var/www/klingt.net/blog;
+        root /var/www/klingt.net/www;
         index index.html index.htm;
 
         location / {
@@ -67,7 +67,7 @@ Now the configuration file should look something like this:
         }
     }
 
-If you haven't done it before, you should now set the ``A`` and ``AAAA`` (IPv6) records of your domain to point to the IP address of your droplet. When you've done that you can make symlink from the config-file to nginx ``sites-enabled`` directory:
+If you haven't done it before, you should now set the ``A`` and ``AAAA`` (IPv6) records of your domain to point to the IP address of your droplet. When you've done that you can make a symlink from the config-file to nginx the ``sites-enabled`` directory to *enable* the server block:
 
 .. code:: sh
 
@@ -75,34 +75,58 @@ If you haven't done it before, you should now set the ``A`` and ``AAAA`` (IPv6) 
 
 Restart nginx ``service nginx restart`` and your website should be served!
 
-.. nginx log analytics
-.. -------------------
+nginx log analytics
+-------------------
 
-.. - goaccess
-.. - ``openssl passwd`` (max. 8 characters)
-.. - edit /etc/goaccess.conf , date-format and logfile
-.. - create cronjob for html report:
-..     + ``crontab -e``
-..     + ``*/10 * * * * /root/scripts/goaccess_reports.sh``
+At first I don't wanted to use any analytics at all, but generating a report from the nginx logs is dead easy with `goaccess`_ and doesn't involve injecting third-party javascript into my website. Luckily, Ubuntu provides an goaccess package so you can install it via ``apt-get install goaccess``. It isn't necessary to generate html reports with goaccess, because this tool can show you the report right in the terminal, but for convenience I want to them to be generated as an html file. My idea was pretty straight-forward, using a cronjob that calls every 10 minutes a script which generates a new html report using goaccess. This is the script that calls goaccess:
 
-.. optimization
-.. ------------
+.. code-block:: sh
 
-.. - use `PageSpeed Insights`_
-.. - enable compression/uncompression `nginx compression`_
-.. - text/plain for rst ``/etc/nginx/mime.types``
-.. - enable caching
-.. - service nginx restart
+    #!/bin/sh
 
-.. - configure `ufw`_
+    WWW_ROOT=/var/www/klingt.net/
+    LOG=/var/log/nginx/access.log
 
-..     + IPV6 should be enabled by default, if you don't want this change IPV6 to no in /etc/default/ufw
-..     + ``ufw default deny incoming``
-..     + ``ufw default allow outgoing``
-..     + ``ufw allow ssh`` (same as ``ufw allow 22/tcp``)
-..     + ``ufw allow www``
-..     + ``sudo ufw enable``
+    if [ -e $WWW_ROOT/reports ] ; then
+        cat $LOG* | goaccess > $WWW_ROOT/reports/index.html
+    fi
 
+Because the logs are rotated I have to combine them, this is done with ``cat $LOG*`` which then pipes its output into goaccess. Before running the cronjob, the date- and log-format must be specified in `/etc/goaccess.conf`, in my case uncommenting the default values was enough. Now it's time to add the cronjob, this is done with ``crontab -e`` and adding this line: ``*/10 * * * * /path/to/your/goaccess_reports.sh``. Alright, now we have fresh reports every 10 minutes. Because the reports aren't meant to be available for the whole web I've configured a `basic HTTP authentification <http://nginx.com/resources/admin-guide/restricting-access/>`_.
+
+We are almost finished, the only thing that misses is a little bit of optimization to the nginx configuration.
+
+optimization
+~~~~~~~~~~~~
+
+Google `PageSpeed Insights`_ showed me that I haven't activated gzip compression and caching. Enabling gzip compression is easy, open your ``/etc/nginx/nginx.conf`` and uncomment ``gzip on;``, depending on the power of your server you could also change the ``gzip_comp_level``, but levels above 6 need much higher processing power with minimally reduced filesize. The content-types that should be compressed can be set under ``gzip_types``.
+
+Caching is slightly more complicated, but all I had to do was to add this location directive to my server-block configuration ``/etc/nginx/sites-available/klingt.net``:
+
+.. code:: sh
+
+    location ~*\.(css|js|gif|jpe?g|png|ttf|otf|woff)$ {
+        expires 7d;
+        add_header Cache-Control private;
+    }
+
+I am providing a source-code link for every post on my weblog, with the default mime.type settings you will always get an annoying download dialog when you try to open the ``.rst`` source link. To fix this I had to add a content-type ``text/plain`` for `rst <en.wikipedia.org/wiki/ReStructuredText>`_ files in ``/etc/nginx/mime.types``.
+
+Don't forget to restart nginx to make the changes take effect: ``service nginx restart``.
+
+configure ufw
+-------------
+
+One last thing is to enable the firewall. Because `ufw`_ makes this super easy there is no excuse for not doing it. If you don't want to block IPv6 you should change ``IPv6`` in ``/etc/default/ufw`` to ``no``. Ok, so lets start:
+
+.. code:: sh
+
+    ufw default deny incoming
+    ufw default allow outgoing
+    ufw allow ssh
+    ufw allow www
+    ufw enable
+
+In Ubuntu ``ufw enable`` also creates an init.d script, so the firewall is started automagically on boot. Enabling the firewall shows you—based on the logs—how often someone/somewhat searches for open ports etc., sometimes this is a little bit scary. Maybe I will write an article about the analysis of the firewall log.
 
 .. [#] That's how they call virtual machines at `digitalocean`_
 .. [#] You could also use ``ppa:nginx/development`` if you are brave enough.
