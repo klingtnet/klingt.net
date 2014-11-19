@@ -3,7 +3,7 @@
 .. date: 2014-09-28 11:51:36 UTC+02:00
 .. tags:
 .. link:
-.. description: The imprint, you need to have it in germany.
+.. description: The imprint, you need to have it in Germany.
 .. type: text
 
 Address information
