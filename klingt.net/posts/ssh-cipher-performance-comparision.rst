@@ -87,7 +87,6 @@ The following snippet shows the interesting part of the script where the time me
 The full script can be downloaded from `here </files/ssh_bench.py>`_.
 
 .. code-block:: python
-    :linenos:
 
     start = resource.getrusage(resource.RUSAGE_CHILDREN)
     try:
