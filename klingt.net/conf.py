@@ -349,7 +349,7 @@ DEPLOY_COMMANDS = {
 #
 from nikola import filters
 FILTERS = {
-   ".html": [filters.minify_lines],
+   ".html": [],
    ".js": [kn_filters.yui_compressor],
    # ".css": [kn_filters.yui_compressor],
    # ".js": [filters.closure_compiler],
