@@ -128,6 +128,8 @@ One last thing is to enable the firewall. Because `ufw`_ makes this super easy t
 
 In Ubuntu ``ufw enable`` also creates an init.d script, so the firewall is started automagically on boot. Enabling the firewall shows you—based on the logs—how often someone/somewhat searches for open ports etc., sometimes this is a little bit scary. Maybe I will write an article about the analysis of the firewall log.
 
+----
+
 .. [#] That's how they call virtual machines at `digitalocean`_
 .. [#] You could also use ``ppa:nginx/development`` if you are brave enough.
 
