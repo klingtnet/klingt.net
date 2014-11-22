@@ -109,7 +109,7 @@ Caching is slightly more complicated, but all I had to do was to add this locati
         add_header Cache-Control private;
     }
 
-I am providing a source-code link for every post on my weblog, with the default mime.type settings you will always get an annoying download dialog when you try to open the ``.rst`` source link. To fix this I had to add a content-type ``text/plain`` for `rst <en.wikipedia.org/wiki/ReStructuredText>`_ files in ``/etc/nginx/mime.types``.
+I am providing a source-code link for every post on my weblog, with the default mime.type settings you will always get an annoying download dialog when you try to open the ``.rst`` source link. To fix this I had to add a content-type ``text/plain`` for `rst <http://en.wikipedia.org/wiki/ReStructuredText>`_ files in ``/etc/nginx/mime.types``.
 
 Don't forget to restart nginx to make the changes take effect: ``service nginx restart``.
 
