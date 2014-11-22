@@ -1,4 +1,4 @@
-.. title: UFW and Samba-which ports to enable?
+.. title: UFW and Samba - which ports to enable?
 .. slug: ufw-and-samba-which-ports-to-enable
 .. date: 2014-11-18 19:46:02 UTC+01:00
 .. tags: samba, smb, ufw, ports, firewall
