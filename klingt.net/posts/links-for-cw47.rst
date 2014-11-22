@@ -11,4 +11,3 @@
 - `A winged victory for the sullen <http://boilerroom.tv/recording/a-winged-victory-for-the-sullen/>`_ next monday evening live at `UT-Connewitz <http://www.utconnewitz.de/>`_
 - PEP-8 the `python style guide <https://www.python.org/dev/peps/pep-0008>`_
 - `python3 generators <http://simeonvisser.com/posts/python-3-using-yield-from-in-generators-part-1.html>`_ (lazy evaluation) and how to use ``yield from``
-
