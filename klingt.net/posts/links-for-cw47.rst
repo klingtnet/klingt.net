@@ -3,7 +3,7 @@
 .. date: 2014-11-23 14:00:00 UTC+01:00
 .. tags: git, neural networks, music, classic, ut-connewitz, lazy evulation, tinyjpg, compression, python, generators, gray-code, binary
 .. link:
-.. description: the weekly link list for calendar week 47
+.. description: The weekly link list for calendar week 47
 .. type: text
 
 - a not-so-basic `introduction into git <http://mrchlblng.me/2014/09/practical-git-introduction/#git-basics>`_
