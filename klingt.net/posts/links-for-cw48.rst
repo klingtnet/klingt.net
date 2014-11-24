@@ -19,4 +19,4 @@
     Point 1-5 could be solved using their approach to generate the CSS via JS and I have to admit that `programming` plain CSS is broken. Especially the first 3 points are important, #5 can be solved easily using `SASS <http://sass-lang.com/>`_.
 
     One thing to note is that even facebook developers are using the crappiest of all web development resources, w3schools.com, like you can see on slide 5.
-
+- a beautiful `collection of vim plugin <http://vimawesome.com/>`_
