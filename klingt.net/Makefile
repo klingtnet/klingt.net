@@ -23,7 +23,10 @@ clean:
 		echo 'removing nikola cache dir $(CACHE)';\
 		rm -r $(CACHE);\
 	fi
-	rm .doit.db
+	@if [ -f .doit.db ]; then\
+		echo 'removing doit.db';\
+		rm .doit.db;\
+	fi
 
 deploy:
 	nikola deploy
