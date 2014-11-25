@@ -1,5 +1,5 @@
-.. title: Links for cw47
-.. slug: links-for-cw47
+.. title: Links for #47
+.. slug: links-for-#47
 .. date: 2014-11-23 14:00:00 UTC+01:00
 .. tags: git, neural networks, music, classic, ut-connewitz, lazy evulation, tinyjpg, compression, python, generators, gray-code, binary
 .. link:
