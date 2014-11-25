@@ -20,3 +20,4 @@
 
     One thing to note is that even facebook developers are using the crappiest of all web development resources, w3schools.com, like you can see on slide 5.
 - a beautiful `collection of vim plugin <http://vimawesome.com/>`_
+- `functional progamming using JavaScript <http://scott.sauyet.com/Javascript/Talk/2014/01/FuncProgTalk/#slide-0>`_
