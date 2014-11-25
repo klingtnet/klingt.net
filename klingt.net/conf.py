@@ -455,7 +455,7 @@ RSS_READ_MORE_LINK = '<p><a href="{link}">{read_more}…</a> ({min_remaining_rea
 
 # A HTML fragment describing the license, for the sidebar.
 # (translatable)
-LICENSE = """If not otherwise stated, this site is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>"""
+LICENSE = """If not otherwise stated, this site is licensed under <a itemprop="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>"""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
