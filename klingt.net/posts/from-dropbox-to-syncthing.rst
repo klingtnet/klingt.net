@@ -6,9 +6,9 @@
 .. description: Why I switched from Dropbox to Syncthing and how I organized my synchronized folders.
 .. type: text
 
-I've used `Dropbox`_ since about two and a half years on my desktop and mobile devices and was pretty satisfied with it most of the time. But, even before `Condoleezza Rice <https://blog.dropbox.com/2014/04/growing-our-leadership-team/>`_ [1]_ was part of Dropbox's directors board, I had a bad feeling about my data lying on their servers. Another downside was the linux client, fortunately it's not half as bad as `skype <http://www.skype.com/de/download-skype/skype-for-linux/>`_. The trayicon always disappeared under `Gnome3 <http://www.gnome.org/gnome-3/>`_, clicking on a single notification opened up a dozen instances of `Nautilus <https://github.com/GNOME/nautilus>`_ and using closed-source software means that I had to install it manually or use it from the `Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>`_ which I try to avoid whenever possible. Also the android client seems to forget my login credentials from time to time.
+I've used `Dropbox`_ since about two and a half years on my desktop and mobile devices and was pretty satisfied with it most of the time. But, even before Condoleezza Rice [1]_ was part of `Dropbox's directors board <https://blog.dropbox.com/2014/04/growing-our-leadership-team/>`_, I had a bad feeling about my data lying on their servers. Another downside was the linux client, fortunately it's not half as bad as `skype <http://www.skype.com/de/download-skype/skype-for-linux/>`_. The trayicon always disappeared under `Gnome3 <http://www.gnome.org/gnome-3/>`_, clicking on a single notification opened up a dozen instances of `Nautilus <https://github.com/GNOME/nautilus>`_ and using closed-source software means that I had to install it manually or use it from the `Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>`_ which I try to avoid whenever possible. Also the android client seems to forget my login credentials from time to time.
 
-One might say that I only had to encrypt my Dropbox folder in order to reduce my worries about security. That's what I've done and it works well using `EncFS <http://en.wikipedia.org/wiki/EncFS>`_ as long as you don't use your Dropbox on different Operating Systems, especially on mobile. Distrusting a service provider and at the same time using a service that he offers is wrong from the ground up.
+One might say that I only had to encrypt my Dropbox folder in order to reduce my worries about security. That's what I've done and it works well using `EncFS <http://en.wikipedia.org/wiki/EncFS>`_ as long as you don't use your Dropbox on different Operating Systems, especially on mobile. Distrusting a service provider and at the same time using a service that they offer is wrong from the ground up.
 
 Not everything was bad, the synchronization worked well and I can't remember a moment when their servers were down. Getting public links for my files was also a nice feature. The camera upload feature was also a nice addition.
 
@@ -26,7 +26,7 @@ For Arch Linux: ``pacman -S syncthing``. If you are running Windows download the
 Configuration
 -------------
 
-Now you are ready to start (the service) ``systemctl stsart syncthing@USERNAME``. This should open your browser with ``http://localhost:8080/`` and shows you the dashboard with looks something like the image shown below, except that you should see only one folder and device. The default sync folder is located under ``~/Sync``, you can remove it after configuring at least one more folder.
+Now you are ready to start (the service) ``systemctl start syncthing@USERNAME``. This should open your browser with ``http://localhost:8080/`` and shows you the dashboard with looks something like the image shown below, except that you should see only one folder and device. The default sync folder is located under ``~/Sync``, you can remove it after configuring at least one more folder.
 
 .. image:: /imgs/syncthing_dashboard.png
     :class: kn-image
@@ -41,7 +41,7 @@ At first it is not very easy to synchronize a folder but if you note these few t
     By enabling the *Folder Master* option you can synchronize the folder as *read-only*.
 - You have to restart Syncthing after every folder you added, this can also be done from the menu bar of the dashboard
 
-Maybe you've asked yourself how the devices can talk to each other? The answer is the *Global Discovery Server*, that is used to share the addresses between the devices. If you will you can `run one by yourself <https://github.com/syncthing/discosrv>`_.
+Maybe you've asked yourself how the devices can talk to each other? The answer is the *Global Discovery Server*, that is used to share the addresses between the devices. If you want you can `run one by yourself <https://github.com/syncthing/discosrv>`_.
 
 There is a lot of progress in the project on github, so I am hopeful that this procedure will be way more user friendly in the near future.
 
