@@ -66,7 +66,7 @@ I have decided to add every subfolder of my base folder (``syncthing``) as seper
         │   └── uni
         └── wallpaper
 
-Symbolic links will be copied as is, that means that Syncthing won't follow those links and synchronize their content as Dropbox does. Maybe this `behaviour has changed <https://github.com/syncthing/syncthing/issues/873>`_ in version `0.10.8`. Because the Arch package is exceptionally out-of-date I will update this post when the newest version is available.
+Symbolic links will be copied as is, that means that Syncthing won't follow those links and synchronize their content as Dropbox does. Maybe this `behaviour has changed <https://github.com/syncthing/syncthing/issues/873>`_ in version `0.10.8 <https://github.com/syncthing/syncthing/releases/tag/v0.10.8>`_. Because the Arch package is exceptionally out-of-date I will update this post when the newest version is available.
 
 ----
 
