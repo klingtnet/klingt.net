@@ -1,4 +1,4 @@
-.. title: links for cw48
+.. title: Links for cw48
 .. slug: links-for-cw48
 .. date: 2014-11-30 11:45:36 UTC+01:00
 .. tags: python, bytecode, css, sass, react, extreme programming, pointers, C, cello, java, equal tempered, scale, octave, vim
