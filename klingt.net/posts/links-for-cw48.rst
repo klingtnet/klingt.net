@@ -1,7 +1,7 @@
 .. title: links for cw48
 .. slug: links-for-cw48
-.. date: 2014-11-23 17:30:36 UTC+01:00
-.. tags: python, bytecode
+.. date: 2014-11-30 11:45:36 UTC+01:00
+.. tags: python, bytecode, css, sass, react, extreme programming, pointers, C, cello, java, equal tempered, scale, octave
 .. link:
 .. description: the weekly link list for calendar week 48
 .. type: text
