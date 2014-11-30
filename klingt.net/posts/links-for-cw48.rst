@@ -6,7 +6,7 @@
 .. description: the weekly link list for calendar week 48
 .. type: text
 
-This weeks list has gotten a little longer than planned and I have left out the links to vagrant, docker and salt/ansible (I haven't decided yet which to choose). My plan is to setup a build environment for this blog using those tools, but more to that in a future post.
+This weeks list has gotten a little longer than planned and I have left out links to `vagrant <https://www.vagrantup.com/>`_, `docker <https://www.docker.com/>`_ and `salt <http://www.saltstack.com/>`_ or `ansible <http://www.ansible.com/home>`_ (I haven't decided yet which to choose). My plan is to setup a build environment for this blog using those tools, but more to that in a future post. Before someone asks, I won't use `puppet <http://puppetlabs.com/>`_ that's for sure.
 
 - How to understand `python bytecode <http://security.coverity.com/blog/2014/Nov/understanding-python-bytecode.html>`_ using python.
 - Why facebook uses `react js to generate their CSS <https://speakerdeck.com/vjeux/react-css-in-js>`_ and which problem they had with stylesheets *at scale* (buzzword):
