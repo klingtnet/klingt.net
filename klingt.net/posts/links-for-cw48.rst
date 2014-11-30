@@ -1,7 +1,7 @@
 .. title: links for cw48
 .. slug: links-for-cw48
 .. date: 2014-11-30 11:45:36 UTC+01:00
-.. tags: python, bytecode, css, sass, react, extreme programming, pointers, C, cello, java, equal tempered, scale, octave
+.. tags: python, bytecode, css, sass, react, extreme programming, pointers, C, cello, java, equal tempered, scale, octave, vim
 .. link:
 .. description: the weekly link list for calendar week 48
 .. type: text
@@ -21,7 +21,7 @@ This weeks list has gotten a little longer than planned and I have left out link
     Points 1-5 could be solved using their approach to generate the CSS via JS. Especially the first 3 points are important, #5 can be solved easily using `SASS <http://sass-lang.com/>`_.
 
     One thing to note is that even facebook developers are using the crappiest of all web development resources, w3schools.com [1]_, like you can see on slide 5.
-- A beautiful `collection of vim plugin <http://vimawesome.com/>`_
+- A beautiful `collection of vim plugins <http://vimawesome.com/>`_.
 - `Functional progamming using JavaScript <http://scott.sauyet.com/Javascript/Talk/2014/01/FuncProgTalk/#slide-0>`_.
 - `Hands-On Start to Mathematica <https://www.youtube.com/playlist?list=PLxn-kpJHbPx1TOYrbMrvqOztwg0Ncv07e>`_. [🎥]
 - *Modellanalyse* is a 2 weekly podcast produced by mathematics faculty of the KIT (Karslruhe Institute for Technology) and is really worth listening to. In of their last episodes they've talked about `Analysis <http://www.math.kit.edu/ianm4/seite/ma-analysis/de>`_ and presented an overview over all the basic concepts of this large branch of mathematics. [🔊/German]
@@ -30,7 +30,7 @@ This weeks list has gotten a little longer than planned and I have left out link
     .. image:: /imgs/Extreme_Programming.png
         :class: kn-image
         :alt: extreme programming
-- `If programming languages were weapons <http://bjorn.tipling.com/if-programming-languages-were-weapons>`_
+- `If programming languages were weapons <http://bjorn.tipling.com/if-programming-languages-were-weapons>`_.
 - `C Pointers Explained <http://karwin.blogspot.de/2012/11/c-pointers-explained-really.html>`_ (in a tiny fontsize).
 - `Cello <https://github.com/orangeduck/libCello>`_ provides higher level programming features for C, like Interfaces, Exceptions and `Duck-Typing <http://en.wikipedia.org/wiki/Duck_typing>`_.
 - A little outdated `IntelliJ tutorial <http://wiki.jetbrains.net/intellij/Developing_and_running_a_Java_EE_Hello_World_application>`_ that tells you how to write a *Hello World* application in Java EE. This is so over-engineered and complicated that I have to wonder why anyone has ever used this. The worst thing, it did not get much better till today.
