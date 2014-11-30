@@ -35,7 +35,7 @@ This weeks list has gotten a little longer than planned and I have left out link
 - `Cello <https://github.com/orangeduck/libCello>`_ provides higher level programming features for C, like Interfaces, Exceptions and `Duck-Typing <http://en.wikipedia.org/wiki/Duck_typing>`_.
 - A little outdated `IntelliJ tutorial <http://wiki.jetbrains.net/intellij/Developing_and_running_a_Java_EE_Hello_World_application>`_ that tells you how to write a *Hello World* application in Java EE. This is so over-engineered and complicated that I have to wonder why anyone has ever used this. The worst thing, it did not get much better till today.
 - Why are `12 notes in one octave <Why 12 notes to the Octave>`_, at least in our `equal-tempered <http://en.wikipedia.org/wiki/Equal_temperament>`_ western scale?
-    An octave is a doubling in frequency, or a ratio of :math:`{2}:{1}`. The subdivision in twelve tones, each with a ration of :math:`{1}:{\sqrt[12]{2}}`, gives a very good approximation for `perfect fifths <http://en.wikipedia.org/wiki/Perfect_fifth>`_ :math:`{1}:{2^{\frac{7}{12}}}` and is optimal for an octave.
+    An octave is a doubling in frequency, or a ratio of :math:`{1}:{2}`. The subdivision in twelve tones, each with a ration of :math:`{1}:{\sqrt[12]{2}}`, gives a very good approximation for `perfect fifths <http://en.wikipedia.org/wiki/Perfect_fifth>`_ :math:`{1}:{2^{\frac{7}{12}}}` and is optimal for an octave.
 
 ----
 
