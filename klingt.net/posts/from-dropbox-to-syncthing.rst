@@ -6,6 +6,9 @@
 .. description: Why I switched from Dropbox to Syncthing and how I organized my synchronized folders.
 .. type: text
 
+.. role:: strike
+    :class: strike
+
 I've used `Dropbox`_ since about two and a half years on my desktop and mobile devices and was pretty satisfied with it most of the time. But, even before Condoleezza Rice [1]_ was part of `Dropbox's directors board <https://blog.dropbox.com/2014/04/growing-our-leadership-team/>`_, I had a bad feeling about my data lying on their servers. Another downside was the linux client, fortunately it's not half as bad as `skype <http://www.skype.com/de/download-skype/skype-for-linux/>`_. The trayicon always disappeared under `Gnome3 <http://www.gnome.org/gnome-3/>`_, clicking on a single notification opened up a dozen instances of `Nautilus <https://github.com/GNOME/nautilus>`_ and using closed-source software means that I had to install it manually or use it from the `Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>`_ which I try to avoid whenever possible. Also the android client seems to forget my login credentials from time to time.
 
 One might say that I only had to encrypt my Dropbox folder in order to reduce my worries about security. That's what I've done and it works well using `EncFS <http://en.wikipedia.org/wiki/EncFS>`_ as long as you don't use your Dropbox on different Operating Systems, especially on mobile. Distrusting a service provider and at the same time using a service that they offer is wrong from the ground up.
@@ -66,7 +69,12 @@ I have decided to add every subfolder of my base folder (``syncthing``) as seper
         │   └── uni
         └── wallpaper
 
-Symbolic links will be copied as is, that means that Syncthing won't follow those links and synchronize their content as Dropbox does. Maybe this `behaviour has changed <https://github.com/syncthing/syncthing/issues/873>`_ in version `0.10.8 <https://github.com/syncthing/syncthing/releases/tag/v0.10.8>`_. Because the Arch package is exceptionally out-of-date I will update this post when the newest version is available.
+Symbolic links will be copied as is, that means that Syncthing won't follow those links and synchronize their content as Dropbox does. Maybe this `behaviour has changed <https://github.com/syncthing/syncthing/issues/873>`_ in version `0.10.8 <https://github.com/syncthing/syncthing/releases/tag/v0.10.8>`_. :strike:`Because the Arch package is exceptionally out-of-date I will update this post when the newest version is available.`
+
+Update
+~~~~~~
+
+Syncthing 0.10.8 is out and symlinks won't be followed, they will be copied as is and this should work for Windows as well.
 
 ----
 
