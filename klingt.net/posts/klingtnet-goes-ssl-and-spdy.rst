@@ -50,6 +50,32 @@ SSL is nothing without certificates, that means you have to add their location t
 
 That's all, have fun, feel secure and be SPDY!
 
+Update (Rewrite-Rule)
+~~~~~~~~~~~~~~~~~~~~~
+
+Now that we have SSL enabled we can rewrite all the incoming HTTP requests to HTTPS, using the following config:
+
+.. code::nginx
+    server {
+        listen 80;
+        listen [::]:80;
+        server_name example.com www.example.com;
+        return 301 https://www.example.com$request_uri;
+    }
+
+    server {
+        listen 443 ssl spdy;
+        listen [::]:443 ssl spdy;
+
+        ssl_certificate /file/path/klingt.net/;
+        ssl_certificate_key /file/path/server.key;
+
+        server_name example.com www.example.com;
+
+        ...
+    }
+
+
 ----
 
 .. [#] You should have a good reason for not supporting IPv6 in 2014.
