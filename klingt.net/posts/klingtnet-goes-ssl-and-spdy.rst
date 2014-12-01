@@ -48,6 +48,9 @@ SSL is nothing without certificates, that means you have to add their location t
     ssl_certificate /file/path/klingt.net/;
     ssl_certificate_key /file/path/server.key;
 
-.. [#] You should have a good reason for not supporting IPv6 in 2014.
+----
 
 That's all, have fun, feel secure and be SPDY!
+
+.. [#] You should have a good reason for not supporting IPv6 in 2014.
+
