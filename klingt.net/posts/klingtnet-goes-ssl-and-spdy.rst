@@ -55,7 +55,8 @@ Update (Rewrite-Rule)
 
 Now that we have SSL enabled we can rewrite all the incoming HTTP requests to HTTPS, using the following config:
 
-.. code::nginx
+.. code:: nginx
+
     server {
         listen 80;
         listen [::]:80;
@@ -72,7 +73,7 @@ Now that we have SSL enabled we can rewrite all the incoming HTTP requests to HT
 
         server_name example.com www.example.com;
 
-        ...
+        #...
     }
 
 
