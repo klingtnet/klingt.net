@@ -45,7 +45,7 @@ SSL is nothing without certificates, that means you have to add their location t
 
 .. code:: nginx
 
-    ssl_certificate /file/path/klingt.net/;
+    ssl_certificate /file/path/klingt.net/bundle.crt;
     ssl_certificate_key /file/path/server.key;
 
 That's all, have fun, feel secure and be SPDY!
@@ -68,7 +68,7 @@ Now that we have SSL enabled we can rewrite all the incoming HTTP requests to HT
         listen 443 ssl spdy;
         listen [::]:443 ssl spdy;
 
-        ssl_certificate /file/path/klingt.net/;
+        ssl_certificate /file/path/example.com/bundle.crt;
         ssl_certificate_key /file/path/server.key;
 
         server_name example.com www.example.com;
