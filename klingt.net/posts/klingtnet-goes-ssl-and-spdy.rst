@@ -32,7 +32,7 @@ nginx
 -----
 
 Now it's time to edit your site-config that should be located somewhere like ``/etc/nginx/sites-available/example.com``.
-Because the HTTPS port is ``443`` you have to add one or two ``listen`` directives, depending if you will support IPv6 or not [1]_.
+Because the HTTPS port is ``443`` you have to add one or two ``listen`` directives, dependend on if you will support IPv6 or not [1]_.
 
 .. code:: nginx
 
