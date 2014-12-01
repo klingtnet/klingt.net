@@ -21,7 +21,7 @@ It so happens that there is a coupon for a one year certificate from `namecheap 
 - ``-keyout example.com.pem`` filename for the generated private key
 - ``-out example.com.csr`` filename for CSR output
 
-The following dialog will ask you for a passphrase to encrypt your private key, please note the you have to enter it every time your webserver restarts. If you don't want this, then you have to add the ``-nodes`` option. But be warned, this leaves the private.key *unencrypted*!. Depending on your certification authority you have to do some more steps until you receive the signed certificate. My certificate was delivered via email, so I had to upload it securely to my server using ``scp`` for example. An unencrypted FTP connection is :strike:`not` never a good idea :strike:`in this case`.
+The following dialog will ask you for a passphrase to encrypt your private key, please note the you have to enter it every time your webserver restarts. If you don't want this, then you have to add the ``-nodes`` option. But be warned, this leaves the private.key *unencrypted*! Depending on your certification authority you have to do some more steps until you receive the signed certificate. My certificate was delivered via email, so I had to upload it securely to my server using ``scp`` for example. An unencrypted FTP connection is :strike:`not` never a good idea :strike:`in this case`.
 
 Update
 ~~~~~~
