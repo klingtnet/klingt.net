@@ -21,7 +21,7 @@ It so happens that there is a coupon for a one year certificate from `namecheap 
 - ``-keyout example.com.pem`` filename for the generated private key
 - ``-out example.com.csr`` filename for CSR output
 
-The following dialog will ask you for a passphrase to encrypt your private key, please note the you have to enter it every time your webserver restarts. If you don't want this, then you have to add the ``-nodes`` option. But be warned, this leaves the private.key *unencrypted*!. Depending on your certification authority you have to do some more steps until you receive the signed certificate. My certificate was delivered via email, so I had to upload it securely to my server using ``scp`` for example. An unencrypted FTP connection is :strike:`not` never a good idea :strike:`in this case`.
+The following dialog will ask you for a passphrase to encrypt your private key, please note the you have to enter it every time your webserver restarts. If you don't want this, then you have to add the ``-nodes`` option. But be warned, this leaves the private.key *unencrypted*! Depending on your certification authority you have to do some more steps until you receive the signed certificate. My certificate was delivered via email, so I had to upload it securely to my server using ``scp`` for example. An unencrypted FTP connection is :strike:`not` never a good idea :strike:`in this case`.
 
 Update
 ~~~~~~
@@ -32,7 +32,7 @@ nginx
 -----
 
 Now it's time to edit your site-config that should be located somewhere like ``/etc/nginx/sites-available/example.com``.
-Because the HTTPS port is ``443`` you have to add one or two ``listen`` directives, depending if you will support IPv6 or not [1]_.
+Because the HTTPS port is ``443`` you have to add one or two ``listen`` directives, dependend on if you will support IPv6 or not [1]_.
 
 .. code:: nginx
 
@@ -45,9 +45,39 @@ SSL is nothing without certificates, that means you have to add their location t
 
 .. code:: nginx
 
-    ssl_certificate /file/path/klingt.net/;
+    ssl_certificate /file/path/klingt.net/bundle.crt;
     ssl_certificate_key /file/path/server.key;
+
+That's all, have fun, feel secure and be SPDY!
+
+Update (Rewrite-Rule)
+~~~~~~~~~~~~~~~~~~~~~
+
+Now that we have SSL enabled we can rewrite all the incoming HTTP requests to HTTPS, using the following config:
+
+.. code:: nginx
+
+    server {
+        listen 80;
+        listen [::]:80;
+        server_name example.com www.example.com;
+        return 301 https://www.example.com$request_uri;
+    }
+
+    server {
+        listen 443 ssl spdy;
+        listen [::]:443 ssl spdy;
+
+        ssl_certificate /file/path/example.com/bundle.crt;
+        ssl_certificate_key /file/path/server.key;
+
+        server_name example.com www.example.com;
+
+        #...
+    }
+
+
+----
 
 .. [#] You should have a good reason for not supporting IPv6 in 2014.
 
-That's all, have fun, feel secure and be SPDY!
