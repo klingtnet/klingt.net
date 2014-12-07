@@ -3,7 +3,7 @@
 .. date: 2014-11-30 11:45:36 UTC+01:00
 .. tags: python, bytecode, css, sass, react, extreme programming, pointers, C, cello, java, equal tempered, scale, octave, vim
 .. link:
-.. description: the weekly link list for calendar week 48
+.. description: The weekly link list for calendar week 48.
 .. type: text
 
 This weeks list has gotten a little longer than planned and I have left out links to `vagrant <https://www.vagrantup.com/>`_, `docker <https://www.docker.com/>`_ and `salt <http://www.saltstack.com/>`_ or `ansible <http://www.ansible.com/home>`_ (I haven't decided yet which to choose). My plan is to setup a build environment for this blog using those tools, but more to that in a future post. Before someone asks, I won't use `puppet <http://puppetlabs.com/>`_ that's for sure.
