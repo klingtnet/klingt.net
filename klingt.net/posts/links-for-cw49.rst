@@ -1,6 +1,6 @@
 .. title: Links for cw49
 .. slug: links-for-cw49
-.. date: 2014-12-02 18:12:53 UTC+01:00
+.. date: 2014-12-07 14:12:30 UTC+01:00
 .. tags: music, learning, study, tuning, equal tempered, prime factorization, HTML6, McDonalds, NLP, python, IPython, Pandas, matplotlib, seaborn, rust, golang, go, book, C, signal handler, audio, back, 31c3, schedule
 .. link: 
 .. description: The weekly link list for calendar week 49.
