@@ -17,5 +17,5 @@
 - `Rust <https://www.rust-lang.org/>`_ is a statically typed systems programming language with features like pattern matching, guaranteed memory safety and type inference, to name a few. The `introductary guide <http://doc.rust-lang.org/0.12.0/guide.html>`_ is well written and extensive. The examples that I wrote while reading the guide are available on `github <https://github.com/KLINGTdotNET/rust-guide-examples>`_.
 - Besides rust I also want to learn `golang <https://www.golang.org>`_, maybe with the help of `The Little Go Book <https://github.com/karlseguin/the-little-go-book/blob/master/en/go.md>`_ by Karl Seguin. He has also written books about `Redis <https://github.com/karlseguin/the-little-redis-book>`_ and `MongoDB <https://github.com/karlseguin/the-little-mongodb-book>`_ in his "little books" series.
 - The `schedule for the 31st Chaos Communication Congress <https://events.ccc.de/congress/2014/Fahrplan/schedule.html>`_ is online.
-- `Running bash commands in the background properly <http://felixmilea.com/2014/12/running-bash-commands-background-properly/>`_, didn't knew about ``disown`` and ``nohup``.
+- `Running bash commands in the background properly <http://felixmilea.com/2014/12/running-bash-commands-background-properly/>`_, didn't know about ``disown`` and ``nohup``.
 
