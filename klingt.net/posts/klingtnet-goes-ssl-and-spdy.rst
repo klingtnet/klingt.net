@@ -1,4 +1,4 @@
-.. title: klingt.net goes SSL and SPDY (Updated)
+.. title: klingt.net goes SSL and SPDY
 .. slug: klingtnet-goes-ssl-and-spdy
 .. date: 2014-12-01 22:00:52 UTC+01:00
 .. tags: SPDY, SSL, TLS, HTTP/2, digitalocean, nginx, HTTPS, namecheap, CSR
@@ -75,7 +75,10 @@ Now that we have SSL enabled we can rewrite all the incoming HTTP requests to HT
         #...
     }
 
-**Update** 2014/12/09) Disabled SSL3 in ``nginx.conf`` because of the vulnerability through the `POODLE attack <http://en.wikipedia.org/wiki/POODLE>`_ (no, not the `fancy haired dogs <http://upload.wikimedia.org/wikipedia/commons/4/4c/Poodle%2C_cropped.JPG>`_). Thanks to Tobias for giving me this advise. You can check your settings with `this online-tool <https://www.ssllabs.com/ssltest/>`_.
+Update
+~~~~~~
+
+- *2014-12-09* Disabled SSL3 in ``nginx.conf`` because of the vulnerability through the `POODLE attack <http://en.wikipedia.org/wiki/POODLE>`_ (no, not the `fancy haired dogs <http://upload.wikimedia.org/wikipedia/commons/4/4c/Poodle%2C_cropped.JPG>`_). Thanks to Tobias for giving me this advise. You can check your settings with `this online-tool <https://www.ssllabs.com/ssltest/>`_.
 
 ----
 
