@@ -24,9 +24,9 @@ This should show you that ``smbd`` is listening on TCP ports **445** and **139**
 
 That's all, samba should be working!
 
-UPDATE
-~~~~~~
+Updates
+~~~~~~~
 
-It works on my Windows machine as well, even without the UDP ports that ``nmbd`` uses.
+- *2014-11-22* It works on my Windows machine as well, even without the UDP ports that ``nmbd`` uses.
 
 .. [#] If your router doesn't forward these ports it's also possible to allow them for any machine. But that's where the tin foil hat comes into play 😁.
