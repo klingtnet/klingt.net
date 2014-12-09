@@ -75,8 +75,8 @@ Now that we have SSL enabled we can rewrite all the incoming HTTP requests to HT
         #...
     }
 
-Update
-~~~~~~
+Updates
+~~~~~~~
 
 - *2014-12-09* Disabled SSL3 in ``nginx.conf`` because of the vulnerability through the `POODLE attack <http://en.wikipedia.org/wiki/POODLE>`_ (no, not the `fancy haired dogs <http://upload.wikimedia.org/wikipedia/commons/4/4c/Poodle%2C_cropped.JPG>`_). Thanks to Tobias for giving me this advise. You can check your settings with `this online-tool <https://www.ssllabs.com/ssltest/>`_.
 
