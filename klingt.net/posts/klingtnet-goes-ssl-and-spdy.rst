@@ -1,4 +1,4 @@
-.. title: klingt.net goes SSL and SPDY
+.. title: klingt.net goes SSL and SPDY (Updated)
 .. slug: klingtnet-goes-ssl-and-spdy
 .. date: 2014-12-01 22:00:52 UTC+01:00
 .. tags: SPDY, SSL, TLS, HTTP/2, digitalocean, nginx, HTTPS, namecheap, CSR
@@ -22,9 +22,6 @@ It so happens that there is a coupon for a one year certificate from `namecheap 
 - ``-out example.com.csr`` filename for CSR output
 
 The following dialog will ask you for a passphrase to encrypt your private key, please note the you have to enter it every time your webserver restarts. If you don't want this, then you have to add the ``-nodes`` option. But be warned, this leaves the private.key *unencrypted*! Depending on your certification authority you have to do some more steps until you receive the signed certificate. My certificate was delivered via email, so I had to upload it securely to my server using ``scp`` for example. An unencrypted FTP connection is :strike:`not` never a good idea :strike:`in this case`.
-
-Update
-~~~~~~
 
 You can specify an ``ssl_password_file`` in your `nginx config <http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate_key>`_ if you are lazy.
 
@@ -50,8 +47,8 @@ SSL is nothing without certificates, that means you have to add their location t
 
 That's all, have fun, feel secure and be SPDY!
 
-Update (Rewrite-Rule)
-~~~~~~~~~~~~~~~~~~~~~
+Rewrite-Rule
+~~~~~~~~~~~~
 
 Now that we have SSL enabled we can rewrite all the incoming HTTP requests to HTTPS, using the following config:
 
@@ -71,11 +68,14 @@ Now that we have SSL enabled we can rewrite all the incoming HTTP requests to HT
         ssl_certificate /file/path/example.com/bundle.crt;
         ssl_certificate_key /file/path/server.key;
 
+        ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;   # don’t use SSLv3 because of the POODLE attack
+
         server_name example.com www.example.com;
 
         #...
     }
 
+**Update** 2014/12/09) Disabled SSL3 in ``nginx.conf`` because of the vulnerability through the `POODLE attack <http://en.wikipedia.org/wiki/POODLE>`_ (no, not the `fancy haired dogs <http://upload.wikimedia.org/wikipedia/commons/4/4c/Poodle%2C_cropped.JPG>`_). Thanks to Tobias for giving me this advise. You can check your settings with `this online-tool <https://www.ssllabs.com/ssltest/>`_.
 
 ----
 
