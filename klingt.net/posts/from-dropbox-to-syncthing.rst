@@ -78,7 +78,7 @@ Syncthing 0.10.8 is out and symlinks won't be followed, they will be copied as i
 
 ----
 
-.. [#] I didn't mispelled her name, she is `written like that <http://en.wikipedia.org/wiki/Condoleezza_Rice>`_
+.. [#] I didn't misspell her name, she is `written like that <http://en.wikipedia.org/wiki/Condoleezza_Rice>`_
 .. [#] Alternatively you can do this configuration steps by editing the ``~/.config/syncthing/config.xml`` file.
 
 .. _Dropbox: https://www.dropbox.com/
