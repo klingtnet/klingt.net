@@ -25,6 +25,8 @@ The following dialog will ask you for a passphrase to encrypt your private key, 
 
 You can specify an ``ssl_password_file`` in your `nginx config <http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate_key>`_ if you are lazy.
 
+*Update 2014-12-12:* This needs nginx v.1.7.3 or above!
+
 nginx
 -----
 
