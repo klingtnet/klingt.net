@@ -20,7 +20,7 @@
     docker run -d -p 10086:10086 -v /var/run/docker.sock:/var/run/docker.sock tobegit3hub/seagull
 
 - PayPal about `10 Myths of Enterprise Python <https://www.paypal-engineering.com/2014/12/10/10-myths-of-enterprise-python/>`_. Did you know that the Python language is `4 years <http://python-history.blogspot.com/2009/01/introduction-and-overview.html>`_ older than Java? Since `PyPy <http://pypy.org/>`_ there is no more reason to believe that `Python is slow <https://www.paypal-engineering.com/2014/12/10/10-myths-of-enterprise-python/#python-is-slow>`_.
-- `Chrome will mark HTTP websites in 2015 as non-secure <https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure>`_, fair enough because I already switched to `HTTPS <//posts/klingtnet-goes-ssl-and-spdy/>`_ and you should too.
+- `Chrome will mark HTTP websites in 2015 as non-secure <https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure>`_, fair enough because I already switched to `HTTPS <//www.klingt.net/posts/klingtnet-goes-ssl-and-spdy/>`_ and you should too.
 - `addict <https://github.com/mewwts/addict>`_ is a Python dictionary that allows you to set/get values using *attribute* and *getitem* syntax.
 
 .. code:: python
