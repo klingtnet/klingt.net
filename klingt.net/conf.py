@@ -567,6 +567,7 @@ DEPLOY_DRAFTS = False
 MATHJAX_CONFIG = '''
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
+    displayAlign:"center"
 });
 </script>
 '''
