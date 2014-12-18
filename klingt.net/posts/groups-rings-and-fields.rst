@@ -3,7 +3,7 @@
 .. date: 2014-12-17 20:35:42 UTC+01:00
 .. tags: groups, rings, fields, abelian, monoid, math, algebra, mathematics
 .. link:
-.. description: A short summary about basic algebraic structures.
+.. description: A short summary about some basic algebraic structures.
 .. type: text
 
 This semester I am taking a automata theory course at the university which relies heavily on basic algebraic structures like `monoids <http://en.wikipedia.org/wiki/Monoid>`_, `groups <http://en.wikipedia.org/wiki/Group_(mathematics)>`_, `rings <http://en.wikipedia.org/wiki/Ring_(mathematics)>`_ and `fields <http://en.wikipedia.org/wiki/Field_%28mathematics%29>`_ the latter is better known as *Körper* in german lectures.
