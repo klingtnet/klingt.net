@@ -3,10 +3,10 @@
 .. date: 2014-12-17 20:35:42 UTC+01:00
 .. tags: groups, rings, fields, abelian, monoid, math, algebra, mathematics
 .. link:
-.. description: A short summary about these basic algebraic structures.
+.. description: A short summary about basic algebraic structures.
 .. type: text
 
-This semester I am taking a automata theory course at the university which relies heavily on basic algebraic structures like `monoids <http://en.wikipedia.org/wiki/Monoid>`_, `groups <http://en.wikipedia.org/wiki/Group_(mathematics)>`_ and `rings <http://en.wikipedia.org/wiki/Ring_(mathematics)>`_, the latter one is better known als *Körper* in german lectures.
+This semester I am taking a automata theory course at the university which relies heavily on basic algebraic structures like `monoids <http://en.wikipedia.org/wiki/Monoid>`_, `groups <http://en.wikipedia.org/wiki/Group_(mathematics)>`_, `rings <http://en.wikipedia.org/wiki/Ring_(mathematics)>`_ and `fields <http://en.wikipedia.org/wiki/Field_%28mathematics%29>`_ the latter is better known as *Körper* in german lectures.
 
 Sometimes I'm a little bit confused which structure needs which properties to be satisfied. That's why I decided to write a short summary about this topic and the process of writing this post also helps me to remember it, thus I can kill two birds with one stone.
 
@@ -77,7 +77,7 @@ Conditions
     & (b + c) \cdot a = (b \cdot a) + (c \cdot a)
     \end{split}
 
-6. :math:`\cdot` **associative**
+6. :math:`\cdot` is **associative**
 
    :math:`\forall a,b,c \in R : (a \cdot b) \cdot c = a \cdot (b \cdot c)`
 
@@ -89,15 +89,15 @@ Fields
 
 A field :math:`(F, +, \cdot)` is a set with elements :math:`F` and two binary operations :math:`+` and :math:`\cdot` that satisfies *all the conditions of a ring* plus the following three:
 
-1. :math:`\cdot` **commutative**
+1. :math:`\cdot` is **commutative**
 
    :math:`\forall a,b \in F : a \cdot b = b \cdot a`
 
-2. :math:`\cdot` **identity**
+2. :math:`\cdot` is **identity**
 
    :math:`\forall a \exists 1 : ( a, 1 \in F) \land ( a \cdot 1 = 1 \cdot a = a)`
 
-3. :math:`\cdot` **inverse**
+3. :math:`\cdot` is **inverse**
 
    :math:`\forall a \exists a^{-1} : ( a, a^{-1} \in F ) \land ( a + a^{-1} = a^{-1} + a = 1 )`
 
