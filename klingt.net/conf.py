@@ -136,7 +136,7 @@ TIMEZONE = "Europe/Berlin"
 
 # Date format used to display post dates.
 # (str used by datetime.datetime.strftime)
-DATE_FORMAT = '%d, %B %Y'
+DATE_FORMAT = '%d. %B %Y'
 
 # While nikola can select a sensible locale for each language,
 # sometimes explicit control can come handy.
