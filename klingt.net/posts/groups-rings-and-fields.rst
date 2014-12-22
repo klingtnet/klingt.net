@@ -44,12 +44,12 @@ Conditions
 - If the group is also *commutative* (5) then it's called an **abelian group**
 
 Rings
-~~~~~
+-----
 
 A ring :math:`(R, +, \cdot)` is a set with elements :math:`R` and two binary operations :math:`+` and :math:`\cdot`.
 
 Conditions
-----------
+~~~~~~~~~~
 
 1. :math:`+` is **associative**
 
