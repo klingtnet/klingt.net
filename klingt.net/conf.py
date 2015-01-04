@@ -301,8 +301,7 @@ REDIRECTIONS = []
 # To do manual deployment, set it to []
 DEPLOY_COMMANDS = {
     'default': [
-        'rsync --archive --stats --delete output/ klingt.net:/var/www/klingt.net/www/',
-        'rsync --archive imgs/favicon.ico klingt.net:/var/www/klingt.net/www/'
+        'rsync --archive --stats --delete output/ klingt.net:/var/www/klingt.net/www/'
     ]
 }
 
