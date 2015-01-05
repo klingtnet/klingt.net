@@ -81,6 +81,7 @@ Conditions
 
    :math:`\forall a,b,c \in R : (a \cdot b) \cdot c = a \cdot (b \cdot c)`
 
+- If condition 4. is *not* satisfied (there is no additive inverse element), then the structure is called a **semiring**.
 - A **ring** has to satifsfy all six conditions
 - If the :math:`\cdot` operation is also commutative the structure is called **commutative ring**
 
