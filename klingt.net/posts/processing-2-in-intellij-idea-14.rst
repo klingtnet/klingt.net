@@ -74,13 +74,18 @@ To run your processing sketch as *Application* instead of an *Applet* you have t
 
     public class Main {
         public static void main(String args[]) {
-            PApplet.main(new String[] {"--present", "net.klingt.example.ProcessingExample"});
+            // full-screen mode can be activated via parameters to PApplets main method.
+            PApplet.main(new String[] {"net.klingt.example.ProcessingExample"});
         }
     }
 
 Now you can run you sketch as *Application* by pressing ``Shift+F10`` in your ``Main`` class.
 
 For further details read the *eclipse setup instructions* that I've linked above or take a look at Daniel Shiffmans `Learning Processing <http://www.learningprocessing.com/>`_ website.
+
+**Update**
+
+You can reuse the project as Idae project template using ``Tools → Save Project as Template ...``.
 
 ----
 
