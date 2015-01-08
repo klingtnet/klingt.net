@@ -46,7 +46,7 @@ At first download the latest  CM12 release from `official cyanogenmod downloads 
 
 Now it's time to boot into recovery mode, you can do this via ``adb reboot bootloader`` or by pressing and holding the *Volume Down* and *Power* button on reboot.
 
-Make a full system wipe by choosing the *Wipe* Menu in TWRP and *Swipe to Factory Reset*. Now open the *Install* menu and install the Cyanogenmod zip from your sdcard. If this succeeds go back to the *Install* menu and install the gapps zip-file. Don't choose Reboot System, instead go back to *Home*, select *Reboot* and choose *Bootloader*. In the bootloader menu check that you can see a line with read background that show ``FASTBOOT USB``. Now extract the ``boot.img`` from your cyanogenmod zip-file and flash it via `fastboot <wiki.cyanogenmod.org/w/Doc:_fastboot_intro>`_ onto your device:
+Make a full system wipe by choosing the *Wipe* Menu in TWRP and *Swipe to Factory Reset*. Now open the *Install* menu and install the Cyanogenmod zip from your sdcard. If this succeeds go back to the *Install* menu and install the gapps zip-file. Don't choose Reboot System, instead go back to *Home*, select *Reboot* and choose *Bootloader*. In the bootloader menu check that you can see a line with red background that shows ``FASTBOOT USB``. Now extract the ``boot.img`` from your cyanogenmod zip-file and flash it via `fastboot <wiki.cyanogenmod.org/w/Doc:_fastboot_intro>`_ onto your device:
 
 .. code:: sh
 
