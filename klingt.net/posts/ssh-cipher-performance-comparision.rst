@@ -1,7 +1,7 @@
 .. title: SSH cipher performance comparision
 .. slug: ssh-cipher-performance-comparision
 .. date: 2014-10-19 13:34:10 UTC+02:00
-.. tags: ssh, gnuplot, arcfour, cipher, comparision, aes, chacha20, python
+.. tags: ssh, gnuplot, arcfour, cipher, comparision, aes, chacha20, python, arm
 .. link:
 .. description: I've tried to measure the performance of different OpenSSH cipher algorithms using python.
 .. type: text
