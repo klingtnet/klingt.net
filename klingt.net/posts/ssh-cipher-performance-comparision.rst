@@ -12,15 +12,15 @@ OpenSSH disabled in ``sshd`` with version 6.6 some `unsafe algorithms <http://ma
 
 This caused some trouble because I was using arcfour_ for performance reasons as default cipher for my remote backup machines in ``~/.ssh/config``. Now I need to reevaluate which cipher algorithm to use. Because I often do my backup via ``rsync`` over ssh I care most about transfer speed.
 
-preparing a test
+Preparing a Test
 ================
 
-create a test file
+Create a Test File
 ------------------
 
 At first we need a reasonably large file to transfer. That file must contain only random data to eliminate the possible influence of compression on the transfer rate. To do this simply use dd :code:`dd if=/dev/urandom of=/tmp/randomfile bs=1k count=1M`. This creates a file of 1GB size because the blocksize ``bs`` is 1000 and ``count`` blocks (1 million) are written. Because generating random data is expensive this could take some time, on my machine around 76s.
 
-available cipher algorithms
+Available Cipher Algorithms
 ---------------------------
 
 To see which algorithms are available on client-side is dead easy:
@@ -43,7 +43,7 @@ You can also do ``ssh -vv SERVER`` and read the logs. According to ``man ssh_con
     aes128-gcm@openssh.com,aes256-gcm@openssh.com,
     chacha20-poly1305@openssh.com
 
-test setup
+Test Setup
 ----------
 
 The transfer rates are simply determined by iterating over the available algorithms and sending the test file one or more times using the selected algorithm while measuring the transfer time.
@@ -66,7 +66,7 @@ But why bothering with bash if you have the power of python™?
 
 Before going further in the details, I have to say that I was really suprised by the benchmark results. I was firmly convinced that the choice of a fast cipher algorithm has `noticeably improved my transfer rates <https://bbs.archlinux.org/viewtopic.php?id=9107>`_. But my feeling has fooled me, the measurement showed that it *doesn't make any difference which algorithm you choose*, assuming that you have a reasonable amount of CPU power in relation to your network bandwidth. In my case this means that my `i5-2520M <http://ark.intel.com/de/products/52229/Intel-Core-i5-2520M-Processor-3M-Cache-up-to-3_20-GHz>`_ can handle ``scp`` over gigabit-ethernet without much effort. But if you still want to know what the benchmark results are, please read on.
 
-using the loopback device
+Using the Loopback Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The idea was to ssh onto my own machine using the loopback device, eliminating the network bottleneck. To be able to do this I had to create another user to ssh into. Maybe you can skip the ``--create-home`` option because the test file is transfered to ``/tmp`` to prevent disk throttling by the SSD. In the normal case ``/tmp`` should be a RAM disk, you can check this by executing ``mount | grep -i /tmp`` which should show tmpfs_ as filesystem.
@@ -79,7 +79,7 @@ The idea was to ssh onto my own machine using the loopback device, eliminating t
     ssh cipherbench@localhost
     ssh-copy-id -i ~/.ssh/id_rsa.pub cipherbench@localhost
 
-the benchmark script
+The Benchmark Script
 --------------------
 
 The following snippet shows the interesting part of the script where the time measurement takes place, lines 1 and 8. The script uses the `resource information package <https://docs.python.org/3/library/resource.html>`_ to get the time the subprocess call has used.
@@ -106,7 +106,7 @@ To delete the :code:`cipherbench` user after running the script, execute the fol
     sudo userdel cipherbench
     sudo rm -r /home/cipherbench
 
-results
+Results
 -------
 
 .. image:: /imgs/ssh_cipher_bench.png
@@ -130,10 +130,23 @@ This is the code for generating the plot above.
     # ($0) is pseudo column containing the row index, lc is linecolor
 
 
-conclusion
-~~~~~~~~~~
+Conclusion
+----------
 
-In short, if you care about speed don't use :code:`chacha20-poly1305@openssh.com`.
+In short, if you *care more about speed than security* and you have an processor that *supports AES on hardware* as well as an OpenSSH implementation that uses this CPU extension you shouldn't use :code:`chacha20-poly1305@openssh.com`.
+
+**Update 2015.01.12**
+~~~~~~~~~~~~~~~~~~~~~
+
+Arian Sanusi, one of my attentive readers, has commented that my conclusion is only valid for CPUs with hardware AES extension. He has made an similar benchmark on a *650MHz ARM Cortex A9* with NEON extension and an OpenSSH rebuilt for this particluar SOC, obtaining the following results:
+
+.. code::
+
+    52MB  10.5MB/s chacha20-poly1305@openssh.com
+    52MB   8.7MB/s aes128-ctr
+    52MB   6.5MB/s aes256-gcm@openssh.com
+
+Like you can see, this is quite the inverted result. If you have a `modern x86 processor <http://en.wikipedia.org/wiki/AES_instruction_set>`_, nothing older than the second generation of intel Core-I series for example, you are likely to have AES optimizations built in your CPU. On Linux you can check this by running ``cat /proc/cpuinfo | grep aes``. You also have to make sure that your OpenSSH implementation is build against these optimizations to make use of them.
 
 ----
 
