@@ -43,7 +43,7 @@ basic syntax
 
 The most important part, every statement you enter has to be delimited by an semicolon ``;``. If you forget it, the interpreter will sit around twiddling it's thumbs until you finalize your statement.
 
-Variables can be assigned with a infix colon `:` like this: ``foo:3;``. Function definitions are made similar with `:=`, f.e.: ``f(x):=sin(%pi*x);`` (even that ``f(x)`` will be zero for all :math:`x \in \mathbb{N}`). Now you have to armamentarium (Handwerkszeug?) to get started.
+Variables can be assigned with a infix colon `:` like this: ``foo:3;``. Function definitions are made similar with `:=`, e.g.: ``f(x):=sin(%pi*x);`` (even that ``f(x)`` will be zero for all :math:`x \in \mathbb{N}`). Now you have to armamentarium (Handwerkszeug?) to get started.
 
 If you need the TeX output for any expression, use ``tex(foobar);``.
 
@@ -105,7 +105,7 @@ Because this was planned as a five minute guide I won't go in detail. All the th
                 2 x
     (%o2)   2 %e
 
-Note that you must use explicit multiplication in maxima, f.e. ``2x`` won't work.
+Note that you must use explicit multiplication in maxima, e.g. ``2x`` won't work.
 
 Integration works analogously with the ``integrate();`` function.
 
@@ -123,7 +123,7 @@ To calculate the limit for a function you have to know the three different *type
 
 Especially as a computer scientist you have to use sums everywhere, the equivalent of the famous `Gaußsche Summenformel <http://de.wikipedia.org/wiki/Gau%C3%9Fsche_Summenformel>`_ :math:`\sum_{k=1}^{100} k` is ``sum(k, k, 1, 100);``. More general: ``sum(expression, summation index, lower bound, upper bound);``.
 
-To get the `Taylor approximation <http://en.wikipedia.org/wiki/Taylor%27s_theorem>`_ for a differentiable function at a point until a specific degree use ``taylor(function, variable, point, degree);``, f.e. ``taylor(sin(x), x, 0, 10);``.
+To get the `Taylor approximation <http://en.wikipedia.org/wiki/Taylor%27s_theorem>`_ for a differentiable function at a point until a specific degree use ``taylor(function, variable, point, degree);``, e.g. ``taylor(sin(x), x, 0, 10);``.
 
 plotting
 ========

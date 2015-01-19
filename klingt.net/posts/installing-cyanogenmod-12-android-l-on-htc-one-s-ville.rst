@@ -35,7 +35,7 @@ I will explain the backup switches in detail:
 - ``-shared`` enable backup of the device's shared storage / SD card contents;
 - ``-all`` means to back up all installed applications
 
-You have to unlock this operation on your device and you will also be asked if you want to set password to encrypt your backup if you like. Note that *not everything* (f.e. pictures, music) on your SD card will be backed up and your SMS, if someone still uses this stone-age technology, will be lost. In addition I had to uninstall `ebookdroid <https://play.google.com/store/apps/details?id=org.ebookdroid&hl=en>`_ first, otherwise the backup will be stuck. In my case the backup process took about 15 minutes until finished but it could take a lot longer depending on the amount of apps and data you've saved on your mobile device.
+You have to unlock this operation on your device and you will also be asked if you want to set password to encrypt your backup if you like. Note that *not everything* (e.g. pictures, music) on your SD card will be backed up and your SMS, if someone still uses this stone-age technology, will be lost. In addition I had to uninstall `ebookdroid <https://play.google.com/store/apps/details?id=org.ebookdroid&hl=en>`_ first, otherwise the backup will be stuck. In my case the backup process took about 15 minutes until finished but it could take a lot longer depending on the amount of apps and data you've saved on your mobile device.
 
 To restore the backup you have to boot into your android devices bootloader and run ``adb restore /path/to/your/backup.ab`` from your computer.
 
