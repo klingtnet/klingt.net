@@ -24,7 +24,7 @@ Open the project structure dialog ``File → Project Structure ...`` or press ``
 
 .. image:: /imgs/processing-idea_core_jar.png
 
-Create a new package, f.e. ``net.klingt.example`` and a new Java Class inside that package named ``ProcessingExample``. Now you have to import the processing core library by writing the following import statement: ``import processing.core.*;``. Maybe IntelliJ will remove the line as soon as you press enter, because it assumes that you aren't using anything from it and therefore it *optimizes* the import. To disable this behaviour go to ``File → Settings`` or press ``Ctrl+Alt+S`` and in the following dialog disable ``Optimize imports on the fly`` under ``Editor → General → Auto Import`` [1]_.
+Create a new package, e.g. ``net.klingt.example`` and a new Java Class inside that package named ``ProcessingExample``. Now you have to import the processing core library by writing the following import statement: ``import processing.core.*;``. Maybe IntelliJ will remove the line as soon as you press enter, because it assumes that you aren't using anything from it and therefore it *optimizes* the import. To disable this behaviour go to ``File → Settings`` or press ``Ctrl+Alt+S`` and in the following dialog disable ``Optimize imports on the fly`` under ``Editor → General → Auto Import`` [1]_.
 
 .. image:: /imgs/processing-idea_imports.png
 

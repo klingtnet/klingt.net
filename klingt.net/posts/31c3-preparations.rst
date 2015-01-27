@@ -40,7 +40,7 @@ This scans for open TCP/UDP and SCTP ports. The output should look something lik
 	123/udp  open          ntp
 	5353/udp open|filtered zeroconf
 
-Now we want to know which process belongs to which port, for this task we need ``ps`` and ``fuser``. Take f.e. port 8000:
+Now we want to know which process belongs to which port, for this task we need ``ps`` and ``fuser``. Take e.g. port 8000:
 
 .. code-block:: bash
 
@@ -73,7 +73,7 @@ To disable an NFS share, remove or comment out the corresponding line.
 quick tips
 ~~~~~~~~~~
 
-Raise the bar for thefts a little bit an use a BIOS password for your laptop, to prevent thieves from bypassing your user password and accessing your data using a simple boot disk/usb-stick running f.e. `Knoppix <http://www.knopper.net/knoppix/index-en.html>`_. When you are once in the BIOS, disable booting from external devices as well.
+Raise the bar for thefts a little bit an use a BIOS password for your laptop, to prevent thieves from bypassing your user password and accessing your data using a simple boot disk/usb-stick running e.g. `Knoppix <http://www.knopper.net/knoppix/index-en.html>`_. When you are once in the BIOS, disable booting from external devices as well.
 
 If you haven't done it already then set a password for your ssh-keys! Maybe someone steals your machine and has access to your them. I can't even imagine ...
 

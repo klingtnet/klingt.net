@@ -40,7 +40,7 @@ Because the HTTPS port is ``443`` you have to add one or two ``listen`` directiv
 
 Remember to *open the port in your firewall* or you will look like an idiot, trust me...
 
-SSL is nothing without certificates, that means you have to add their location to. Before adding the certificates you may have to take a look on the instructions of your certification authority, because it can be necessary to concatenate multiple certificates into one file, f.e. ``cat ROOTCA.key example.com.key > bundle.key``.
+SSL is nothing without certificates, that means you have to add their location to. Before adding the certificates you may have to take a look on the instructions of your certification authority, because it can be necessary to concatenate multiple certificates into one file, e.g. ``cat ROOTCA.key example.com.key > bundle.key``.
 
 .. code:: nginx
 
