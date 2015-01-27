@@ -1,7 +1,7 @@
 .. title: Restart unresponsive gnome-shell from a terminal
 .. slug: restart-unresponsive-gnome-shell-from-a-terminal
 .. date: 2015-01-27 15:01:48 UTC+01:00
-.. tags: gnome, shell, desktop, frozen, unresponsive, restart, tty, terminal
+.. tags: Gnome, shell, desktop, frozen, unresponsive, restart, tty, terminal
 .. link: 
 .. description: How to restart a frozen gnome-shell from a virtual terminal (tty).
 .. type: text
