@@ -51,7 +51,7 @@ I will describe the installation and configuration steps for Prosody rather brie
 - add an useraccount for yourself: ``prosodyctl register user example.domain password`` or interactive ``prosodyctl adduser user@domain.name`` [3]_
 - [*optional*] add your user to the list of admins: ``admins = { "user@example.domain" }``
 - restart the prosody service: ``service prosody restart``
-- [*ufw*] enable both ports for incoming and outcoming connections: ``ufw allow 5222/tcp````ufw allow 5269/tcp``
+- [*ufw*] enable both ports for incoming and outcoming connections: ``ufw allow 5222/tcp`` and ``ufw allow 5269/tcp``
 
 Everything should work fine, have fun with your own Jabber server!
 
