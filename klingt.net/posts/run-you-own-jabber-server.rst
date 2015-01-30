@@ -1,6 +1,6 @@
 .. title: Run you own Jabber server
 .. slug: run-you-own-jabber-server
-.. date: 2015-01-27 20:21:52 UTC+01:00
+.. date: 2015-01-30 11:25:52 UTC+01:00
 .. tags: jabber, XMPP, prosody, erlang, ubuntu, digitalocean, Lua, prosody
 .. link:
 .. description: How to run your own Jabber server, using prosody.
