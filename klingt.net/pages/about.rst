@@ -6,12 +6,24 @@
 .. description: A post about myself.
 .. type: text
 
+.. role:: kn-reverse
+
 .. image:: /imgs/face_circle.png
     :class: kn-image kn-face
 
 I'm **Andreas Linz**.
 
 I love to develop software, at the moment especially with python_. Besides I enjoy to learn for my masters degree in computer science at the `University Leipzig`_ and write code for spreadshirt_.
+
+Contact
+=======
+
+Write a mail or get in touch with me via Jabber, you can reach me on both ways via:
+
+.. code::
+    :class: kn-reverse
+    
+    ten.tgnilk@znila
 
 Interests
 =========
