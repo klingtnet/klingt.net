@@ -18,11 +18,11 @@ I love to develop software, at the moment especially with python_. Besides I enj
 Contact
 =======
 
-Write a mail or get in touch with me via Jabber, you can reach me on both ways via:
+The easiest way to get in touch with me is to write me a mail or to talk to me via Jabber. I am using the same address for both:
 
 .. code::
     :class: kn-reverse
-    
+
     ten.tgnilk@znila
 
 Interests
