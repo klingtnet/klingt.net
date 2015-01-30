@@ -46,7 +46,7 @@ I will describe the installation and configuration steps for Prosody rather brie
     - the path to my keyfile and the keyfiles itself are owned by ``root:ssl-cert`` and set to ``710``, that means owner has all permissions and everyone in the group (``ssl-cert``) is able to execute (enter) the directory
     - every keyfile has ``640`` permissions, this translates to ``rw``-permissions for the owner and ``r`` for the group
 - force clients to use encryption: ``c2s_require_encryption = true``
-- to force secured server to server connections as well: ``s2s_secure_auth = false``
+- to force secured server to server connections as well: ``s2s_secure_auth = true``
 - use the authentification backend that stores only password hashes instead of plaintext: ``authentication = "internal_hashed"``
 - add an useraccount for yourself: ``prosodyctl register user example.domain password`` or interactive ``prosodyctl adduser user@domain.name`` [3]_
 - [*optional*] add your user to the list of admins: ``admins = { "user@example.domain" }``
