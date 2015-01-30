@@ -18,7 +18,7 @@ Due to the configuration issues and because it felt like a little bit of overkil
 Installation
 ------------
 
-I will describe the installation and configuration steps for Prosody rather briefly, if something is unclear try to find an answer in the `official configuration guide <http://prosody.im/doc/configure>`_. I will assume that you are owning an `SSL certificate </posts/klingtnet-goes-ssl-and-spdy/>`_, if not you can omit the ``ssl`` block in the configuration and use unencrypted connections. Since a lot of XMPP servers are requiring encrypted connections including mine) you won't be able to communicate with them using unencrypted connections.
+I will describe the installation and configuration steps for Prosody rather briefly, if something remains unclear, try to find an answer in the `official configuration guide <http://prosody.im/doc/configure>`_. I will assume that you are owning an `SSL certificate </posts/klingtnet-goes-ssl-and-spdy/>`_, if not you can omit the ``ssl`` block in the configuration and use unencrypted connections. Since a lot of XMPP servers are requiring encrypted connections (including mine) you won't be able to communicate with them using unencrypted connections.
 
 - ``apt-get install prosody`` or install it `from source <http://prosody.im/doc/install#source>`_, if you like
 - the initial example config file is very well documented, that's why you should back it up before making any changes: ``cp /etc/prosody/prosody.cfg.lua{,.bak}``
