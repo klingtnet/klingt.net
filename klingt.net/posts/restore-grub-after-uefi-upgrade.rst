@@ -1,18 +1,17 @@
 .. title: Restore GRUB after UEFI upgrade
 .. slug: restore-grub-after-uefi-upgrade
 .. date: 2015-02-01 13:10:03 UTC+01:00
-.. tags: UEFI, BIOS, arch, Asrock, rEFInd
+.. tags: UEFI, BIOS, Arch, Asrock, rEFInd
 .. category:
 .. link:
 .. description: How to restore a broken GRUB installation after UEFI upgrade.
 .. type: text
 
-Today was a beautiful sunday morning, so I decided to update the UEFI firmware of my home server. UEFI/BIOS updates are always a bad idea if everything runs smoothly, but that did not stop me from updating the firmware anyway. My home server is based on a `Asrock FM2A85X-ITX <http://www.asrock.com/mb/AMD/FM2A85X-ITX/>`_ motherboard, which is quite nice despite the bad reputation that Asrock boards had in recent years. The UEFI upgrade process was simple, save the binary on a FAT32 formatted USB drive, reboot the system, enter the UEFI menu and you are ready to go. For the utterly brave people is an automatic firmware updater integrated in the UEFI menu of this board that downloads the new firmware image if an active network connection is available.
+Today was a beautiful sunday morning, so I decided to update the UEFI firmware of my home server. UEFI/BIOS updates are always a bad idea if everything runs smoothly, but that did not stop me from updating the firmware anyway. My home server is based on a `Asrock FM2A85X-ITX <http://www.asrock.com/mb/AMD/FM2A85X-ITX/>`_ motherboard, which is quite nice despite the bad reputation that Asrock boards had in recent years. The UEFI upgrade process was simple, save the binary on a FAT32 formatted USB drive, reboot the system, enter the UEFI menu and you are ready to go. For the utterly brave people, there is an automatic firmware updater in the UEFI menu of this board, that downloads and flashes a new firmware image if an active network connection is available.
 
 After the update process was finished I rebooted the system and got a little heart attack when I saw those horrible words on my screen: ``DISK BOOT FAILURE, INSERT SYSTEM DISK AND PRESS ENTER ...``. The fix was easy if you know what to do, like it always is. At first get the USB flash drive image of `rEFInd <http://www.rodsbooks.com/refind/getting.html>`_ and ``dd`` it on a flash drive:
 
-.. code::
-    :lang: sh
+.. code:: sh
 
     # check which device is your flash drive
     lsblk -l
@@ -28,8 +27,7 @@ After the update process was finished I rebooted the system and got a little hea
 
 Reboot your system and boot from the usb drive which contains the rEFInd image. You should now be able to boot your existing Arch installation (or whatever distro you are using). Boot into your system and check your UEFI boot entries with ``efibootmgr -v``, this should print something like this:
 
-.. code::
-    :lang: sh
+.. code:: sh
 
     BootCurrent: 0000
     Timeout: 10 seconds
@@ -41,15 +39,13 @@ Reboot your system and boot from the usb drive which contains the rEFInd image. 
 
 In my case ``Boot0000*`` was missing, which was the UEFI boot entry for GRUB. To restore it run:
 
-.. code::
-    :lang: sh
+.. code:: sh
 
     sudo grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub
 
 Because only the entry was missing and my GRUB installation probably works, I've used the existing *bootloader id*. Your bootloader id is the name of the subdirectory in ``/boot/EFI/``, in my case ``arch_grub``. Running ``efibootmgr -v`` again showed me that my missing entry was restored:
 
-.. code::
-    :lang: sh
+.. code:: sh
 
     Boot0000* arch_grub HD(1,800,1ff801,08a220bf-ac71-462c-bac9-abcdefghijkl)File(\EFI\arch_grub\grubx64.efi)
 
