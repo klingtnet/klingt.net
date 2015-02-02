@@ -40,7 +40,7 @@ Playground for my `first steps in Go <https://tour.golang.org/list>`__.
 
    -  as opposed to C, the parameter name comes before the type, e.g.
       ``x int``
-   -  `here is <golang.org/doc/articles/gos_declaration_syntax.html>`__
+   -  `here is <https://golang.org/doc/articles/gos_declaration_syntax.html>`__
       why they choosed this syntax
    -  if two or more consecutive parameters share the same type, you can
       omit it from all but the last
