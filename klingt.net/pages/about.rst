@@ -43,8 +43,8 @@ Technologies
 - javascript, if you make anything web-related then you won't come around using this mess (waiting for `ecmascript6 <http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts>`_)
 - `Java`_, almost never use it for private projects
 - C/C++, i have to hone my low-level skills because python in combination with C or C++ is almighty ;)
-- apropos low-level, I'm learning `Rust <https://github.com/KLINGTdotNET/rust-guide-examples>`_ and hope to do some audio related stuff with it in the near future
-- `Go`_, one of my future goals is to `get started with Go <https://github.com/KLINGTdotNET/get-go-ing>`_
+- apropos low-level, I'm learning `Rust <https://github.com/klingtnet/rust-guide-examples>`_ and hope to do some audio related stuff with it in the near future
+- `Go`_, one of my future goals is to `get started with Go <https://github.com/klingtnet/get-go-ing>`_
 - `[Xe]TeX`_ it's a must for academic work and also a hassle, the idea of separating format and content does'nt work at all in any TeX variant if we are honest
 - a whole lot of other stuff...
 

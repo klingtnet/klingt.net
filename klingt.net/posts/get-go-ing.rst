@@ -7,7 +7,7 @@
 .. description: My notes to the official golang tour.
 .. type: text
 
-This post is a `pandoc <http://johnmacfarlane.net/pandoc/>`_ converted version of my `get-go-ing <https://github.com/KLINGTdotNET/get-go-ing>`_ github repo. It contains my example solutions and notes to the official `golang tour <https://tour.golang.org/welcome/1>`_.
+This post is a `pandoc <http://johnmacfarlane.net/pandoc/>`_ converted version of my `get-go-ing <https://github.com/klingtnet/get-go-ing>`_ github repo. It contains my example solutions and notes to the official `golang tour <https://tour.golang.org/welcome/1>`_.
 
 Get Go'ing
 ==========
