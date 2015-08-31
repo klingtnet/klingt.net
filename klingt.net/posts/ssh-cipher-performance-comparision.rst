@@ -146,11 +146,70 @@ Arian Sanusi, one of my attentive readers, has commented that my conclusion is o
     52MB   8.7MB/s aes128-ctr
     52MB   6.5MB/s aes256-gcm@openssh.com
 
-Like you can see, this is quite the inverted result. If you have a `modern x86 processor <http://en.wikipedia.org/wiki/AES_instruction_set>`_, nothing older than the second generation of intel Core-I series for example, you are likely to have AES optimizations built in your CPU. On Linux you can check this by running ``cat /proc/cpuinfo | grep aes``. You also have to make sure that your OpenSSH implementation is build against these optimizations to make use of them.
+Like you can see, this is quite the inverted result. If you have a `modern x86 processor <http://en.wikipedia.org/wiki/AES_instruction_set>`_, nothing older than the second generation of intel Core-I series for example, you are likely to have AES optimizations built in your CPU [2]_. On Linux you can check this by running ``cat /proc/cpuinfo | grep aes``. You also have to make sure that your OpenSSH implementation is build against these optimizations to make use of them.
+
+**Update 2015.08.31**
+---------------------
+
+Han-Kwang has stated that some modern Intel CPUs does not have hardware AES support (see [2]_) and he's also made some benchmarks:
+
+I test like this:
+
+for ciph in "aes128-ctr" "aes192-ctr" "aes256-ctr"
+"aes128-gcm@openssh.com" "aes256-gcm@openssh.com"
+"chacha20-poly1305@openssh.com" arcfour128 arcfour256 ; do echo -n
+"$ciph "; (time cat randomdata.bin randomdata.bin | ssh -c $ciph
+localhost wc -c) >& sshlog && grep real sshlog | sed -e 's/^.*m//';
+done
+
+(Note that this avoids dealing with file writes. The randomdata.bin
+file is small enough to be cached.)
+
+On the i3 CPU, 100 MiB transfer:
+
+.. code::
+
+    aes128-ctr 1.091s
+    aes192-ctr 1.527s
+    aes256-ctr 1.357s
+    aes128-gcm@openssh.com 1.045s
+    aes256-gcm@openssh.com 1.335s
+    chacha20-poly1305@openssh.com 1.124s
+    arcfour128 0.926s
+    arcfour256 1.015s
+
+(not so much difference between all the ciphers. Note that 1s/100 MiB
+is about 50x slower than what your benchmark shows.)
+
+On a VIA Eden 1 GHz CPU (1 thread), 5 MiB transfer:
+
+.. code::
+
+    aes128-ctr 4.673s
+    aes192-ctr 5.233s
+    aes256-ctr 5.764s
+    arcfour128 2.101s
+    arcfour256 2.105s
+
+(older ssh version, does not have the latest ciphers available.
+Arcfour/RC4 is significantly faster.)
+
+On a VPS with 2 virtual cores Xeon E312xx (Sandy Bridge), with AES
+support, 50 MiB transfer:
+
+.. code::
+
+    aes128-ctr 2.961s
+    aes192-ctr 3.035s
+    aes256-ctr 2.789s
+    arcfour128 2.712s
+    arcfour256 3.448s
 
 ----
 
 .. [1] This is the moment where I hate myself because I bought the `TP-Link WDR3500 <http://www.tp-link.com.de/products/details/?model=TL-WDR3500>`_ and not the `WDR3600 <http://www.tp-link.com.de/products/details/?model=TL-WDR3600>`_ which has gigabit-ethernet ports. On the other hand, I've saved 10 bucks.
+
+.. [2] Intel's ultra low power models (model name with prepended *U*) as well as the cheap Celeron's (maybe Pentium's, too) seem to not have hardware AES support.
 
 .. _arcfour:    http://en.wikipedia.org/wiki/RC4
 .. _tmpfs:      http://en.wikipedia.org/wiki/Tmpfs
