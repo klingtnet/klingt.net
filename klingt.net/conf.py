@@ -299,9 +299,12 @@ REDIRECTIONS = []
 # And then do a backup, or run `nikola ping` from the `ping`
 # plugin (`nikola install_plugin ping`).
 # To do manual deployment, set it to []
+
+## centos 6 rsync version does not support --chown or --{user,group}map
 DEPLOY_COMMANDS = {
     'default': [
-        'rsync --archive --stats --delete output/ klingt.net:/var/www/klingt.net/www/'
+        'rsync --update --recursive --progress --stats --delete output/ klingt.net:/var/www/sites/klingt.net',
+        'ssh root@klingt.net chown -R nginx:nginx /var/www/sites/klingt.net'
     ]
 }
 
