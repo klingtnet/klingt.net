@@ -7,6 +7,8 @@
 .. description: How to do a persistent Arch Linux installation on a USB flash drive.
 .. type: text
 
+*Update*: This tutorial was written for BIOS machines. For UEFI computers (most laptops/desktops since 2013), please refer to the `Arch Linux UEFI Guide <https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface>`__ to make the USB drive bootable.
+
 Last friday my new USB drive that I ordered from amazon.com, an 64GB USB
 3.0 `ADATA
 AUV131-64G-RGY <http://www.adata.com/index.php?action=product_feature&cid=1&piid=300>`__,
