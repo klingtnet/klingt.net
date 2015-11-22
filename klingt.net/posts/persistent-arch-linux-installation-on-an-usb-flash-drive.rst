@@ -75,13 +75,13 @@ mount the drive
 ~~~~~~~~~~~~~~~
 
 Create a directory where you can mount the root partition of the drive,
-g.e. ``mkdir /mnt/archusbdrive`` and mount the root and boot partitions:
+e.g. ``mkdir /mnt/archusbdrive`` and mount the root and boot partitions:
 
 .. code:: sh
 
     mount /dev/sdX2 /mnt/archusbdrive
     mkdir /mnt/archusbdrive/boot
-    mount /dev/sdX1 /mnt/archusbdrive
+    mount /dev/sdX1 /mnt/archusbdrive/boot
 
 installation
 ------------
