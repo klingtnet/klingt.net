@@ -1,4 +1,4 @@
-.. title: Persistent Arch Linux installation on an USB flash drive
+.. title: Persistent Arch Linux installation on an USB flash drive (BIOS)
 .. slug: persistent-arch-linux-installation-on-an-usb-flash-drive
 .. date: 2015-03-09 20:40:55 UTC+01:00
 .. tags: Arch, Linux, pendrive, USB, flashs
