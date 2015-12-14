@@ -18,7 +18,7 @@ I love to develop software, at the moment especially with python_. Besides I enj
 Contact
 =======
 
-The easiest way to get in touch with me is to write me a mail or to talk to me via Jabber. I am using the same address for both:
+The easiest way to get in touch with me is to send me an email:
 
 .. code::
     :class: kn-reverse
