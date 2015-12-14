@@ -39,12 +39,12 @@ PGP
 .. code::
     :name: fingerprint
 
-    EC9B CA2A 5BA2 56EC 3143 72A3 FF4A 9E7F 9AA3 F5EC
+    F1E8 B1CC E0B7 FBF0 8E7E  33A2 A57E A370 7387 1146
 
-My `PGP public key`_, you can get it also on the `MIT key-server <https://pgp.mit.edu/pks/lookup?op=vindex&search=0xFF4A9E7F9AA3F5EC>`_ :code:`gpg --keyserver pgp.mit.edu/ --recv-keys 0x9AA3F5EC`.
+My `PGP public key`_, you can get it also on the `MIT key-server <https://pgp.mit.edu/pks/lookup?op=get&search=0xA57EA37073871146>`_ :code:`gpg --keyserver pgp.mit.edu/ --recv-keys 0x9AA3F5EC`.
 
 ----
 
 .. [1] I've done in the hope to prevent misuse of address by stupid spam bots. At first I had implemented a solution with simple encryption and a captcha, but this involved javascript, which is -- sadly -- not everywhere available.
 .. [BDSG] `§ 28 Absatz 4 Bundesdatenschutzgesetz <http://www.bfdi.bund.de/DE/Themen/GrundsaetzlichesZumDatenschutz/BDSGAuslegung/Artikel/Widerspruchsrecht.html?nn=409922>`_
-.. _`PGP Public Key`: /files/public.key
+.. _`PGP Public Key`: /files/public.pgp
