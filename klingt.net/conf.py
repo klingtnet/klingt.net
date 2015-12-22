@@ -303,7 +303,7 @@ REDIRECTIONS = []
 ## centos 6 rsync version does not support --chown or --{user,group}map
 DEPLOY_COMMANDS = {
     'default': [
-        'rsync --archive --chown=alinz:www output/* kn:/var/www/sites/klingt.net/'
+        'rsync --archive --chown=alinz:www output/* kn:/var/www/sites/blog.klingt.net/'
     ]
 }
 
