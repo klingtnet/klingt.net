@@ -4,7 +4,7 @@
 .. tags: 32c3
 .. category:
 .. link: 
-.. description: A set of useful links for the chaos congress.
+.. description: A collection of useful links for the chaos congress.
 .. type: text
 
 - `live streams <http://streaming.media.ccc.de/32c3/>`_
