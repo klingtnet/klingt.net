@@ -7,7 +7,7 @@
 .. description: A collection of useful links for the chaos congress.
 .. type: text
 
-- `live streams <http://streaming.media.ccc.de/32c3/>`_
+- `live streams <https://streaming.media.ccc.de/32c3/>`_
 - 32c3 `event map <http://halfnarp.events.ccc.de/>`_
-- 32c3 `wiki mirror <87.106.13.134/32c3/events.ccc.de/congress/2015/wiki>`_
+- 32c3 `wiki mirror <http://87.106.13.134/32c3/events.ccc.de/congress/2015/wiki>`_
 - indoor navigation `c3nav <https://c3nav.de/>`_
