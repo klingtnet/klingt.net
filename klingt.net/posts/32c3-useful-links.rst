@@ -9,5 +9,5 @@
 
 - `live streams <https://streaming.media.ccc.de/32c3/>`_
 - 32c3 `event map <http://halfnarp.events.ccc.de/>`_
-- 32c3 `wiki mirror <http://87.106.13.134/32c3/events.ccc.de/congress/2015/wiki>`_
+- 32c3 `wiki mirror <http://87.106.13.134/32c3/events.ccc.de/congress/2015/wiki>`_ and the faster `mirror <http://32c3-wiki.top>`_ which is only accessible from the 32c3 network
 - indoor navigation `c3nav <https://c3nav.de/>`_
