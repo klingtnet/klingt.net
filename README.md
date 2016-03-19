@@ -1,4 +1,3 @@
-# my website using the [nikola](http://www.getnikola.com) static site generator
+# klingt.net - my place on the web since 2006™
 
-- [read it](http://www.klingt.net)
-
+[follow me](https://klingt.net)
