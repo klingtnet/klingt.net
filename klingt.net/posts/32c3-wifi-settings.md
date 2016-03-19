@@ -1,21 +1,23 @@
-.. title: 32c3 Wifi Settings
-.. slug: 32c3-wifi-settings
-.. date: 2015-12-26 23:36:39 UTC+01:00
-.. tags: wifi wireless-lan network
-.. category: 
-.. link: 
-.. description: How to access the 32c3 wireless network
-.. type: text
+{
+    "date": "2015-12-26",
+    "description": "How to access the 32c3 wireless network",
+    "slug": "32c3-wifi-settings",
+    "tags": "wifi wireless-lan network",
+    "title": "32c3 Wifi Settings"
+}
 
-This post is for those who are struggling to get a connection to the 32c3 wifi network. The 32c3 wiki has some problems at the moment but you can view the network setup instructions using `googles cache <http://webcache.googleusercontent.com/search?q=cache:WKbElgnAiZ4J:https://events.ccc.de/congress/2015/wiki/Static:Network+&cd=4&hl=en&ct=clnk>`_.
+This post is for those who are struggling to get a connection to the
+32c3 wifi network. The 32c3 wiki has some problems at the moment but you
+can view the network setup instructions using [googles
+cache](http://webcache.googleusercontent.com/search?q=cache:WKbElgnAiZ4J:https://events.ccc.de/congress/2015/wiki/Static:Network+&cd=4&hl=en&ct=clnk).
 
-These are my network-manger settings (they are the same for the ``32c3`` and ``32c3-legacy``):
+These are my network-manger settings (they are the same for the `32c3`
+and `32c3-legacy`):
 
-.. image:: /imgs/32c3-wifi.png
+![image](/imgs/32c3-wifi.png)
 
-You need to use this certificate (``/etc/ssl/certs/StartCom_Certification_Authority.pem``):
-
-::
+You need to use this certificate
+(`/etc/ssl/certs/StartCom_Certification_Authority.pem`):
 
     -----BEGIN CERTIFICATE-----
     MIIHyTCCBbGgAwIBAgIBATANBgkqhkiG9w0BAQUFADB9MQswCQYDVQQGEwJJTDEW
@@ -61,4 +63,3 @@ You need to use this certificate (``/etc/ssl/certs/StartCom_Certification_Author
     um0ABj6y6koQOdjQK/W/7HW/lwLFCRsI3FU34oH7N4RDYiDK51ZLZer+bMEkkySh
     NOsF/5oirpt9P/FlUQqmMGqz9IgcgA38corog14=
     -----END CERTIFICATE-----
-
