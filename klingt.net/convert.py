@@ -4,6 +4,7 @@ from pathlib import Path
 import json
 import subprocess
 import os
+from datetime import datetime
 
 
 def main():
@@ -47,6 +48,13 @@ def json_front_matter(post):
         (key, _, val) = line[2:].strip().partition(':')
         if val == "" or key not in valid_keys:
             continue
+        if key == 'date':
+            val = val.strip()
+            # remove last occurence of `:`
+            idx = len(val)-val[-1::-1].index(':')
+            val = val[:idx-1]+val[idx:]
+            date = datetime.strptime(val.strip(), '%Y-%m-%d %H:%M:%S %Z%z')
+            val = datetime.strftime(date, '%Y-%m-%d')
         fm[key.strip()] = val.strip()
     return json.dumps(fm, indent=4, sort_keys=True)
 
