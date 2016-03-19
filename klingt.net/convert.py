@@ -15,9 +15,9 @@ def main():
 
 def convert_post(post):
     filename = post.name
-    (front_matter, end) = json_front_matter(post)
+    front_matter = json_front_matter(post)
 # strip spaces before line ending
-    content = [line.rstrip() for line in post.readlines()[end:]]
+    content = [line.rstrip() for line in post.readlines()]
 # join lines together
     content = '\n'.join(content)
 # run content through pandoc
@@ -41,16 +41,14 @@ def write_file(fname, fm, md):
 def json_front_matter(post):
     fm = {} # front-matter
     valid_keys = ['title', 'description', 'tags', 'date', 'categories', 'slug']
-    end = 0
-    for (n, line) in enumerate(post):
+    for line in post:
         if not line.startswith('..'):
-            end = n
             break
         (key, _, val) = line[2:].strip().partition(':')
         if val == "" or key not in valid_keys:
             continue
         fm[key.strip()] = val.strip()
-    return (json.dumps(fm, indent=4, sort_keys=True), end)
+    return json.dumps(fm, indent=4, sort_keys=True)
 
 
 if __name__ == '__main__':
