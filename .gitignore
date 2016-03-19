@@ -8,3 +8,5 @@ output/
 galleries/
 themes/
 *.swp
+public/*
+!public/.gitkeep
