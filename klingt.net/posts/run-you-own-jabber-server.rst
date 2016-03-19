@@ -55,6 +55,13 @@ I will describe the installation and configuration steps for Prosody rather brie
 
 Everything should work fine, have fun with your own Jabber server!
 
+**UPDATE** (Sa 19. Mär 17:32:37 CET 2016)
+
+I no longer maintain my `prosody docker image <https://github.com/klingtnet/docker-prosody>`_ but there are some good alternatives:
+
+- at first the `official prosody docker image <https://github.com/prosody/prosody-docker>`_
+- and then there is `Mark Kubacki's prosody image <https://hub.docker.com/r/wmark/prosody/>`_ which incorporates ``lua-pbkdf2`` and ``lua-sec`` build against `BoringSSL <https://boringssl.googlesource.com/boringssl/>`_. See this `github issue <https://github.com/klingtnet/klingt.net/issues/2>`_ for details.
+
 ----
 
 .. [1] The `XMPP <http://en.wikipedia.org/wiki/XMPP>`_ protocol was originally named Jabber, so you can use both names interchangeably.
