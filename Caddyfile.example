@@ -1,0 +1,8 @@
+127.0.0.1:8800 {
+    gzip
+    basicauth /admin admin admin
+    hugo {
+        theme klingt.net
+    }
+    root public
+}
