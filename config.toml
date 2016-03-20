@@ -1,4 +1,8 @@
 baseurl = "//"
 languageCode = "en-us"
 title = "klingt.net"
+description = "klingt.net - sounds nice"
 
+[author]
+    name = "Andreas Linz"
+    homepage = "https://klingt.net"
