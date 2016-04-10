@@ -11,3 +11,19 @@ theme = "klingtnet"
 [author]
     name = "Andreas Linz"
     homepage = "https://klingt.net"
+
+[[menu.social]]
+    name = "github"
+    url = "https://github.com/klingtnet"
+[[menu.social]]
+    name = "keybase"
+    url = "https://keybase.io/klingtnet"
+[[menu.services]]
+    name = "gogs"
+    url = "https://git.klingt.net"
+[[menu.services]]
+    name = "syncthing"
+    url = "https://syncthing.klingt.net"
+[[menu.services]]
+    name = "reports"
+    url = "https://reports.klingt.net"
