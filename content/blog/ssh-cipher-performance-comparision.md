@@ -29,7 +29,7 @@ Create a Test File
 At first we need a reasonably large file to transfer. That file must
 contain only random data to eliminate the possible influence of
 compression on the transfer rate. To do this simply use dd
-`dd if=/dev/urandom of=/tmp/randomfile bs=1k count=1M`{.sourceCode}.
+`dd if=/dev/urandom of=/tmp/randomfile bs=1k count=1M`.
 This creates a file of 1GB size because the blocksize `bs` is 1000 and
 `count` blocks (1 million) are written. Because generating random data
 is expensive this could take some time, on my machine around 76s.
@@ -141,7 +141,7 @@ else:
     call(["ssh", ssh_dest, "rm {}/{}".format(file_dest, src_file)])
 ```
 
-To delete the `cipherbench`{.sourceCode} user after running the script,
+To delete the `cipherbench` user after running the script,
 execute the following commands:
 
 ```bash
@@ -177,7 +177,7 @@ Conclusion
 In short, if you *care more about speed than security* and you have an
 processor that *supports AES on hardware* as well as an OpenSSH
 implementation that uses this CPU extension you shouldn't use
-`chacha20-poly1305@openssh.com`{.sourceCode}.
+`chacha20-poly1305@openssh.com`.
 
 ### **Update 2015.01.12**
 

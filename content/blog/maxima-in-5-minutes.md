@@ -23,11 +23,11 @@ There are at least two ways to use maxima. The first one is the
 *interactive* mode where maxima works as an interpreter and executes
 your expression right away. The second is the noninteractive mode, which
 is used when you load maxima with a script like this
-`maxima -b file.mac`{.sourceCode}. I am not a hundred percent sure, but
+`maxima -b file.mac`. I am not a hundred percent sure, but
 I think that `.mac` is the common file extension for maxima scripts.
 Note that maxima will close right after executing your script. To
 prevent this you can load your script as init script with
-`maxima --init-mac file.mac`{.sourceCode}.
+`maxima --init-mac file.mac`.
 
 Before starting maxima, make sure that you have *readline wrapper*
 installed because otherwise you can't use your arrow keys to access your
