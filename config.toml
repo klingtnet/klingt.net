@@ -4,6 +4,10 @@ title = "klingt.net"
 description = "klingt.net - sounds nice"
 theme = "klingtnet"
 
+[params]
+    logo = "imgs/logo.svg"
+    homepage = "static/homepage.md"
+
 [author]
     name = "Andreas Linz"
     homepage = "https://klingt.net"
