@@ -1,19 +1,12 @@
+.PHONY: clean
+
 all: build
 
-rebuild: clean theme build
-
-BUILD_OPTS="-n 3"
-THEME=themes/klingt-net
-
-build:
-	nikola build $(BUILD_OPTS)
-
-theme:
-	@echo "Building theme $(THEME) ..."
-	@$(THEME)/build.sh
+build: content themes
+	hugo
 
 clean:
-	./clean.sh $(THEME)
+	rm -r public
 
 deploy:
-	nikola deploy
+	rsync --progress -r public/* --owner --group --chown=http:http kn:/var/www/sites/play.klingt.net/
