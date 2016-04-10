@@ -1,4 +1,5 @@
 {
+    "lastmod": "2016-04-10",
     "date": "2016-03-05",
     "description": "The setup of my netcup vServer that runs Arch Linux, Docker and Caddy.",
     "slug": "my-netcup-server-with-arch-linux-docker-and-caddy",
@@ -6,7 +7,7 @@
     "title": "My netcup server setup with Arch Linux, Docker and Caddy"
 }
 
-- login into the [vcp](vservercontrolpanel.de)
+- login into the [vservercontrolpanel (vcp)](vservercontrolpanel.de)
 - select your vServer
 - open the `Image` tab
 - select `Arch Linux` image and follow the instructions
