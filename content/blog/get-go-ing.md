@@ -468,4 +468,3 @@ Further Reading
 -   [go-koans](https://github.com/cdarwin/go-koans) lets you learn Go by
     fixing test cases. Sounds boring but instead it's quite fun to fix
     it!
-

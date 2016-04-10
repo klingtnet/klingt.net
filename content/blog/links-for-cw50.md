@@ -73,4 +73,3 @@ e.x.a.m.p.l['e'] = 'example' # both mixed
 -   [The Algorithmic Beauty of
     Plants](http://algorithmicbotany.org/papers/#abop) as
     [pdf](http://algorithmicbotany.org/papers/abop/abop.pdf).
-

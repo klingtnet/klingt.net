@@ -120,8 +120,6 @@ plus the following three:
 -   If the $\cdot$ operation is *not commutative*, then the structure is
     called a **skew field**, **division algebra** or **Schiefkörper**
 
-------------------------------------------------------------------------
-
 References
 ----------
 

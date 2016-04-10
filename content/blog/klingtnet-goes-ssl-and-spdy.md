@@ -121,5 +121,3 @@ Updates
     dogs](http://upload.wikimedia.org/wikipedia/commons/4/4c/Poodle%2C_cropped.JPG)).
     Thanks to Tobias for giving me this advise. You can check your
     settings with [this online-tool](https://www.ssllabs.com/ssltest/).
-
-------------------------------------------------------------------------

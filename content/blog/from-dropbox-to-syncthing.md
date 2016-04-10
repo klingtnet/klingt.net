@@ -149,5 +149,3 @@ Update
 
 Syncthing 0.10.8 is out and symlinks won't be followed, they will be
 copied as is and this should work for Windows as well.
-
-------------------------------------------------------------------------

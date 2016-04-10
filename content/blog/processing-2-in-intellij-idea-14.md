@@ -132,7 +132,5 @@ Processing](http://www.learningprocessing.com/) website.
 You can reuse the project as Idae project template using
 `Tools → Save Project as Template ...`.
 
-------------------------------------------------------------------------
-
 [^1]: You can optimize the imports manually either by pressing
     `Ctrl+Alt+O` or by using `Code → Optimize Imports ...`.

@@ -260,8 +260,6 @@ arcfour128 2.712s
 arcfour256 3.448s
 ```
 
-------------------------------------------------------------------------
-
 [^1]: This is the moment where I hate myself because I bought the
     [TP-Link
     WDR3500](http://www.tp-link.com.de/products/details/?model=TL-WDR3500)

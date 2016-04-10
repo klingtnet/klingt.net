@@ -229,5 +229,3 @@ started automagically on boot. Enabling the firewall shows you—based on
 the logs—how often someone/somewhat searches for open ports etc.,
 sometimes this is a little bit scary. Maybe I will write an article
 about the analysis of the firewall log.
-
-------------------------------------------------------------------------

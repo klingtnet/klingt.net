@@ -71,4 +71,3 @@
 -   [Running bash commands in the background
     properly](http://felixmilea.com/2014/12/running-bash-commands-background-properly/),
     didn't know about `disown` and `nohup`.
-

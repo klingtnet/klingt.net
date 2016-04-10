@@ -117,8 +117,6 @@ good alternatives:
     [github issue](https://github.com/klingtnet/klingt.net/issues/2)
     for details.
 
-------------------------------------------------------------------------
-
 [^1]: The [XMPP](http://en.wikipedia.org/wiki/XMPP) protocol was
     originally named Jabber, so you can use both names interchangeably.
 

@@ -82,5 +82,3 @@ won't use [puppet](http://puppetlabs.com/) that's for sure.
         ${1}:{\sqrt[12]{2}}$, gives a very good approximation for
         [perfect fifths](http://en.wikipedia.org/wiki/Perfect_fifth)
         ${1}:{2^{\frac{7}{12}}}$ and is optimal for an octave.
-
-------------------------------------------------------------------------
