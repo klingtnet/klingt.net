@@ -66,7 +66,7 @@ linux partitions, but the [Flash-Friendly File System
 (F2FS)](http://en.wikipedia.org/wiki/F2FS) would might be better suited
 for the job. With the `-L` switch you can set disk labels.
 
-``` {.sourceCode .sh}
+```bash
 mkfs.ext4 -L usbboot    /dev/sdX1
 mkfs.ext4 -L usbroot    /dev/sdX2
 ```
@@ -80,7 +80,7 @@ mount the drive
 Create a directory where you can mount the root partition of the drive,
 e.g. `mkdir /mnt/archusbdrive` and mount the root and boot partitions:
 
-``` {.sourceCode .sh}
+```bash
 mount /dev/sdX2 /mnt/archusbdrive
 mkdir /mnt/archusbdrive/boot
 mount /dev/sdX1 /mnt/archusbdrive/boot
@@ -118,7 +118,7 @@ base system
 -   set your root password: `passwd`
 -   install a bootloader, for GRUB:
 
-``` {.sourceCode .sh}
+```bash
 pacman -S grub
 grub-install --target=i386-pc --recheck /dev/sdX
 grub-mkconfig -o /boot/grub/grub.cfg

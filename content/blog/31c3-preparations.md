@@ -26,7 +26,7 @@ open ports
 The first thing to do is to *backup your data*, then to scan for open
 ports on your machine:
 
-``` {.sourceCode .bash}
+```bash
 sudo nmap -sS -sU -sY localhost
 ```
 
@@ -50,7 +50,7 @@ something like this:
 Now we want to know which process belongs to which port, for this task
 we need `ps` and `fuser`. Take e.g. port 8000:
 
-``` {.sourceCode .bash}
+```bash
 ps -p $(fuser -n tcp 8000)
 ```
 
@@ -100,7 +100,7 @@ If you haven't done it already then set a password for your ssh-keys!
 Maybe someone steals your machine and has access to your them. I can't
 even imagine ...
 
-``` {.sourceCode .sh}
+```bash
 ssh-keygen -p -f keyfile
 ```
 

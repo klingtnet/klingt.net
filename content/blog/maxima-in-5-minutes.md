@@ -36,7 +36,7 @@ your terminal.
 
 The resulting prompt should look something like this:
 
-``` {.sourceCode .sh}
+```bash
 Maxima 5.34.1 http://maxima.sourceforge.net
 using Lisp SBCL 1.2.2
 Distributed under the GNU Public License. See the file COPYING.
@@ -93,7 +93,7 @@ most cases. There are two methods for simplification, one for rational
 expression which is called `ratsimp` and one for trigonometric ones
 `trigsimp`. Here is an example:
 
-``` {.sourceCode . .numberLines startFrom=""}
+```
 (%i1) ratsimp(sqrt(x^2)/4+1/4);
         abs(x) + 1
 (%o1)   ----------
@@ -105,7 +105,7 @@ absolute value of $abs(x)$, that's why maxima had assumed that we use
 real numbers and the square root of them is only defined for positive
 real numbers.
 
-``` {.sourceCode . .numberLines startFrom=""}
+```
 (%i1) trigsimp(1/(1-cos(x))+1/(1+cos(x)));
              2
 (%o1)  - -----------
@@ -119,7 +119,7 @@ won't be nitpickers here.
 To solve an equation for a variable or a list of variables use
 `solve(equation, [variables]);`.
 
-``` {.sourceCode . .numberLines startFrom=""}
+```
 (%i1) solve(x^2=-1,[x]);
 (%o1)   [x = - %i, x = %i]
 ```
@@ -136,7 +136,7 @@ tears).
 
 $f(x) = e^{2x} \frac{d}{dx}$ is:
 
-``` {.sourceCode . .numberLines startFrom=""}
+```
 (%i1) f(x):=%e^(2*x);
                   2 x
 (%o1)   f(x) := %e
@@ -157,7 +157,7 @@ different *types of infinity*, that exist in maxima:
 -   `minf` $-\infty$
 -   `infinite` is the complex $\infty$
 
-``` {.sourceCode . .numberLines startFrom=""}
+```
 (%i2) limit(1-1/x^2, x, inf);
 (%o2)   1
 ```
@@ -187,13 +187,13 @@ argument and as second argument the
 Maybe you want to plot $\sin(x)$ and $\cos(x)$ side-by-side from -π to
 π:
 
-``` {.sourceCode .}
+```
 plot2d([sin(x),cos(x)], [x,-%pi,%pi]);
 ```
 
 Three dimensional plots work the same way, apart from that you have to
 enter a range for the second variable:
 
-``` {.sourceCode .}
+```
 plot3d(sin(x+y), [x,-%pi,%pi], [y,2*-%pi, 2*%pi]);
 ```

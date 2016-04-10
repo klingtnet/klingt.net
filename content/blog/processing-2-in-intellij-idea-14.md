@@ -66,7 +66,7 @@ Create an example class
 Your main class has to extend `PApplet` and has to implement the `setup`
 and `draw` method. It should look something like this:
 
-``` {.sourceCode .java}
+```java
 package net.klingt.example;
 
 import processing.core.*;
@@ -107,7 +107,7 @@ To run your processing sketch as *Application* instead of an *Applet*
 you have to implement a `main` method. You can add the method to your
 existing class or create a seperate `Main` class like I do.
 
-``` {.sourceCode .java}
+```java
 package net.klingt.example;
 
 import processing.core.PApplet;

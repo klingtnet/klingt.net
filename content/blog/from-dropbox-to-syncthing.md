@@ -120,7 +120,7 @@ optimal synchronization options for each folder. To see directly which
 folders are shared with other people I have created the `shared`
 subfolder.
 
-``` {.sourceCode .}
+```
 syncthing
    ├── audio
    ├── docs

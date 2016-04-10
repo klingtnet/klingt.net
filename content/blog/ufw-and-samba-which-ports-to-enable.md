@@ -16,7 +16,7 @@ usage](https://wiki.samba.org/index.php/Samba_port_usage) guide from the
 official documentation. The solution to get the used ports is netstat
 with its famous `-tulpn` switch and `egrep`:
 
-``` {.sourceCode .sh}
+```bash
 netstat -tulpn | egrep "samba|smbd|nmbd|winbind"
 ```
 
@@ -29,7 +29,7 @@ class="strike">But if you are running a windows machine it could be possible tha
 To make sure that the ports are only openend for machines inside my
 local network I have to use the `from` directive \[1\]\_:
 
-``` {.sourceCode .sh}
+```bash
 ufw allow proto tcp from 10.10.10.0/24 to any port 139
 ufw allow proto tcp from 10.10.10.0/24 to any port 445
 ```

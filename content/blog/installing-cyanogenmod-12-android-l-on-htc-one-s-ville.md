@@ -47,7 +47,7 @@ of the [Android SDK](http://developer.android.com/sdk/index.html). The
 following backup instructions are based on [this xda-developers
 guide](http://forum.xda-developers.com/galaxy-nexus/general/guide-phone-backup-unlock-root-t1420351).
 
-``` {.sourceCode .sh}
+```bash
 adb backup -f ./htc_one_s_CM10_2.ab -apk -shared -all
 ```
 
@@ -99,7 +99,7 @@ red background that shows `FASTBOOT USB`. Now extract the `boot.img`
 from your cyanogenmod zip-file and flash it via
 [fastboot](wiki.cyanogenmod.org/w/Doc:_fastboot_intro) onto your device:
 
-``` {.sourceCode .sh}
+```bash
 ./fastboot flash boot boot.img
 ```
 

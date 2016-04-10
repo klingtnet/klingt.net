@@ -19,7 +19,7 @@ Contact
 
 The easiest way to get in touch with me is to send me an email:
 
-``` {.sourceCode .}
+```
 ten.tgnilk@znila
 ```
 

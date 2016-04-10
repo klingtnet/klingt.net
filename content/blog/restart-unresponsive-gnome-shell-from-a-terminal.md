@@ -18,7 +18,7 @@ computer isn't crashed you should be able to login into one of the
 number between 2 and 6 (at least on my machine). Send a `SIGINT` signal
 to your gnome-shell process:
 
-``` {.sourceCode .sh}
+```bash
 kill -s INT $(pidof gnome-shell)
 ```
 

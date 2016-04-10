@@ -47,7 +47,7 @@ Playground for my [first steps in Go](https://tour.golang.org/list).
         in python)
 -   **strings** are enquoted by doublequotes `"`
 
-``` {.sourceCode .go}
+```go
 func add(a, b int) int {
     return a+b
 }
@@ -82,7 +82,7 @@ func add(a, b int) int {
 
 -   functions can also be assigned as variable values:
 
-``` {.sourceCode .go}
+```go
 square := func(x int) int {
     return x*x
 }
@@ -93,7 +93,7 @@ square := func(x int) int {
 -   a closure is a function value that references variables from outside
     its body
 
-``` {.sourceCode .go}
+```go
 func adder() func(int) int {
     sum := 0
     return func(x int) int {
@@ -122,7 +122,7 @@ func adder() func(int) int {
     `for x < y {}`
 -   omit the loop conditions and you get an infinite loop: `for {}`
 
-``` {.sourceCode .go}
+```go
 for i := 0; i < 10; i++ {
     sum += i
 }
@@ -132,7 +132,7 @@ for i := 0; i < 10; i++ {
 
 -   C-like but without the parentheses:
 
-``` {.sourceCode .go}
+```go
 if x < y {
     x++
 } else {
@@ -144,7 +144,7 @@ if x < y {
 -   variables declared in this pre-statement are only visible inside the
     scope of the if statement
 
-``` {.sourceCode .go}
+```go
 if x := 10; x == 10 {
     fmt.Println("It's only an example.")
 }
@@ -156,7 +156,7 @@ if x := 10; x == 10 {
 -   a `switch` without condition is the same as `switch true` and can be
     used for long if-else chains:
 
-``` {.sourceCode .go}
+```go
 switch {
 case t.Hour() < 12:
     fmt.Println("Good morning!")
@@ -175,7 +175,7 @@ default:
     refers to
 -   there is no **pointer arithmetic** in Go
 
-``` {.sourceCode .go}
+```go
 var p *int
 i := 42
 p = &i
@@ -205,7 +205,7 @@ Structured Data
 -   the indirection through struct pointers is
     [transparent](https://tour.golang.org/moretypes/4)
 
-``` {.sourceCode .go}
+```go
 type Vertex struct {
     X int
     Y int
@@ -223,7 +223,7 @@ v.X = 4
 -   arrays **can't** be resized
 -   Go has an array slice syntax similar to pythons list slices:
 
-``` {.sourceCode .go}
+```go
 p := []int{2, 3, 5, 7, 11, 13}
 fmt.Println(p[1:5])
 ```
@@ -238,7 +238,7 @@ fmt.Println(p[1:5])
     are `T` values
 -   looping over a slice:
 
-``` {.sourceCode .go}
+```go
 x = []int {2, 4, 8}
 for i, v := range x {
     // i = index
@@ -257,7 +257,7 @@ for i, v := range x {
     them
 -   you can use **map literals** to initalize a map like this:
 
-``` {.sourceCode .go}
+```go
 var m2 = map[string]uint64{
     "foo": 42,
     "bar": 314,
@@ -285,7 +285,7 @@ var m2 = map[string]uint64{
 -   you can call the method like you can access struct elements:
     `foo.F()`
 
-``` {.sourceCode .go}
+```go
 type Vertex struct {
     X, Y float64
 }
@@ -313,7 +313,7 @@ func (v Vertex) Abs() float64 {
 
 [./src/method\_receiver.go](./src/method_receiver.go)
 
-``` {.sourceCode .go}
+```go
 type Decimal struct {
     X float64
 }
@@ -351,7 +351,7 @@ prints out:
 -   the equivalent of Java's `toString()` method is the `String()`
     method from the `Stringer` interface:
 
-``` {.sourceCode .go}
+```go
 type Stringer interface {
     String() string
 }
@@ -363,7 +363,7 @@ type Stringer interface {
 -   error checking is done by validating if an error value is `nil`
     (Go's null type):
 
-``` {.sourceCode .go}
+```go
 i, err := strconv.Atoi("42")
 if err != nil {
     fmt.Printf("couldn't convert number: %v\n", err)
@@ -378,7 +378,7 @@ if err != nil {
     `ServeHTTP(w http.ResponseWriter, r *http.Request)`
 -   [http Handler](src/exercise-http-handlers.go) example
 
-``` {.sourceCode .go}
+```go
 func (s Struct) ServeHTTP(w http.ResponseWriter, r *http.Request) {
     fmt.Fprint(w, fmt.Sprintf("%s%s %s\n", s.Greeting, s.Punct, s.Who))
 }
@@ -420,7 +420,7 @@ Concurrency mechanisms
 
 Loops until the channel was closed
 
-``` {.sourceCode .go}
+```go
 c := make(chan type)
 //...
 for v := range c {
@@ -433,7 +433,7 @@ for v := range c {
 -   the `default` case is run if no other channel is ready (can be used
     for non-blocking send/receive)
 
-``` {.sourceCode .go}
+```go
 select {
 case c <- x:
     x, y = y, x+y

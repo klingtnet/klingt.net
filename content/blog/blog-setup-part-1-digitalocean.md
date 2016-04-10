@@ -56,7 +56,7 @@ documentation](http://wiki.nginx.org/Install) has got installation
 instructions for all kinds of operating systems, but my droplet runs
 Ubuntu, so I will write only the instructions for this system \[2\]\_:
 
-``` {.sourceCode .sh}
+```bash
 add-apt-repository ppa:nginx/stable
 apt-get update
 apt-get install nginx
@@ -75,14 +75,14 @@ served. In my case it's one for my weblog and another one for the
 reports that will be generated from the nginx logs using
 [goaccess](http://goaccess.io/), but more on this later.
 
-``` {.sourceCode .sh}
+```bash
 mkdir -p /var/www/klingt.net/html/{www,reports}
 ```
 
 I've changed the ownership of the freshly created directories to
 `www-data` user and group.
 
-``` {.sourceCode .sh}
+```bash
 chown -R www-data:www-data /var/www/klingt.net
 ```
 
@@ -91,7 +91,7 @@ for your *server blocks* or virtual hosts, to say it in Apache terms. To
 put it simply, a server block is a combination of server-name and
 ip/port specification.
 
-``` {.sourceCode .sh}
+```bash
 cp /etc/nginx/sites-available/default /etc/nginx/sites-available/klingt.net
 ```
 
@@ -107,7 +107,7 @@ path to the directory you've created before:
 `root /var/www/klingt.net/html/www;`. Now the configuration file should
 look something like this:
 
-``` {.sourceCode .sh}
+```bash
 server {
     listen 80;
     listen [::]:80; # IPv6
@@ -129,7 +129,7 @@ droplet. When you've done that you can make a symlink from the
 config-file to nginx the `sites-enabled` directory to *enable* the
 server block:
 
-``` {.sourceCode .sh}
+```bash
 ln -s /etc/nginx/sites-available/klingt.net /etc/nginx/sites-enabled/klingt.net
 ```
 
@@ -150,7 +150,7 @@ straight-forward, using a cronjob that calls every 10 minutes a script
 which generates a new html report using goaccess. This is the script
 that calls goaccess:
 
-``` {.sourceCode .sh}
+```bash
 #!/bin/sh
 
 WWW_ROOT=/var/www/klingt.net/
@@ -190,7 +190,7 @@ Caching is slightly more complicated, but all I had to do was to add
 this location directive to my server-block configuration
 `/etc/nginx/sites-available/klingt.net`:
 
-``` {.sourceCode .sh}
+```bash
 location ~*\.(css|js|gif|jpe?g|png|ttf|otf|woff)$ {
     expires 7d;
     add_header Cache-Control private;
@@ -216,7 +216,7 @@ makes this super easy there is no excuse for not doing it. If you don't
 want to block IPv6 you should change `IPv6` in `/etc/default/ufw` to
 `no`. Ok, so lets start:
 
-``` {.sourceCode .sh}
+```bash
 ufw default deny incoming
 ufw default allow outgoing
 ufw allow ssh

@@ -38,7 +38,7 @@
     monitor your docker deamon. To try it run this line in your shell
     and open [localhost:10086](http://localhost:10086) afterwards:
 
-``` {.sourceCode .bash}
+```bash
 docker run -d -p 10086:10086 -v /var/run/docker.sock:/var/run/docker.sock tobegit3hub/seagull
 ```
 
@@ -58,7 +58,7 @@ docker run -d -p 10086:10086 -v /var/run/docker.sock:/var/run/docker.sock tobegi
     that allows you to set/get values using *attribute* and
     *getitem* syntax.
 
-``` {.sourceCode .python}
+```python
 from addict import Dict
 e = Dict()
 e.x.a.m.p.l.e    = 'examble' # attribute syntax

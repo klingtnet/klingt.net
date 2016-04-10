@@ -11,7 +11,7 @@ from suspend. Furthermore the network icons are missing from Gnomes
 panel. Simply restarting the `NetworkManager.service` via `systemctl`
 doesn't help in most cases, but the following works for me:
 
-``` {.sourceCode .sh}
+```bash
 sudo systemctl kill NetworkManager.service wpa_supplicant.service
 sudo systemctl start NetworkManager.service wpa_supplicant.service
 ```

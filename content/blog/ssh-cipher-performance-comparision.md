@@ -39,7 +39,7 @@ Available Cipher Algorithms
 
 To see which algorithms are available on client-side is dead easy:
 
-``` {.sourceCode .bash}
+```bash
 ssh -Q cipher
 ```
 
@@ -47,7 +47,7 @@ But that's not what we want, we need to know which of them are available
 on server-side, too. One way is to specify an unsupported algorithm,
 then the server will tell your which are avaible:
 
-``` {.sourceCode .bash}
+```bash
 ssh -c arcfour SERVER.
 ```
 
@@ -55,7 +55,7 @@ You can also do `ssh -vv SERVER` and read the logs. According to
 `man ssh_config` the default is (if not otherwise specified in your
 `sshd_config`):
 
-``` {.sourceCode .bash}
+```bash
 aes128-ctr,aes192-ctr,aes256-ctr,
 aes128-gcm@openssh.com,aes256-gcm@openssh.com,
 chacha20-poly1305@openssh.com
@@ -68,7 +68,7 @@ The transfer rates are simply determined by iterating over the available
 algorithms and sending the test file one or more times using the
 selected algorithm while measuring the transfer time.
 
-``` {.sourceCode .bash}
+```bash
 #!/bin/bash
 
 ALGS=( "aes128-ctr" "aes192-ctr" "aes256-ctr" "aes128-gcm@openssh.com" "aes256-gcm@openssh.com" "chacha20-poly1305@openssh.com" )
@@ -109,7 +109,7 @@ throttling by the SSD. In the normal case `/tmp` should be a RAM disk,
 you can check this by executing `mount | grep -i /tmp` which should show
 [tmpfs](http://en.wikipedia.org/wiki/Tmpfs) as filesystem.
 
-``` {.sourceCode .bash}
+```bash
 sudo useradd --create-home cipherbench
 sudo passwd cipherbench
 sudo systemctl start sshd
@@ -128,7 +128,7 @@ time the subprocess call has used.
 
 The full script can be downloaded from [here](/files/ssh_bench.py).
 
-``` {.sourceCode .python}
+```python
 start = resource.getrusage(resource.RUSAGE_CHILDREN)
 try:
     check_call(["scp", "-c", alg, src_file, "{}:{}".format(ssh_dest, file_dest)])
@@ -144,7 +144,7 @@ else:
 To delete the `cipherbench`{.sourceCode} user after running the script,
 execute the following commands:
 
-``` {.sourceCode .bash}
+```bash
 sudo userdel cipherbench
 sudo rm -r /home/cipherbench
 ```
@@ -156,7 +156,7 @@ Results
 
 This is the code for generating the plot above.
 
-``` {.sourceCode .gnuplot}
+```gnuplot
 set title 'ssh cipher benchmark'
 set xlabel 'algorithm'
 set ylabel 'mean time for 1GB testfile [s]'
@@ -187,7 +187,7 @@ made an similar benchmark on a *650MHz ARM Cortex A9* with NEON
 extension and an OpenSSH rebuilt for this particluar SOC, obtaining the
 following results:
 
-``` {.sourceCode .}
+```
 52MB  10.5MB/s chacha20-poly1305@openssh.com
 52MB   8.7MB/s aes128-ctr
 52MB   6.5MB/s aes256-gcm@openssh.com
@@ -222,7 +222,7 @@ is small enough to be cached.)
 
 On the i3 CPU, 100 MiB transfer:
 
-``` {.sourceCode .}
+```
 aes128-ctr 1.091s
 aes192-ctr 1.527s
 aes256-ctr 1.357s
@@ -238,7 +238,7 @@ about 50x slower than what your benchmark shows.)
 
 On a VIA Eden 1 GHz CPU (1 thread), 5 MiB transfer:
 
-``` {.sourceCode .}
+```
 aes128-ctr 4.673s
 aes192-ctr 5.233s
 aes256-ctr 5.764s
@@ -252,7 +252,7 @@ Arcfour/RC4 is significantly faster.)
 On a VPS with 2 virtual cores Xeon E312xx (Sandy Bridge), with AES
 support, 50 MiB transfer:
 
-``` {.sourceCode .}
+```
 aes128-ctr 2.961s
 aes192-ctr 3.035s
 aes256-ctr 2.789s

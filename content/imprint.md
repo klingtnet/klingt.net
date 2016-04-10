@@ -7,7 +7,7 @@ date = "2016-04-07"
 Address information
 ===================
 
-``` {.sourceCode .}
+```
 19356112/15194+
 
 zniL saerdnA
@@ -42,7 +42,7 @@ CDN because of caching.
 PGP
 ===
 
-``` {.sourceCode .}
+```
 F1E8 B1CC E0B7 FBF0 8E7E  33A2 A57E A370 7387 1146
 ```
 

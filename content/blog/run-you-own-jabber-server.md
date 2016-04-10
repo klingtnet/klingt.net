@@ -57,7 +57,7 @@ unencrypted connections.
     everything outside*
 -   add a host:
 
-``` {.sourceCode .lua}
+```lua
 VirtualHost "example.domain"
     enabled = true
 

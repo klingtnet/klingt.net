@@ -61,7 +61,7 @@ like `/etc/nginx/sites-available/example.com`. Because the HTTPS port is
 `443` you have to add one or two `listen` directives, dependend on if
 you will support IPv6 or not \[1\]\_.
 
-``` {.sourceCode .nginx}
+```nginx
 listen 443 ssl spdy;
 listen [::]:443 ssl spdy;
 ```
@@ -75,7 +75,7 @@ on the instructions of your certification authority, because it can be
 necessary to concatenate multiple certificates into one file, e.g.
 `cat ROOTCA.key example.com.key > bundle.key`.
 
-``` {.sourceCode .nginx}
+```nginx
 ssl_certificate /file/path/klingt.net/bundle.crt;
 ssl_certificate_key /file/path/server.key;
 ```
@@ -88,7 +88,7 @@ Rewrite-Rule
 Now that we have SSL enabled we can rewrite all the incoming HTTP
 requests to HTTPS, using the following config:
 
-``` {.sourceCode .nginx}
+```nginx
 server {
     listen 80;
     listen [::]:80;

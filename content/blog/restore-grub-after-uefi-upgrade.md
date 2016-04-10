@@ -27,7 +27,7 @@ flash drive image of
 [rEFInd](http://www.rodsbooks.com/refind/getting.html) and `dd` it on a
 flash drive:
 
-``` {.sourceCode .sh}
+```bash
 # check which device is your flash drive
 lsblk -l
 unzip refind-flashdrive-x.x.x.zip
@@ -47,7 +47,7 @@ image. You should now be able to boot your existing Arch installation
 UEFI boot entries with `efibootmgr -v`, this should print something like
 this:
 
-``` {.sourceCode .sh}
+```bash
 BootCurrent: 0000
 Timeout: 10 seconds
 BootOrder: 0000,0001,0005,0006,0004
@@ -60,7 +60,7 @@ Boot0006* UEFI:  Patriot Memory PMAP    ACPI(a0341d0,0)PCI(10,0)USB(3,0)HD(1,800
 In my case `Boot0000*` was missing, which was the UEFI boot entry for
 GRUB. To restore it run:
 
-``` {.sourceCode .sh}
+```bash
 sudo grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub
 ```
 
@@ -70,7 +70,7 @@ name of the subdirectory in `/boot/EFI/`, in my case `arch_grub`.
 Running `efibootmgr -v` again showed me that my missing entry was
 restored:
 
-``` {.sourceCode .sh}
+```bash
 Boot0000* arch_grub HD(1,800,1ff801,08a220bf-ac71-462c-bac9-abcdefghijkl)File(\EFI\arch_grub\grubx64.efi)
 ```
 

@@ -27,7 +27,7 @@ IPv6 *address* and *gateway*.
 SSH into your droplet and before making the settings permanent, try them
 out by using `ip addr` like this:
 
-``` {.sourceCode .bash}
+```bash
 ip -6 addr add PUBLIC_IPv6/SUBNET_MASK dev INTERFACE
 ip -6 route add default via PUBLIC_IPv6_GATEWAY dev INTERFACE
 ```
@@ -39,7 +39,7 @@ ip -6 route add default via PUBLIC_IPv6_GATEWAY dev INTERFACE
 Now you should be able to ping your machine `ping6 -c 2 PUBLIC_IPv6`. If
 the output looks similar to this, you're almost done:
 
-``` {.sourceCode .bash}
+```bash
 $ ping6 -c 2 2a03:f00:2:ba9::17d:c001
 PING 2a03:f00:2:ba9::17d:c001(2a03:f00:2:ba9::17d:c001) 56 data bytes
 64 bytes from 2a03:f00:2:ba9::17d:c001: icmp_seq=1 ttl=56 time=33.8 ms
@@ -53,7 +53,7 @@ rtt min/avg/max/mdev = 33.808/35.464/37.120/1.656 ms
 Make the settings permanently by adding them to your
 /etc/network/interfaces config file:
 
-``` {.sourceCode .bash}
+```bash
 iface eth0 inet6 static
     address 2a03:f00:2:ba9::17d:c001:c001
     netmask 64
