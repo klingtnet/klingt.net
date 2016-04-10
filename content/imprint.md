@@ -50,8 +50,6 @@ My PGP public key\_, you can get it also on the [MIT
 key-server](https://pgp.mit.edu/pks/lookup?op=get&search=0xA57EA37073871146)
 `gpg --keyserver pgp.mit.edu/ --recv-keys 0x9AA3F5EC`{.sourceCode}.
 
-------------------------------------------------------------------------
-
 [^1]: I've done in the hope to prevent misuse of address by stupid spam
     bots. At first I had implemented a solution with simple encryption
     and a captcha, but this involved javascript, which is -- sadly --
