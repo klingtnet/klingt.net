@@ -7,4 +7,4 @@ My masters thesis topic is *Programming a Realtime Remote Controllable FM Audio 
 
 As you maybe already guessed, I'm also passionate about audio. I've build loudspeakers, a Midi controller and I'm maintaining some audio related software projects ([rsoundio](https://github.com/klingtnet/rsoundio) ,[rosc](https://github.com/klingtnet/rosc), ...).
 
-I love music and I'm fascinated by the whole process of generating audio signals. Besides, I like to do systems programming or build web services. I also have some experience with front-end technologies like CSS/SCSS or Javascript. Sometimes I create beautiful things with [TeX](https://github.com/klingtnet/beamer_template), too.
+I love music and I'm fascinated by the whole process of generating audio signals. Besides, I like to do systems programming and build web services. I also have some experience with front-end technologies like CSS/SCSS or Javascript. Sometimes I create beautiful things with [TeX](https://github.com/klingtnet/beamer_template), too.
