@@ -2,4 +2,3 @@
 themes/*
 !themes/klingtnet
 public/*
-!public/.gitkeep
