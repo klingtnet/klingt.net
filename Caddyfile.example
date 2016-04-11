@@ -2,7 +2,7 @@
     gzip
     basicauth /admin admin admin
     hugo {
-        theme klingt.net
+        theme klingtnet
     }
     root public
 }
