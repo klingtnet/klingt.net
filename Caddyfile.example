@@ -5,4 +5,9 @@
         theme klingtnet
     }
     root public
+    log stdout
+    errors {
+        log stderr
+        404 404.html
+    }
 }
