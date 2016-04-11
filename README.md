@@ -27,3 +27,7 @@ make
 ```sh
 make deploy
 ```
+
+## Notes
+
+- `convert.py` was used to convert the restructured text formatted posts to markdown with the help of `pandoc`
