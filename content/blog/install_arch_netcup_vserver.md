@@ -213,7 +213,8 @@ some.domain {
 	- run the alpine linux container: `sudo rkt run quay.io/coreos/alpine-sh --exec echo -- hello`
 	- this should print something like this: `[ 6093.399497] echo[4]: hello`
 - fetch the official (docker) gogs image: `sudo rkt fetch --insecure-options=image docker://gogs/gogs`
-- print the container manifest: `sudo rkt image cat-manifest --pretty-print sha512-thecontainerhash`
+- print the container manifest: `sudo rkt image cat-manifest --pretty-print sha512-<GOGS_CONTAINER_HASH>`
+    - the container hash is printed by `rkt fetch`
 - run the gogs container and ~~expose port 3000 (http)~~: `sudo rkt run --insecure-options=image docker://gogs/gogs &> /dev/null &`
 - `rkt list` shows you the ip of the rkt `pod` (that's a single/group of container[s] in rkt terminology)
 - the gogs installation screen should be shown if you open `POD_IP:3000` in your browser
