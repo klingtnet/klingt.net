@@ -212,7 +212,7 @@ some.domain {
 	- trust quay.io (this is the equivalent of the *docker hub* from coreos): `sudo rkt trust --prefix quay.io`
 	- run the alpine linux container: `sudo rkt run quay.io/coreos/alpine-sh --exec echo -- hello`
 	- this should print something like this: `[ 6093.399497] echo[4]: hello`
-- fetch the official (docker) gogs image: `sudo rkt fetch docker://gogs/gogs`
+- fetch the official (docker) gogs image: `sudo rkt fetch --insecure-options=image docker://gogs/gogs`
 - print the container manifest: `sudo rkt image cat-manifest --pretty-print sha512-thecontainerhash`
 - run the gogs container and ~~expose port 3000 (http)~~: `sudo rkt run --insecure-options=image docker://gogs/gogs &> /dev/null &`
 - `rkt list` shows you the ip of the rkt `pod` (that's a single/group of container[s] in rkt terminology)
