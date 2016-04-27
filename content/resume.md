@@ -97,13 +97,10 @@ Markup languages:
 
 ## Software
 
-Tools and operating systems that I use and I'm highly familiar with
-
-- Linux ([Arch Linux](https://www.archlinux.org/), Debian, Ubuntu, Fedora)
-- Windows
-- Bash/Zsh
+- Proficient in Linux ([Arch Linux](https://www.archlinux.org/), Debian, Ubuntu, Fedora) and Windows environments
+- Write and analyse advanced Bash/Zsh scripts
 - gnu make
-- vim, IntelliJ Idea, Eclipse
+- Editor and IDE of choce: vim and IntelliJ Idea
 
 ---
 
