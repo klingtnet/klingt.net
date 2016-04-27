@@ -46,11 +46,11 @@ Referees available on request.
 
 #### Thales Rail Signalling Solutions Arnstadt GmbH
 
-- mechatronician in the inductive systems division
+- Mechatronician in the inductive systems division
 
 ### 2006-08 --- 2009-09
 
-- training as a mechatronician
+- Training as a mechatronician
 
 ---
 
