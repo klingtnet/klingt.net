@@ -1,7 +1,7 @@
 +++
 title = "Imprint"
 description = "A bit of information about the website owner"
-date = "2016-04-07"
+hidemeta = true
 +++
 
 Address information
