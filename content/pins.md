@@ -53,6 +53,13 @@ This is my personal list of bookmarks.
 - [createdigitalmusic](http://createdigitalmusic.com/) A blog about the latest trends and gadgets in the audio production area
 - [matrixsynth](http://www.matrixsynth.com/) Audio gear porn at it's finest. This is a really great resource for procrastinating
 
+## Podcasts
+
+- [alternativlos](http://alternativlos.org/) A podcast about politics, tech and conspiracy theories (not the usual illuminati crap, more like *reasonable* theories).
+- [Mad Slabs](http://spinfoam.net/madslabs.html) My alltime favorite music podcast. No comments nor moderation only 2+ hours of fresh new music. The played genres represent my own personal taste quite good because they're pretty diverse and range from ambient/drone or classical to breakcore or distorted german techno tunes.
+- [the  bike shed](http://bikeshed.fm/) A podcast about development related topics.
+- [methodisch inkorrekt](http://minkorrekt.de/) Two german scientists discuss current topics in science and research or talk about the daily routine in general.
+
 ## This and That
 
 - [noisli](http://www.noisli.com/) Generates nice ambient sounds like rain drops, chirping birds, a bonfire and much more
