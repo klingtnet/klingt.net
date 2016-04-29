@@ -16,6 +16,9 @@ This is my personal list of bookmarks.
 - [hckrnews](http://hckrnews.com/) An alternative [hacker news](http://news.ycombinator.com/) interface where you can waste your time.
 - [lobste.rs](https://lobste.rs/) Like hacker news but /wo the marketing and startup BS.
 - [GalaxySQL](http://sol.gfxile.net/g3) An unusual SQL tutorial which is quite entertaining unlinke most SQL books/courses, they are boring as hell.
+- [play.rust-lang.org](https://play.rust-lang.org/) Rusts interactive playpen.
+- [play.golang.org](https://play.golang.org/) Gos playground.
+- [try.ocamlpro.com](https://try.ocamlpro.com/) An interactive OCaml tutorial. Note to myself: Learn OCaml sometime.
 
 ## Articles
 
