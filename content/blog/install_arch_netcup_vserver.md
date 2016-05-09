@@ -48,7 +48,7 @@
 PasswordAuthentication no
 ChallengeResponseAuthentication no
 # UsePAM no
-# You don't have to disable PAM but it can't do much useful \wo
+# You don't have to disable PAM but it can't do much useful w/o
 # password based login.
 # Details: http://mail-index.netbsd.org/tech-security/2009/01/04/msg000153.html
 ```
