@@ -1,6 +1,6 @@
 +++
 date = "2016-04-27T21:58:08+02:00"
-title = "Pins"
+title = "Links"
 hidemeta = true
 +++
 
