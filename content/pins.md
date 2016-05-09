@@ -6,6 +6,12 @@ hidemeta = true
 
 This is my personal list of bookmarks.
 
+## (Hacker) News
+
+- [/r/programming](https://www.reddit.com/r/programming) Reddit's programming subforum
+- [hckrnews](http://hckrnews.com/) An alternative, responsive [hacker news](http://news.ycombinator.com/) interface
+- [lobste.rs](https://lobste.rs/) Is like hacker news but w/o the marketing and startup noise
+
 ## Sites
 
 - [glot.io](https://glot.io/) An open source pastebin with runnable snippets and API
