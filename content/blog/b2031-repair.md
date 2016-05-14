@@ -36,8 +36,8 @@ The main capacitors seem to be fine on the first look but, but there was almost 
 
 Another modification that I would have liked to do is to lower the threshold level of the auto power circuit.
 The factory default setting is way too high, so the speaker always shuts off on silent passages.
-Unfortunately, the resistors that is responsible for the auto power level is an SMD model and I don't have the appropriate tools to replace them.
-Anyone else can try to replace the 50 ohms `Rxx`, that is located near `IC11`, to one with a lower resistance.
+Unfortunately, the resistor that is responsible for the auto power level is an SMD model and I don't have the appropriate tools to replace them.
+Anyone else can try to replace the 47 ohms `R83`, that is located near `IC11`, to one with a lower resistance.
 I can't provide a link to the schematics, but you can find them easily using google.
 
 ![Behringer B2031 amplifier board back side](/imgs/b2031a_amp_board_back.jpg)
