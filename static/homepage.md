@@ -1,3 +1,5 @@
+<img class="laptop-sketch" title="A sketch of a laptop and a cup of coffee." alt="laptop and coffee" src="/imgs/laptop_sketch_released.png">
+
 # Hi!
 
 I'm **Andreas Linz** and I love technology.
