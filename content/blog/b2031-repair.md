@@ -5,8 +5,8 @@ title = "Fix Buzzing Sound in Behringer B2031A Studio Monitor"
 
 Some weeks ago, one of my [B2031A](http://www.music-group.com/Categories/Behringer/Loudspeaker-Systems/Studio-Monitors/B2031A/p/P0252)'s started to make strange noises after running more than half an hour and the speaker popped very loud when I switched it off an on within short time.
 It was not the type of [high-pitched digital noise](https://www.youtube.com/watch?v=GbNyINuo-Uw) where you can hear your mouse cursor moving on the display, because the monitors or computers cheap power supply is injecting a lot of noise in the ground wire.
-This can be fixed with a proper [DI-Unit](https://en.wikipedia.org/wiki/DI_unit), I'm using [this one](http://www.thomann.de/de/art_dti.htm) to isolate my computer from the amplifier.
-Instead, one speaker was making buzzing sounds that got louder until the tweeter has shut off.
+By the way, this can be fixed with a proper [DI-Unit](https://en.wikipedia.org/wiki/DI_unit). I'm using [this one](http://www.thomann.de/de/art_dti.htm) to isolate my computer from the amplifier.
+However, one speaker was making buzzing sounds that got louder until the tweeter has shut off.
 The source of the issue could be anything, but the speakers are already more than 10 years old, and failing electrolytic capacitors are a common problem for amplifiers and power supplies, so I decided to take a look and replace them if necessary.
 
 Here is a list of tools and materials that you need to replace the capacitors:
@@ -32,7 +32,8 @@ The disassembly was quite easy:
 
 ![Behringer B2031 amplifier board front](/imgs/b2031a_amp_board_front.jpg)
 
-The main capacitors seem to be fine on the first look but, but there was almost no electrolyte left inside. Empty capacitors will make a rattling sound when you shake them.
+The main capacitors seem to be fine on the first look but, but there was almost no electrolyte left inside.
+Empty capacitors will make a rattling sound when you shake them.
 
 Another modification that I would have liked to do is to lower the threshold level of the auto power circuit.
 The factory default setting is way too high, so the speaker always shuts off on silent passages.
