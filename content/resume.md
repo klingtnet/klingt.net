@@ -1,7 +1,7 @@
 +++
 date = "2016-04-11T23:53:55+02:00"
 title = "Resume"
-hide = true
+hide = false
 hidemeta = true
 +++
 
