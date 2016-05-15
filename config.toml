@@ -27,3 +27,6 @@ theme = "klingtnet"
 [[menu.services]]
     name = "reports"
     url = "https://reports.klingt.net"
+[[menu.services]]
+    name = "files"
+    url = "https://files.klingt.net"
