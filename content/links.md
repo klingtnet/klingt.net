@@ -49,6 +49,7 @@ This is my personal list of bookmarks.
 - [DSP Guide](http://www.dspguide.com/) A good resource to get an overview over a lot of DSP concept but lacks a bit of detail in some places
 - [hifi-forum.de](http://www.hifi-forum.de/viewforum-104.html) Here meets the german DIY loudspeaker community. The [DIY speaker gallery](http://www.hifi-forum.de/viewthread-104-15079-186.html) is always worth a look
 - [diyaudio.com](http://www.diyaudio.com/) Maybe the largest online resource for DIY audio enthusiasts (except software)
+- [BBC Radio 6](http://www.bbc.co.uk/6music) Why can't we have such a great radio channel in Germany? DRadio is nice, but come on, it's way to conservative.
 
 ---
 
