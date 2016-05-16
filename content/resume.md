@@ -7,8 +7,9 @@ hidetitle = true
 
 <img alt="a portrait of me" class="application-photo" src="/imgs/portrait_wide.jpg" />
 
+<h1 class="resume-name">Andreas Linz</h1>
+
 <dl class="resume">
-<dt>Name</dt><dd>Andreas Linz</dd>
 <dt>Email</dt><dd><a href="mailto:alinz@klingt.net">alinz@klingt.net</a></dd>
 <dt>Web</dt><dd><a href="https://www.klingt.net">klingt.net</a></dd>
 <dt>GitHub</dt><dd><a href="https://github.com/klingtnet">klingtnet</a></dd>
