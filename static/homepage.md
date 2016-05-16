@@ -10,7 +10,7 @@ Therefore, I decided to study computer science, got my bachelors degree in 2013 
 The thesis topic is *Programming a Realtime Remote Controllable FM Audio Synthesizer in Rust*.
 
 As you might have already guessed, I am also passionate about audio.
-I have build a pair of loudspeakers, a Midi controller and I am maintaining some audio related software projects on [github](github.com/klingtnet).
+I have build a pair of loudspeakers, a Midi controller and I am maintaining some audio related software projects on [github](https://github.com/klingtnet).
 
 I love music and I am fascinated by the whole process of generating audio signals.
 Besides I like to do systems programming and build web services.
