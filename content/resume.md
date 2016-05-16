@@ -2,6 +2,7 @@
 date = "2016-04-11T23:53:55+02:00"
 title = "Resume"
 hidemeta = true
+hidetitle = true
 +++
 
 <img alt="a portrait of me" class="application-photo" src="/imgs/portrait_wide.jpg" />
