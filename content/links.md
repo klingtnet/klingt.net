@@ -15,7 +15,7 @@ This is my personal list of bookmarks.
 ## Sites
 
 - [glot.io](https://glot.io/) An open source pastebin with runnable snippets and API
-- [Rust STL](https://doc.rust-lang.org/std/) Rusts standard library documentation
+- [Rust Standard Library](https://doc.rust-lang.org/std/) Rusts standard library documentation
 - [tl;dr Legal](https://tldrlegal.com/) Software licenses explained in plain english
 - [Computer science field guide](http://www.csfieldguide.org.nz/en/index.html) An interactive online resource---not for graduates---but more aimed towards high school students
 - [visualgo](http://visualgo.net/) Animated algorithms and data structures, Yay!
