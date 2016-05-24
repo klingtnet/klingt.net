@@ -31,6 +31,7 @@ This is my personal list of bookmarks.
 - [what is CS?](https://www.cs.mtu.edu/~john/whatiscs.html) What is computer science?
 - [what every CS major should know](http://matt.might.net/articles/what-cs-majors-should-know/) At least what the author thinks what everyone should know. Nonetheless, an interesting list of links and topics
 - [A list of awesome lists](https://github.com/sindresorhus/awesome)
+- [Software optimization resources](http://agner.org/optimize/) 5 different manuals about low-level software optimization, from C++ over assembler to machine instructions.
 
 ## PDFs
 
@@ -72,3 +73,4 @@ This is my personal list of bookmarks.
 - [noisli](http://www.noisli.com/) Generates nice ambient sounds like rain drops, chirping birds, a bonfire and much more
 - [interfacelift](https://interfacelift.com/wallpaper/downloads/date/any/) Nice wallpapers in very large resolutions (up to 5k)
 - [Wikimedia Commons: Picture of the Day](https://commons.wikimedia.org/wiki/Commons:Picture_of_the_day) A great wallpaper resource as well
+- [The Free Fall Research Page](http://www.greenharbor.com/fffolder/ffresearch.html) A website dedicated on how to survive a free fall without a parachute. [Banzai](https://en.wikipedia.org/wiki/Banzai_skydiving)!
