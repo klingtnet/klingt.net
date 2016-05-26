@@ -62,9 +62,9 @@ Referees available on request.
 ### Rust
 
 - Author/Contributor of a number of audio related libraries
-- [rsoundio](https://github.com/klingtnet/rsoundio) a wrapper to the cross-platform C audio IO library [libsoundio](http://libsound.io/)
-- [rosc](https://github.com/klingtnet/rosc) an OSC (Open Sound Control) library
-- [rb](https://github.com/klingtnet/rb) a thread-safe ring buffer
+- [rsoundio](https://github.com/klingtnet/rsoundio): a wrapper to the cross-platform C audio IO library [libsoundio](http://libsound.io/)
+- [rosc](https://github.com/klingtnet/rosc): an OSC (Open Sound Control) library
+- [rb](https://github.com/klingtnet/rb): a thread-safe ring buffer
 - Rewrote [portmidi-rs](https://github.com/musitdev/portmidi-rs), the standard Rust MIDI library
 - Contributor to [Rust 1.8](http://blog.rust-lang.org/2016/04/14/Rust-1.8.html)
 
