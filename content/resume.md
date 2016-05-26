@@ -103,6 +103,7 @@ Markup languages:
 - Proficient in Linux ([Arch Linux](https://www.archlinux.org/), Debian, Ubuntu, Fedora) and Windows environments
 - Write and analyse advanced Bash/Zsh scripts
 - gnu make
+- build and deploy [docker](https://www.docker.com/) containers ([docker-hub account](https://hub.docker.com/u/klingtdotnet/))
 - Editor and IDE of choce: vim and IntelliJ Idea
 
 ---
