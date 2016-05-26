@@ -4,7 +4,7 @@ description = "A bit of information about the website owner"
 hidemeta = true
 +++
 
-The best way to get in touch with me is via email: <code class="imprint-address">ten.tgnilk@znila</code>.
+The best way to get in touch with me is via email: <code class="address-rtl">ten.tgnilk@znila</code>.
 
 I also have to provide my postal address because every website that is constantly updated is regarded as *commercial* in german law and therefore needs to show it in the imprint. Otherwise any ~~dickhead~~ lawyer could admonish you because of some laws in the [Telemediengesetz](https://de.wikipedia.org/wiki/Telemediengesetz) (which was created by a bunch of ~~apes~~ clever people).
 
