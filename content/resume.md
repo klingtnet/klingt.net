@@ -14,7 +14,7 @@ hidetitle = true
 <dt>Phone</dt/><dd><address class="address-rtl">193 56 112 / 151 (94+)</address></dd>
 <dt>Email</dt><dd><a href="mailto:alinz@klingt.net">alinz@klingt.net</a></dd>
 <dt>Web</dt><dd><a href="https://www.klingt.net">klingt.net</a></dd>
-<dt>GitHub</dt><dd><a href="https://github.com/klingtnet">klingtnet</a></dd>
+<dt>GitHub</dt><dd><a href="https://github.com/klingtnet">@klingtnet</a></dd>
 <dt>Nationality</dt><dd>German</dd>
 <dt>Languages</dt><dd>German (mother tongue)</br>English (fluent)</dd>
 </dl>
