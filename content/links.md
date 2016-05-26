@@ -48,6 +48,7 @@ This is my personal list of bookmarks.
 - [Earlevel Engineering](http://www.earlevel.com/main) A very well written blog about basic and sometimes more advanced DSP concept with practical audio applications in mind
 - [MicroModeler DSP](http://www.micromodeler.com/dsp/) A full-blown online filter designer
 - [DSP Guide](http://www.dspguide.com/) A good resource to get an overview over a lot of DSP concept but lacks a bit of detail in some places
+- [Julius Orion Smith III](https://ccrma.stanford.edu/~jos/Welcome.html) (what a name). A lot of material about musical and audio signal processing.
 - [hifi-forum.de](http://www.hifi-forum.de/viewforum-104.html) Here meets the german DIY loudspeaker community. The [DIY speaker gallery](http://www.hifi-forum.de/viewthread-104-15079-186.html) is always worth a look
 - [diyaudio.com](http://www.diyaudio.com/) Maybe the largest online resource for DIY audio enthusiasts (except software)
 - [BBC Radio 6](http://www.bbc.co.uk/6music) Why can't we have such a great radio channel in Germany? DRadio is nice, but come on, it's way to conservative.
