@@ -8,14 +8,13 @@ The best way to get in touch with me is via email: <code class="imprint-address"
 
 I also have to provide my postal address because every website that is constantly updated is regarded as *commercial* in german law and therefore needs to show it in the imprint. Otherwise any ~~dickhead~~ lawyer could admonish you because of some laws in the [Telemediengesetz](https://de.wikipedia.org/wiki/Telemediengesetz) (which was created by a bunch of ~~apes~~ clever people).
 
-<pre><code class="imprint-address">
-19356112/15194+
-
-zniL saerdnA
-ten.tgnilk o/c
-25 gnirnegnulebiN
+<address class="address-rtl imprint-address">
+193 56 112 / 151 (94+)<br><br>
+zniL saerdnA<br>
+ten.tgnilk o/c<br>
+25 gnirnegnulebiN<br>
 gizpieL 97240
-</code></pre>
+</address>
 
 Privacy
 =======
