@@ -74,3 +74,4 @@ This is my personal list of bookmarks.
 - [interfacelift](https://interfacelift.com/wallpaper/downloads/date/any/) Nice wallpapers in very large resolutions (up to 5k)
 - [Wikimedia Commons: Picture of the Day](https://commons.wikimedia.org/wiki/Commons:Picture_of_the_day) A great wallpaper resource as well
 - [The Free Fall Research Page](http://www.greenharbor.com/fffolder/ffresearch.html) A website dedicated on how to survive a free fall without a parachute. [Banzai](https://en.wikipedia.org/wiki/Banzai_skydiving)!
+- [How bad are things?](http://slatestarcodex.com/2015/12/24/how-bad-are-things/) Everything's fine.
