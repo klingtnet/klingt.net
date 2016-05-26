@@ -104,7 +104,7 @@ Markup languages:
 - Write and analyse advanced Bash/Zsh scripts
 - gnu make
 - build and deploy [docker](https://www.docker.com/) containers ([docker-hub account](https://hub.docker.com/u/klingtdotnet/))
-- Editor and IDE of choce: vim and IntelliJ Idea
+- Editor and IDE of choice: vim and IntelliJ Idea
 
 ---
 
