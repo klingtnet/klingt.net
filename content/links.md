@@ -68,7 +68,7 @@ This is my personal list of bookmarks.
 - [the  bike shed](http://bikeshed.fm/) A podcast about development related topics.
 - [methodisch inkorrekt](http://minkorrekt.de/) Two german scientists discuss current topics in science and research or talk about the daily routine in general.
 
-## This and That
+## This and That (non computer stuff)
 
 - [noisli](http://www.noisli.com/) Generates nice ambient sounds like rain drops, chirping birds, a bonfire and much more
 - [interfacelift](https://interfacelift.com/wallpaper/downloads/date/any/) Nice wallpapers in very large resolutions (up to 5k)
