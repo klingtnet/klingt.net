@@ -43,7 +43,7 @@ Referees available on request.
 
 - Working student in the platform and API team.
 - Developed a service in [Go](https://golang.org/) that handles synchronization between object stores (S3/[Ceph](http://ceph.com/)) in different datacenters for a fairly large database.
-- Designed and implemented a code-generator to produce a PHP client libraries from abstract description ([WADL](https://en.wikipedia.org/wiki/Web_Application_Description_Language)/[XSD](https://en.wikipedia.org/wiki/XML_Schema_(W3C))) of the spreadshirts API.
+- Designed and implemented a code-generator to produce a PHP client library from an abstract description ([WADL](https://en.wikipedia.org/wiki/Web_Application_Description_Language)/[XSD](https://en.wikipedia.org/wiki/XML_Schema_(W3C))) of the spreadshirts API.
 
 ### 2009-07 --- 2010-06
 
