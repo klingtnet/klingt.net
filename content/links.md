@@ -32,6 +32,7 @@ This is my personal list of bookmarks.
 - [what every CS major should know](http://matt.might.net/articles/what-cs-majors-should-know/) At least what the author thinks what everyone should know. Nonetheless, an interesting list of links and topics
 - [A list of awesome lists](https://github.com/sindresorhus/awesome)
 - [Software optimization resources](http://agner.org/optimize/) 5 different manuals about low-level software optimization, from C++ over assembler to machine instructions.
+- [C++ Frequently Questioned Answers](http://yosefk.com/c++fqa/) :)
 
 ## PDFs
 
