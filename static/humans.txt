@@ -1,0 +1,5 @@
+/*	This is the virtual of Andreas Linz.
+	You're probably a human being if you read these lines, so please don't
+	hesitate to ask me anything (`contact/`) you want to know.
+*/
+Owner: Andreas Linz
