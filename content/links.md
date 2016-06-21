@@ -33,6 +33,7 @@ This is my personal list of bookmarks.
 - [A list of awesome lists](https://github.com/sindresorhus/awesome)
 - [Software optimization resources](http://agner.org/optimize/) 5 different manuals about low-level software optimization, from C++ over assembler to machine instructions.
 - [C++ Frequently Questioned Answers](http://yosefk.com/c++fqa/) :)
+- [The Java Memory Model](http://shipilev.net/blog/2016/close-encounters-of-jmm-kind/) I'm a little bit astound over the amount of things to know about the JMM. My expectation was that this would fit on a beer mat.
 
 ## PDFs
 
