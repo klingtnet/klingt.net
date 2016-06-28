@@ -25,6 +25,7 @@ This is my personal list of bookmarks.
 - [play.rust-lang.org](https://play.rust-lang.org/) Rusts interactive playpen.
 - [play.golang.org](https://play.golang.org/) Gos playground.
 - [try.ocamlpro.com](https://try.ocamlpro.com/) An interactive OCaml tutorial. Note to myself: Learn OCaml sometime.
+- [disassembler.io](disassembler.io) An online disassembler that supports a wide variety of architectures and allows to upload binaries with sizes up to 256kB.
 
 ## Articles
 
