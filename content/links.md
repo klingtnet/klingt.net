@@ -41,6 +41,7 @@ This is my personal list of bookmarks.
 
 - [What every programmer should know about floating point](https://www.ualberta.ca/~kbeach/phys420_580_2010/docs/ACM-Goldberg.pdf) Never heard of IEEE754 or didn't know what a mantissa is? Read this!
 - [what every programmer should know about memory](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf). This article (or short book) is well written and refreshes or explains a lot of concepts that are worth to know about computer memory. This is *not* solely written for system programmers!
+- [Scientific English as a Foreign Language](http://users.wpi.edu/~nab/sci_eng/ScientificEnglish.pdf) consists of 59 lessons that cover common mistaakes made by non-native english scientists at the École Polytechnique Fédérale de Lausanne.
 
 ## Math
 
