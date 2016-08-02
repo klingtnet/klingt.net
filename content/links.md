@@ -12,6 +12,12 @@ This is my personal list of bookmarks.
 - [hckrnews](http://hckrnews.com/) An alternative, responsive [hacker news](http://news.ycombinator.com/) interface
 - [lobste.rs](https://lobste.rs/) Is like hacker news but w/o the marketing and startup noise
 
+## Cheat Sheets
+
+- [Docker](https://github.com/dimonomid/docker-quick-ref) ([PDF](https://github.com/dimonomid/docker-quick-ref/releases/download/latest/docker-quick-ref.pdf))
+- [GDB](https://web.stanford.edu/class/cs107/gdb_refcard.pdf)
+- [Big-O Complexities](file:///home/andreas/Downloads/bigoposter.pdf)
+
 ## Sites
 
 - [glot.io](https://glot.io/) An open source pastebin with runnable snippets and API
