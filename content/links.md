@@ -16,7 +16,7 @@ This is my personal list of bookmarks.
 
 - [Docker](https://github.com/dimonomid/docker-quick-ref) ([PDF](https://github.com/dimonomid/docker-quick-ref/releases/download/latest/docker-quick-ref.pdf))
 - [GDB](https://web.stanford.edu/class/cs107/gdb_refcard.pdf)
-- [Big-O Complexities](file:///home/andreas/Downloads/bigoposter.pdf)
+- [Big-O Complexities Poster](https://github.com/ro31337/bigoposter) ([PDF](https://github.com/ro31337/bigoposter/raw/master/bigoposter.pdf))
 
 ## Sites
 
