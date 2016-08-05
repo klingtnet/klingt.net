@@ -26,7 +26,6 @@ This is my personal list of bookmarks.
 - [Computer science field guide](http://www.csfieldguide.org.nz/en/index.html) An interactive online resource---not for graduates---but more aimed towards high school students
 - [visualgo](http://visualgo.net/) Animated algorithms and data structures, Yay!
 - [hckrnews](http://hckrnews.com/) An alternative [hacker news](http://news.ycombinator.com/) interface where you can waste your time.
-- [lobste.rs](https://lobste.rs/) Like hacker news but /wo the marketing and startup BS.
 - [GalaxySQL](http://sol.gfxile.net/g3) An unusual SQL tutorial which is quite entertaining unlinke most SQL books/courses, they are boring as hell.
 - [play.rust-lang.org](https://play.rust-lang.org/) Rusts interactive playpen.
 - [play.golang.org](https://play.golang.org/) Gos playground.
