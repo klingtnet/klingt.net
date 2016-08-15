@@ -52,6 +52,7 @@ This is my personal list of bookmarks.
 
 - [Desmos](https://www.desmos.com/) A graphical online calculator. Regarding this as calculator is a bit too much understatement. This is really great to make interactive function plots
 - [wolframalpha](http://www.wolframalpha.com/) The online version of Wolfram Mathematica, a *computational knowledge engine* (did someone say singularity?)
+- [Tricki](http://www.tricki.org/tricki/map) A map of techniques for mathematical problem solving
 
 ## Audio
 
