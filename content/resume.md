@@ -70,7 +70,7 @@ Referees available on request.
 
 ### Go
 
-- Contributor to the [caddy webserver](https://github.com/mholt/caddy), maintaining the SystemD service script
+- Contributor to the [caddy webserver](https://github.com/mholt/caddy), maintainer of caddy's Arch Linux package and SystemD service script
 - Author of [gol](https://github.com/klingtnet/gol) a web based daily journal
 - Wrote an S3 synchronization service, see [spreadshirt](#spreadshirt)
 
