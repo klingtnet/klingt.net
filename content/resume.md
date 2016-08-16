@@ -110,4 +110,5 @@ Markup languages:
 
 ## Talks
 
-**2016-02-24**  [Rust - A quick Introduction](https://files.klingt.net/slides/dotdotdot-Rust.html) @ [dotdotdot](https://heartheartheart.club/dots/01.html) Leipzig
+- **2016-02-24** [Rust - A quick Introduction](https://files.klingt.net/slides/dotdotdot-Rust.html) @ [dotdotdot](https://heartheartheart.club/dots/01.html) Leipzig
+- **2016-08-02** [Rust for Pythonistas](http://www.slideshare.net/AndreasLinz1/rust-for-pythonistas-lpug) @ [LPUG](https://lpug.github.io/)
