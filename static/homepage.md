@@ -4,7 +4,7 @@
 
 I am **Andreas Linz**.
 
-Before getting a computer scientist I have learned how to solder and measure electronic components, layout schematics, build circuit boards, and even how to operate a lathe or CNC mill.
+Before becoming a computer scientist I have learned how to solder and measure electronic components, layout schematics, build circuit boards, and even how to operate a lathe or CNC mill.
 But my real passion are computers and software.
 Therefore, I decided to study computer science, got my bachelors degree in 2013 and I am currently in the last steps of finishing my masters degree at the [University of Leipzig](http://www.uni-leipzig.de/).
 The thesis topic is *Programming a Realtime Remote Controllable FM Audio Synthesizer in Rust*.
