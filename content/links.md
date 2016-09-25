@@ -53,6 +53,7 @@ This is my personal list of bookmarks.
 - [Desmos](https://www.desmos.com/) A graphical online calculator. Regarding this as calculator is a bit too much understatement. This is really great to make interactive function plots
 - [wolframalpha](http://www.wolframalpha.com/) The online version of Wolfram Mathematica, a *computational knowledge engine* (did someone say singularity?)
 - [Tricki](http://www.tricki.org/tricki/map) A map of techniques for mathematical problem solving
+- [Numerical Tours in Python](http://www.numerical-tours.com/python/) This website provides a collection of ~~IPython~~ Jupyter notebooks that demonstrate and explain certain methods with a focus on signal and image processing with wavelets.
 
 ## Audio
 
