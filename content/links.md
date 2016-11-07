@@ -48,12 +48,14 @@ This is my personal list of bookmarks.
 - [what every programmer should know about memory](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf). This article (or short book) is well written and refreshes or explains a lot of concepts that are worth to know about computer memory. This is *not* solely written for system programmers!
 - [Scientific English as a Foreign Language](http://users.wpi.edu/~nab/sci_eng/ScientificEnglish.pdf) consists of 59 lessons that cover common mistaakes made by non-native english scientists at the École Polytechnique Fédérale de Lausanne.
 
-## Math
+## Math and CS
 
 - [Desmos](https://www.desmos.com/) A graphical online calculator. Regarding this as calculator is a bit too much understatement. This is really great to make interactive function plots
 - [wolframalpha](http://www.wolframalpha.com/) The online version of Wolfram Mathematica, a *computational knowledge engine* (did someone say singularity?)
 - [Tricki](http://www.tricki.org/tricki/map) A map of techniques for mathematical problem solving
 - [Numerical Tours in Python](http://www.numerical-tours.com/python/) This website provides a collection of ~~IPython~~ Jupyter notebooks that demonstrate and explain certain methods with a focus on signal and image processing with wavelets.
+- [MIT calculus introduction course](https://ocw.mit.edu/resources/res-18-001-calculus-online-textbook-spring-2005/textbook/) that comes with 671 page thick [textbook](https://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf).
+- [Advanced Data Structures course](http://courses.csail.mit.edu/6.851/) at MIT teached by [Erik Demaine](http://erikdemaine.org/).
 
 ## Audio
 
@@ -64,6 +66,7 @@ This is my personal list of bookmarks.
 - [hifi-forum.de](http://www.hifi-forum.de/viewforum-104.html) Here meets the german DIY loudspeaker community. The [DIY speaker gallery](http://www.hifi-forum.de/viewthread-104-15079-186.html) is always worth a look
 - [diyaudio.com](http://www.diyaudio.com/) Maybe the largest online resource for DIY audio enthusiasts (except software)
 - [BBC Radio 6](http://www.bbc.co.uk/6music) Why can't we have such a great radio channel in Germany? DRadio is nice, but come on, it's way to conservative.
+- [Cookbook Formulae](http://shepazu.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html) for biquad filter coefficients.
 
 ---
 
@@ -90,3 +93,7 @@ This is my personal list of bookmarks.
 - [How bad are things?](http://slatestarcodex.com/2015/12/24/how-bad-are-things/) Everything's fine.
 - [How to write a successful covering letter](https://www.kent.ac.uk/careers/cv/coveringletters.htm). It comes the time when you've to apply for a job and this includes writing a conver letter. This article is really useful for those who've trouble writing such a text.
 - [unsplash](https://unsplash.com/) A massive amount of free high-resolution photos and a really nice source for wallpapers.
+
+## Games
+
+- [ztype](http://zty.pe/) An online top-scroller where you must type to shoot.
