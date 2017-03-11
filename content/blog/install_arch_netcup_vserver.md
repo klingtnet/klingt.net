@@ -147,7 +147,7 @@ rm -r pacaur
 - add yourself to the http group: `sudo usermod -a -G http $USER`
     - **NOTE**: the change is only visible after your next login
 - check if you're in the `http` group: `groups | grep http`
-- setup the folder for your Caddyfile: `mkdir ~/.caddy && chmod o-x && sudo ln -s ~/.caddy /etc/caddy`
+- setup the folder for your Caddyfile: `mkdir ~/.caddy && chmod o-x ~/.caddy && sudo ln -s ~/.caddy /etc/caddy`
 - create a directory for your website content: `mkdir -p ~/sites/some.domain && chmod -R o-x ~/sites` 
 - edit your Caddyfile: `vim ~/.caddy/caddy.con` (you can also manage it with git if like):
 
