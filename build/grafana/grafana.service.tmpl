@@ -1,0 +1,19 @@
+[Unit]
+Description=grafana - monitoring and metric analytics & dashboards
+Documentation=https://grafana.org/
+After=prometheus.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+[Service]
+Restart=on-failure
+ExecStart=/usr/bin/grafana-server -homepath=/usr/share/grafana -config=/etc/grafana/config.ini
+User={{ grafana_user }}
+Group={{ grafana_group }}
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=full
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
+

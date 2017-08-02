@@ -1,0 +1,70 @@
+git.{{ domain }}:80 {
+    prometheus
+    redir to git.{{ domain }}:443
+}
+git.{{ domain }}:443 {
+    prometheus
+    tls self_signed
+    proxy / localhost:{{ gitea_port }} {
+        transparent
+    }
+}
+
+pg.{{ domain }}:80 {
+    prometheus
+    redir to pg.{{ domain }}:443
+}
+pg.{{ domain }}:443 {
+    prometheus
+    tls self_signed
+    proxy / localhost:{{ pgweb_port }} {
+        transparent
+    }
+}
+
+prometheus.{{ domain }}:80 {
+    prometheus
+    redir to prometheus.{{ domain }}:443
+}
+prometheus.{{ domain }}:443 {
+    prometheus
+    tls self_signed
+    proxy / localhost:{{ prometheus_port }} {
+        transparent
+    }
+}
+
+jupyter.{{ domain }}:80 {
+    prometheus
+    redir to jupyter.{{ domain }}:443
+}
+jupyter.{{ domain }}:443 {
+    prometheus
+    tls self_signed
+    proxy / localhost:{{ jupyter_port }} {
+        transparent
+    }
+}
+
+grafana.{{ domain }}:80 {
+    prometheus
+    redir to grafana.{{ domain }}:443
+}
+grafana.{{ domain }}:443 {
+    prometheus
+    tls self_signed
+    proxy / localhost:{{ grafana_port }} {
+        transparent
+    }
+}
+
+restic.{{ domain }}:80 {
+    prometheus
+    redir to restic.{{ domain }}:443
+}
+restic.{{ domain }}:443 {
+    prometheus
+    tls self_signed
+    basicauth / {{ caddy_restic_user }} {{ caddy_restic_password }}
+    restic / {{ caddy_restic_path }}
+}

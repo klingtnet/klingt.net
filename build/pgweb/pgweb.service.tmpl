@@ -1,0 +1,18 @@
+[Unit]
+Description=pgweb - Cross-platform client for PostgreSQL databases 
+Documentation=https://github.com/sosedoff/pgweb
+After=postgresql.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+[Service]
+Restart=on-failure
+ExecStart={{ pgweb_path }} --bind=0.0.0.0 --listen={{ pgweb_port }}
+PrivateTmp=true
+PrivateDevices=true
+ProtectHome=true
+ProtectSystem=full
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
+
