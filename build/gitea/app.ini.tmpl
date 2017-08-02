@@ -1,0 +1,52 @@
+APP_NAME = Gitea
+RUN_USER = {{ gitea_user }}
+RUN_MODE = prod
+
+[database]
+DB_TYPE  = postgres
+HOST     = 127.0.0.1:5432
+NAME     = {{ gitea_db_name }}
+USER     = {{ gitea_user }}
+PASSWD   = {{ gitea_db_password }}
+SSL_MODE = disable
+
+[repository]
+ROOT = /home/{{ gitea_user }}/gitea/repos
+
+[server]
+SSH_DOMAIN       = localhost
+HTTP_PORT        = {{ gitea_port }}
+ROOT_URL         = http://localhost:{{ gitea_port }}/
+DISABLE_SSH      = false
+SSH_PORT         = 22
+LFS_START_SERVER = false
+OFFLINE_MODE     = false
+
+[mailer]
+ENABLED = false
+
+[service]
+REGISTER_EMAIL_CONFIRM     = false
+ENABLE_NOTIFY_MAIL         = false
+DISABLE_REGISTRATION       = true
+ENABLE_CAPTCHA             = false
+REQUIRE_SIGNIN_VIEW        = false
+DEFAULT_KEEP_EMAIL_PRIVATE = false
+NO_REPLY_ADDRESS           = noreply.example.org
+
+[picture]
+DISABLE_GRAVATAR        = false
+ENABLE_FEDERATED_AVATAR = false
+
+[session]
+PROVIDER = file
+
+[log]
+MODE      = file
+LEVEL     = Info
+ROOT_PATH = /home/gitea/gitea/logs
+
+[security]
+INSTALL_LOCK = true
+# TODO change this
+SECRET_KEY   = jU7wm95B2j

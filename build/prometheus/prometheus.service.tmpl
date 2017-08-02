@@ -1,0 +1,20 @@
+[Unit]
+Description=prometheus - Monitoring system and time series database.
+Documentation=https://github.com/prometheus/prometheus
+After=network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+[Service]
+Restart=on-failure
+ExecStart={{ prometheus_path }}\
+    -web.listen-address "127.0.0.1:{{ prometheus_port }}"\
+    -config.file {{ prometheus_config_path }}
+PrivateTmp=true
+PrivateDevices=true
+ProtectHome=true
+ProtectSystem=full
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
+

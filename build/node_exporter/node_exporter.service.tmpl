@@ -1,0 +1,19 @@
+[Unit]
+Description=node_exporter - Exporter for machine metrics
+Documentation=https://github.com/prometheus/node_exporter
+After=network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
+Requires=prometheus.service
+
+[Service]
+Restart=on-failure
+ExecStart={{ node_exporter_path }} -web.listen-address "{{ node_exporter_address }}"
+PrivateTmp=true
+PrivateDevices=true
+ProtectHome=true
+ProtectSystem=full
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
+
