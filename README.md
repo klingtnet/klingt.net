@@ -19,11 +19,11 @@ A [series of articles](https://www.digitalocean.com/community/tutorials/an-intro
 
 The following list of services should be configured and deployed automatically:
 
-- caddy
+- [x] caddy
 - [x] gitea
 - [x] prometheus
-- [] grafana
+- [x] grafana
 - [x] jupyter
 - [x] postgres
 - [x] pgweb
-- netdata
+- [x] ~~netdata~~, node_exporter
