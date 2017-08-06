@@ -5,7 +5,7 @@ VERSION:=1.1.2
 all: gitea
 
 gitea: gitea-$(VERSION)-linux-amd64
-	sha256sum $@
+	sha256sum $<
 	cp $< $@
 	chmod +x $@
 
