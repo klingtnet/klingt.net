@@ -17,6 +17,7 @@ pg.{{ domain }}:80 {
 pg.{{ domain }}:443 {
     import common.caddy
     tls self_signed
+    basicauth / {{ user_name }} {{ user_password }}
     proxy / localhost:{{ pgweb_port }} {
         transparent
     }
@@ -29,6 +30,7 @@ prometheus.{{ domain }}:80 {
 prometheus.{{ domain }}:443 {
     import common.caddy
     tls self_signed
+    basicauth / {{ user_name }} {{ user_password }}
     proxy / localhost:{{ prometheus_port }} {
         transparent
     }
@@ -41,6 +43,7 @@ jupyter.{{ domain }}:80 {
 jupyter.{{ domain }}:443 {
     import common.caddy
     tls self_signed
+    basicauth / {{ user_name }} {{ user_password }}
     proxy / localhost:{{ jupyter_port }} {
         transparent
     }
@@ -53,6 +56,7 @@ grafana.{{ domain }}:80 {
 grafana.{{ domain }}:443 {
     import common.caddy
     tls self_signed
+    basicauth / {{ user_name }} {{ user_password }}
     proxy / localhost:{{ grafana_port }} {
         transparent
     }
