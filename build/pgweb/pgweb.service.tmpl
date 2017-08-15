@@ -5,7 +5,7 @@ After=postgresql.target
 Wants=network-online.target systemd-networkd-wait-online.service
 
 [Service]
-Restart=on-failure
+Restart=on-abnormal
 ExecStart={{ pgweb_path }} --bind=0.0.0.0 --listen={{ pgweb_port }}
 PrivateTmp=true
 PrivateDevices=true

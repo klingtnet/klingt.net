@@ -5,7 +5,7 @@ After=network-online.target
 Wants=network-online.target systemd-networkd-wait-online.service
 
 [Service]
-Restart=on-failure
+Restart=on-abnormal
 
 ; User and group the process will run as.
 User={{ caddy_user }}
