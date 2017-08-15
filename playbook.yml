@@ -150,6 +150,7 @@
       src: ./build/pgweb/pgweb.service.tmpl
       dest: /etc/systemd/system/pgweb.service
       mode: 0600
+    register: pgweb_service_result
   - name: Start pgweb
     become: true
     systemd:
@@ -157,6 +158,13 @@
       name: pgweb
       state: started
       enabled: true
+  - name: Restart pgweb
+    become: true
+    systemd:
+      daemon_reload: yes
+      name: pgweb
+      state: restarted
+    when: pgweb_service_result.changed
   # GITEA
   - name: Build gitea
     command: make -C ./build/gitea
@@ -173,6 +181,7 @@
       src: ./build/gitea/gitea.service.tmpl
       dest: /etc/systemd/system/gitea.service
       mode: 0600
+    register: gitea_service_result
   - name: "Create group {{ gitea_group }}"
     become: true
     group:
@@ -216,6 +225,7 @@
       dest: /home/gitea/gitea/custom/conf/app.ini
       mode: 0600
       owner: "{{ gitea_user }}"
+    register: gitea_config_result
   - name: Start gitea
     become: true
     systemd:
@@ -223,6 +233,13 @@
       name: gitea
       state: started
       enabled: true
+  - name: Restart gitea
+    become: true
+    systemd:
+      daemon_reload: true
+      name: gitea
+      state: restarted
+    when: gitea_config_result.changed or gitea_service_result.changed
   - name: Wait for Gitea to startup
     uri:
       url: "http://127.0.0.1:{{ gitea_port }}/"
@@ -283,12 +300,14 @@
       owner: "{{ jupyter_user }}"
       group: "{{ jupyter_group }}"
       mode: 0600
+    register: jupyter_config_result
   - name: Install jupyter systemd unit
     become: true
     template:
       src: ./build/jupyter/jupyter.service.tmpl
       dest: /etc/systemd/system/jupyter.service
       mode: 0600
+    register: jupyter_systemd_result
   - name: Start jupyter
     become: true
     systemd:
@@ -296,6 +315,14 @@
       name: jupyter
       state: started
       enabled: true
+    register: jupyter_service_result
+  - name: Restart jupyter
+    become: true
+    systemd:
+      daemon_reload: true
+      name: jupyter
+      state: restarted
+    when: jupyter_config_result.changed or jupyter_service_result.changed
   # CADDY
   - name: "Create group {{ caddy_group }}"
     become: true
@@ -361,16 +388,19 @@
     with_items:
       - Caddyfile
       - common.caddy
+    register: caddy_config_result
   - name: Validate caddy configuration
     become: true
     become_user: "{{ caddy_user }}"
     command: "{{ caddy_path }} -conf=/etc/caddy/Caddyfile -validate"
+    when: caddy_config_result.changed
   - name: Install caddy systemd unit
     become: true
     template:
       src: ./build/caddy/caddy.service.tmpl
       dest: /etc/systemd/system/caddy.service
       mode: 0600
+    register: caddy_service_result
   - name: Start caddy
     become: true
     systemd:
@@ -378,6 +408,13 @@
       name: caddy
       state: started
       enabled: true
+  - name: Restart caddy
+    become: true
+    systemd:
+      daemon_reload: yes
+      name: caddy
+      state: restarted
+    when: caddy_config_result.changed or caddy_service_result.changed
   # PROMETHEUS
   - name: Build prometheus
     command: make -C ./build/prometheus
@@ -400,12 +437,14 @@
       src: ./build/prometheus/prometheus.yml.tmpl
       dest: /etc/prometheus/config.yml
       mode: 0600
+    register: prometheus_config_result
   - name: Install prometheus systemd unit
     become: true
     template:
       src: ./build/prometheus/prometheus.service.tmpl
       dest: /etc/systemd/system/prometheus.service
       mode: 0600
+    register: prometheus_service_result
   - name: Start prometheus
     become: true
     systemd:
@@ -413,6 +452,13 @@
       name: prometheus
       state: started
       enabled: true
+  - name: Restart prometheus
+    become: true
+    systemd:
+      name: prometheus
+      state: restarted
+      daemon_reload: true
+    when: prometheus_config_result.changed or prometheus_service_result.changed
   # NODE_EXPORTER
   - name: Build node_exporter
     command: make -C ./build/node_exporter
@@ -429,6 +475,7 @@
       src: ./build/node_exporter/node_exporter.service.tmpl
       dest: /etc/systemd/system/node_exporter.service
       mode: 0600
+    register: node_exporter_service_result
   - name: Start node_exporter
     become: true
     systemd:
@@ -436,6 +483,13 @@
       name: node_exporter
       state: started
       enabled: true
+  - name: Restart node_exporter
+    become: true
+    systemd:
+      daemon_reload: true
+      name: node_exporter
+      state: restarted
+    when: node_exporter_service_result.changed
   # GRAFANA
   - name: "Create group {{ grafana_group }}"
     become: true
@@ -486,12 +540,14 @@
       src: ./build/grafana/config.ini.tmpl
       dest: /etc/grafana/config.ini
       mode: 0644 
+    register: grafana_config_result
   - name: Install grafana systemd unit
     become: true
     template:
       src: ./build/grafana/grafana.service.tmpl
       dest: /etc/systemd/system/grafana.service
       mode: 0600
+    register: grafana_service_result
   - name: Create postgres user grafana
     become: true
     become_user: postgres
@@ -512,3 +568,10 @@
       name: grafana
       state: started
       enabled: true
+  - name: Restart grafana
+    become: true
+    systemd:
+      daemon_reload: true
+      name: grafana
+      state: restarted
+    when: grafana_config_result.changed or grafana_service_result.changed
