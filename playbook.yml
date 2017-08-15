@@ -51,6 +51,7 @@
     grafana_db_name: grafana
     grafana_db_password: ThisIsInsecure
     user_name: alinz
+    user_password: ThisIsInsecure
     user_email: alinz@email.provider
     locale: en_US.UTF-8
   tasks:
@@ -94,7 +95,7 @@
       append: true
       groups: wheel
       # http://docs.ansible.com/ansible/user_module.html
-      # password: ...
+      password: "{{ user_password }}"
   # POSTGRES
   - name: Install postgres
     become: true
