@@ -7,6 +7,7 @@
 - hosts: all
   vars:
     domain: klingt.vnet
+    domain_version: unknown
     db_name: klingt-net
     # TODO encrypt this!
     db_password: ThisIsInsecure
@@ -53,6 +54,12 @@
     user_email: alinz@email.provider
     locale: en_US.UTF-8
   tasks:
+  - name: Set version number
+    delegate_to: localhost
+    shell: git describe --always --tags
+    register: git_version
+  - set_fact:
+      domain_version: "{{ git_version.stdout }}"
   - name: "Generate {{ locale }}"
     locale_gen:
       name: "{{ locale }}"
@@ -333,14 +340,17 @@
       group: "{{ caddy_group }}"
       state: directory
       mode: 0700
-  - name: Install Caddyfile
+  - name: Configure caddy
     become: true
     template:
-      src: ./build/caddy/Caddyfile.tmpl
-      dest: /etc/caddy/Caddyfile
+      src: "./build/caddy/{{ item }}.tmpl"
+      dest: "/etc/caddy/{{ item }}"
       owner: "{{ caddy_user }}"
       group: "{{ caddy_group }}"
       mode: 0600
+    with_items:
+      - Caddyfile
+      - common.caddy
   - name: Validate caddy configuration
     become: true
     become_user: "{{ caddy_user }}"
