@@ -1,9 +1,8 @@
 git.{{ domain }}:80 {
-    prometheus
+    import common.caddy
     redir https://git.{{ domain }}{uri}
 }
 git.{{ domain }}:443 {
-    prometheus
     import common.caddy
     tls self_signed
     proxy / localhost:{{ gitea_port }} {
@@ -12,11 +11,10 @@ git.{{ domain }}:443 {
 }
 
 pg.{{ domain }}:80 {
-    prometheus
+    import common.caddy
     redir https://pg.{{ domain }}{uri}
 }
 pg.{{ domain }}:443 {
-    prometheus
     import common.caddy
     tls self_signed
     proxy / localhost:{{ pgweb_port }} {
@@ -25,11 +23,11 @@ pg.{{ domain }}:443 {
 }
 
 prometheus.{{ domain }}:80 {
-    prometheus
+    import common.caddy
     redir https://prometheus.{{ domain }}{uri}
 }
 prometheus.{{ domain }}:443 {
-    prometheus
+    import common.caddy
     tls self_signed
     proxy / localhost:{{ prometheus_port }} {
         transparent
@@ -37,11 +35,11 @@ prometheus.{{ domain }}:443 {
 }
 
 jupyter.{{ domain }}:80 {
-    prometheus
+    import common.caddy
     redir https://jupyter.{{ domain }}{uri}
 }
 jupyter.{{ domain }}:443 {
-    prometheus
+    import common.caddy
     tls self_signed
     proxy / localhost:{{ jupyter_port }} {
         transparent
@@ -49,11 +47,11 @@ jupyter.{{ domain }}:443 {
 }
 
 grafana.{{ domain }}:80 {
-    prometheus
+    import common.caddy
     redir https://grafana.{{ domain }}{uri}
 }
 grafana.{{ domain }}:443 {
-    prometheus
+    import common.caddy
     tls self_signed
     proxy / localhost:{{ grafana_port }} {
         transparent
@@ -61,11 +59,11 @@ grafana.{{ domain }}:443 {
 }
 
 restic.{{ domain }}:80 {
-    prometheus
+    import common.caddy
     redir https://restic.{{ domain }}{uri}
 }
 restic.{{ domain }}:443 {
-    prometheus
+    import common.caddy
     tls self_signed
     basicauth / {{ caddy_restic_user }} {{ caddy_restic_password }}
     restic / {{ caddy_restic_path }}
