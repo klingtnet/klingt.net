@@ -1,6 +1,5 @@
 .PHONY: clean
 
-VERSION:=1.1.2
 PLUGINS:=http.cgi,http.cors,http.filemanager,http.filter,http.ipfilter,http.mailout,http.minify,http.prometheus,http.ratelimit,http.realip,http.restic,http.upload,http.cache,http.webdav
 
 all: caddy
