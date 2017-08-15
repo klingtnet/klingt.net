@@ -75,7 +75,7 @@ restic.{{ domain }}:443 {
 
 files.{{ domain }}:80 {
     import common.caddy
-    redir files.{{ domain }}:443{uri}
+    redir https://files.{{ domain }}{uri}
 }
 files.{{ domain }}:443 {
     import common.caddy
@@ -95,7 +95,7 @@ files.{{ domain }}:443 {
 
 webdav.{{ domain }}:80 {
     import common.caddy
-    redir webdav.{{ domain }}:443{uri}
+    redir https://webdav.{{ domain }}{uri}
 }
 webdav.{{ domain }}:443 {
     import common.caddy
