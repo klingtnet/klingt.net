@@ -34,6 +34,7 @@
     caddy_restic_path: "/home/{{ caddy_user }}/restic"
     caddy_restic_user: alinz
     caddy_restic_password: ThisIsInsecure
+    caddy_file_browser_root: "/var/caddy/files.{{ domain }}"
     # ThisIsInsecure
     jupyter_password: 'sha1:7ba04f8b7db3:b647b05c2e317857828f9f4fc929b08d485f9c76'
     prometheus_path: /usr/bin/prometheus
@@ -329,6 +330,14 @@
     become: true
     file:
       name: "{{ caddy_restic_path }}"
+      owner: "{{ caddy_user }}"
+      group: "{{ caddy_group }}"
+      state: directory
+      mode: 0700
+  - name: "Create {{ caddy_file_browser_root }} directory"
+    become: true
+    file:
+      name: "{{ caddy_file_browser_root }}/public"
       owner: "{{ caddy_user }}"
       group: "{{ caddy_group }}"
       state: directory

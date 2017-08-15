@@ -72,3 +72,36 @@ restic.{{ domain }}:443 {
     basicauth / {{ caddy_restic_user }} {{ caddy_restic_password }}
     restic / {{ caddy_restic_path }}
 }
+
+files.{{ domain }}:80 {
+    import common.caddy
+    redir files.{{ domain }}:443{uri}
+}
+files.{{ domain }}:443 {
+    import common.caddy
+    tls self_signed
+    basicauth / {{ user_name }} {{ user_password }}
+    root {{ caddy_file_browser_root }}/public
+    upload / {
+        to {{ caddy_file_browser_root }}/public
+        filenames_form NFC
+    }
+    mime {
+        # video/x-matroska is not supported in firefox
+        .mkv video/webm
+    }
+    browse
+}
+
+webdav.{{ domain }}:80 {
+    import common.caddy
+    redir webdav.{{ domain }}:443{uri}
+}
+webdav.{{ domain }}:443 {
+    import common.caddy
+    tls self_signed
+    basicauth / {{ user_name }} {{ user_password }}
+    webdav {
+        scope {{ caddy_file_browser_root }}
+    }
+}
