@@ -5,7 +5,7 @@ After=prometheus.target
 Wants=network-online.target systemd-networkd-wait-online.service
 
 [Service]
-Restart=on-failure
+Restart=on-abnormal
 ExecStart=/usr/bin/grafana-server -homepath=/usr/share/grafana -config=/etc/grafana/config.ini
 User={{ grafana_user }}
 Group={{ grafana_group }}
