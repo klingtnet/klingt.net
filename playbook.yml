@@ -72,6 +72,19 @@
   - name: Set timezone to UTC
     timezone:
       name: Etc/UTC
+  - name: Create systemd-journald log path
+    become: true
+    file:
+      path: /var/log/journal
+      state: directory
+      mode: 0600
+    register: journald_dir_result
+  - name: Restart journal process
+    become: true
+    systemd:
+      name: systemd-journald
+      state: restarted
+    when: journald_dir_result.changed
   - name: Update package index
     apt: update_cache=yes package=sudo
     become: true
