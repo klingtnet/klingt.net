@@ -24,4 +24,5 @@ checkout-version: $(CADDY_SRC)
 	cd $(CADDY_SRC) && git checkout --force --quiet $(VERSION)
 
 clean:
-	rm -rf caddy*
+	rm -f caddy
+	rm -rf caddy-*
