@@ -106,11 +106,12 @@ webdav.{{ domain }}:443 {
     }
 }
 
-proxy.{{ domain }} {
+proxy.{{ domain }}:443 {
     tls self_signed
     log stdout
-    basicauth {{ user_name }} {{ user_password }}
     forwardproxy {
+        basicauth {{ user_name }} {{ user_password }}
         hide_ip
+        serve_pac
     }
 }
