@@ -105,3 +105,12 @@ webdav.{{ domain }}:443 {
         scope {{ caddy_file_browser_root }}
     }
 }
+
+proxy.{{ domain }} {
+    tls self_signed
+    log stdout
+    basicauth {{ user_name }} {{ user_password }}
+    forwardproxy {
+        hide_ip
+    }
+}
