@@ -1,0 +1,5 @@
+#db_password: password
+postgres_host: localhost
+postgres_port: 5432
+pgweb_path: /usr/bin/pgweb
+pgweb_port: 9999

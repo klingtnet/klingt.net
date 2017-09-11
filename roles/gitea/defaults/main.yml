@@ -1,0 +1,7 @@
+gitea_user: gitea
+gitea_group: gitea
+gitea_db_name: gitea
+gitea_path: /usr/bin/gitea
+gitea_port: 10000
+#gitea_db_password: password
+#gitea_admin_password: password

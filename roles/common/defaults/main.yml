@@ -1,0 +1,8 @@
+#user_name: default_user
+#user_password: ThisIsInsecure
+#user_email: user@email-provider.com
+locale: en_US.UTF-8
+domain: klingt.net
+domain_version: unknown-version
+db_name: klingt-net
+#db_password: password
