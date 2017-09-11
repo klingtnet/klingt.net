@@ -1,0 +1,77 @@
+- name: "Create group {{ grafana_group }}"
+  become: true
+  group:
+    name: "{{ grafana_group }}"
+- name: Create grafana user
+  become: true
+  user:
+    name: "{{ grafana_user }}"
+    comment: "Grafana run user"
+    append: true
+    group: "{{ grafana_group }}"
+    shell: /bin/false
+- name: Create postgres user grafana
+  become: true
+  become_user: postgres
+  postgresql_user:
+    name: grafana
+    password: "{{ grafana_db_password }}"
+- name: Build grafana
+  command: make -C ./build/grafana
+  delegate_to: localhost
+- name: Create grafana homepath
+  become: true
+  file:
+    path: /usr/share/grafana
+    state: directory
+    mode: 0755
+- name: Install grafana
+  become: true
+  # copy does not scale for directories
+  synchronize:
+    src: "./build/grafana/grafana/{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - { src: 'bin/grafana-server', dest: '/usr/bin/grafana-server' }
+    - { src: 'conf', dest: '/usr/share/grafana' }      
+    - { src: 'public', dest: '/usr/share/grafana' }
+- name: Create grafana config path
+  become: true
+  file:
+    path: /etc/grafana
+    state: directory
+    mode: 0755
+- name: Install grafana configuration
+  become: true
+  template:
+    src: config.ini.tmpl
+    dest: /etc/grafana/config.ini
+    mode: 0644
+  notify: restart-grafana 
+- name: Install grafana systemd unit
+  become: true
+  template:
+    src: grafana.service.tmpl
+    dest: /etc/systemd/system/grafana.service
+    mode: 0600
+  notify: restart-grafana
+- name: Create postgres user grafana
+  become: true
+  become_user: postgres
+  postgresql_user:
+    name: grafana
+    password: "{{ grafana_db_password }}"
+- name: "Create database {{ grafana_db_name }}"
+  become: true
+  become_user: "postgres"
+  postgresql_db:
+    name: grafana
+    owner: "{{ grafana_db_name }}"
+    state: present
+- name: Start grafana
+  become: true
+  systemd:
+    daemon_reload: yes
+    name: grafana
+    state: started
+    enabled: true

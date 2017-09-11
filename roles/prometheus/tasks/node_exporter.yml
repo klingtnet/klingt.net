@@ -1,0 +1,23 @@
+- name: Build node_exporter
+  command: make -C ./build/node_exporter
+  delegate_to: localhost
+- name: Install node_exporter
+  become: true
+  copy:
+    src: ./build/node_exporter/node_exporter
+    dest: "{{ node_exporter_path }}"
+    mode: 0755
+- name: Install node_exporter systemd unit
+  become: true
+  template:
+    src: node_exporter.service.tmpl
+    dest: /etc/systemd/system/node_exporter.service
+    mode: 0600
+  notify: restart-node-exporter
+- name: Start node_exporter
+  become: true
+  systemd:
+    daemon_reload: yes
+    name: node_exporter
+    state: started
+    enabled: true
