@@ -1,0 +1,38 @@
+- name: Install postgres
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - postgresql
+    - python-psycopg2
+- name: Start postgres
+  become: true
+  systemd:
+    name: postgresql
+    state: started
+    enabled: true
+- name: "Create postgres user {{ user_name }}"
+  become: true
+  become_user: postgres
+  postgresql_user:
+    name: "{{ user_name }}"
+    password: "{{ db_password }}"
+    role_attr_flags: NOSUPERUSER,CREATEDB
+- name: "Create database {{ db_name }}"
+  become: true
+  become_user: "{{ user_name }}"
+  postgresql_db:
+    name: "{{ db_name }}"
+    login_user: "{{ user_name }}"
+    state: present
+- name: "Create schemas"
+  become: true
+  become_user: "{{ user_name }}"
+  postgresql_schema:
+    database: "{{ db_name }}"
+    name: blog
+    login_user: "{{ user_name }}"
+    login_password: "{{ db_password }}"
+
+- include: pgweb.yml

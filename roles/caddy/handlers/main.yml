@@ -1,0 +1,12 @@
+- name: Validate caddy configuration
+  listen: caddy-validate
+  become: true
+  become_user: "{{ caddy_user }}"
+  command: "{{ caddy_path }} -conf=/etc/caddy/Caddyfile -validate"
+- name: Restart caddy
+  listen: restart-caddy
+  become: true
+  systemd:
+    daemon_reload: yes
+    name: caddy
+    state: restarted
