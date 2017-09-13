@@ -15,7 +15,9 @@ $(GOPATH): $(CADDY_SRC)
 	ln -sf $(shell pwd)/$(CADDY_SRC) $(GOPATH)/src/github.com/mholt/caddy
 
 patch: $(CADDY_SRC)
-	cd $(CADDY_SRC) && git apply ../plugins.patch
+	cd $(CADDY_SRC)\
+		&& git apply ../plugins.patch\
+		&& git revert --no-edit --no-commit 56453e9664aa2c24115eb52a4e933febb3cac1f7
 
 $(CADDY_SRC):
 	git clone https://github.com/mholt/caddy.git $@
