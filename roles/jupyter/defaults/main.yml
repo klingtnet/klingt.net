@@ -1,0 +1,4 @@
+jupyter_user: jupyter
+jupyter_group: jupyter
+jupyter_port: 10001
+#jupyter_password: 'sha1:<salt>:<password-hash>'

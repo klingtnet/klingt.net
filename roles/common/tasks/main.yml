@@ -1,0 +1,42 @@
+- name: "Generate {{ locale }}"
+  locale_gen:
+    name: "{{ locale }}"
+    state: present
+- name: "Set {{ locale }}"
+  become: true
+  command: "update-locale LANG={{ locale }}"
+- name: Set timezone to UTC
+  timezone:
+    name: Etc/UTC
+- name: Create systemd-journald log path
+  become: true
+  file:
+    path: /var/log/journal
+    state: directory
+    mode: 0600
+  notify: restart-journald
+- name: Update package index
+  apt: update_cache=yes package=sudo
+  become: true
+- name: Check wheel group
+  become: true
+  group:
+    name: wheel
+    state: present
+- name: Allow wheel to sudo (with password)
+  become: true
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    backup: true
+    regexp: '^#\s*%wheel\s+ALL=\(ALL\)\s+ALL$'
+    line: '%wheel ALL=(ALL) ALL'
+- name: "Create user {{ user_name }}"
+  become: true
+  user:
+    name: "{{ user_name }}"
+    comment: "{{ user_email }}"
+    append: true
+    groups: wheel
+    # http://docs.ansible.com/ansible/user_module.html
+    password: "{{ user_password }}"
