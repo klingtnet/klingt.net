@@ -9,8 +9,8 @@
     user_name: alinz
     user_password: ThisIsInsecure
     user_email: "{{ user_name }}@email-provider.com"
-    domain: klingt.vnet
-    domain_version: ''
+    domain: "{{ var_domain | default('klingt.net') }}"
+    domain_version: unknown
     db_password: ThisIsInsecure
     gitea_db_password: ThisIsInsecure
     gitea_admin_password: ThisIsInsecure
