@@ -1,0 +1,24 @@
+- name: Build pgweb
+  command: make -C ./build/pgweb
+  delegate_to: localhost
+- name: Install pgweb
+  become: true
+  copy:
+    src: ./build/pgweb/pgweb
+    dest: "{{ pgweb_path }}"
+    mode: 0755
+- name: Install pgweb systemd unit
+  become: true
+  template:
+    src: pgweb.service.tmpl
+    dest: /etc/systemd/system/pgweb.service
+    mode: 0600
+  register: pgweb_service_result
+- name: Start pgweb
+  become: true
+  systemd:
+    daemon_reload: yes
+    name: pgweb
+    state: started
+    enabled: true
+  notify: restart-pgweb

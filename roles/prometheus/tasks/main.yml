@@ -1,0 +1,38 @@
+- name: Build prometheus
+  command: make -C ./build/prometheus
+  delegate_to: localhost
+- name: Install prometheus
+  become: true
+  copy:
+    src: ./build/prometheus/prometheus
+    dest: "{{ prometheus_path }}"
+    mode: 0755
+- name: Create prometheus folder
+  become: true
+  file:
+    path: /etc/prometheus
+    state: directory
+    mode: 0700
+- name: Install prometheus configuration
+  become: true
+  template:
+    src: prometheus.yml.tmpl
+    dest: /etc/prometheus/config.yml
+    mode: 0600
+  notify: restart-prometheus
+- name: Install prometheus systemd unit
+  become: true
+  template:
+    src: prometheus.service.tmpl
+    dest: /etc/systemd/system/prometheus.service
+    mode: 0600
+  notify: restart-prometheus
+- name: Start prometheus
+  become: true
+  systemd:
+    daemon_reload: yes
+    name: prometheus
+    state: started
+    enabled: true
+
+- include: node_exporter.yml
