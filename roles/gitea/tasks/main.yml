@@ -1,0 +1,88 @@
+# GITEA
+- name: Build gitea
+  command: make -C ./build/gitea
+  delegate_to: localhost
+- name: Install gitea
+  become: true
+  copy:
+    src: ./build/gitea/gitea
+    dest: "{{ gitea_path }}"
+    mode: 0755
+- name: Install gitea systemd unit
+  become: true
+  template:
+    src: gitea.service.tmpl
+    dest: /etc/systemd/system/gitea.service
+    mode: 0600
+  notify: restart-gitea
+- name: "Create group {{ gitea_group }}"
+  become: true
+  group:
+    name: "{{ gitea_group }}"
+- name: "Create user {{ gitea_user }}"
+  become: true
+  user:
+    name: "{{ gitea_user }}"
+    comment: "Gitea run user"
+    append: true
+    group: "{{ gitea_group }}"
+    # needs a shell because of git
+- name: Create gitea folder
+  become: true
+  become_user: "{{ gitea_user }}"
+  file:
+    path: "/home/{{ gitea_user }}/gitea/{{ item }}"
+    state: directory
+    mode: 0700
+  with_items:
+    - repos
+    - logs
+    - custom/conf
+- name: Create postgres user gitea
+  become: true
+  become_user: postgres
+  postgresql_user:
+    name: gitea
+    password: "{{ gitea_db_password }}"
+- name: "Create database {{ gitea_db_name }}"
+  become: true
+  become_user: "postgres"
+  postgresql_db:
+    name: gitea
+    owner: "{{ gitea_db_name }}"
+    state: present
+- name: Create gitea configuration
+  become: true
+  template:
+    src: app.ini.tmpl
+    dest: /home/gitea/gitea/custom/conf/app.ini
+    mode: 0600
+    owner: "{{ gitea_user }}"
+  notify: restart-gitea
+- name: Start gitea
+  become: true
+  systemd:
+    daemon_reload: yes
+    name: gitea
+    state: started
+    enabled: true
+- name: Wait for Gitea to startup
+  uri:
+    url: "http://127.0.0.1:{{ gitea_port }}/"
+    status_code: 200
+  register: result
+  until: result.status == 200
+  retries: 3
+  delay: 1
+- name: Check if gitea admin user was created
+  become: true
+  become_user: "{{ gitea_user }}"
+  command: "psql 'postgresql://{{ gitea_user }}:{{ gitea_db_password }}@localhost/{{ gitea_db_name }}' --no-align --tuples-only --quiet --command 'select exists (select 1 from \"user\" where is_admin);'"
+  register: gitea_admin_check
+- name: "Create gitea admin user {{ user_name }}"
+  become: true
+  become_user: gitea
+  command: "gitea admin create-user --name {{ user_name }} --password {{ gitea_admin_password }} --email {{ user_email }} --admin --config ./gitea/custom/conf/app.ini"
+  args:
+    chdir: "/home/{{ gitea_user }}"
+  when: gitea_admin_check.stdout.strip() == 'f'

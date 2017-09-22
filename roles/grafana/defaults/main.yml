@@ -1,0 +1,11 @@
+grafana_user: grafana
+grafana_group: grafana
+grafana_address: 127.0.0.1
+grafana_port: 10002
+grafana_db_name: grafana
+grafana_db_password: ThisIsInsecure
+grafana_domain: "grafana.{{ domain }}"
+#grafana_password: password
+node_exporter_path: /usr/bin/node_exporter
+node_exporter_port: 9091
+node_exporter_address: "127.0.0.1:{{ node_exporter_port }}"

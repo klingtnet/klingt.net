@@ -1,0 +1,29 @@
+---
+# TODOs
+# - cron for postgres backup (pg_dumpall | tar --use-compress-programm=pixz -cJf postgres-$(date foobar).tar.xz
+- hosts: all
+  vars:
+    user_name: alinz
+    user_email: "{{ user_name }}@email-provider.com"
+    domain: "{{ var_domain | default('klingt.net') }}"
+    domain_version: unknown
+    caddy_email: "{{ user_email }}"
+    caddy_restic_user: alinz
+    jupyter_password: 'sha1:7ba04f8b7db3:b647b05c2e317857828f9f4fc929b08d485f9c76'
+  vars_files:
+    - vault_vars.yml
+  roles:
+    - common
+    - postgres
+    - gitea
+    - jupyter
+    - caddy
+    - prometheus
+    - grafana
+  tasks:
+  - name: Set version number
+    delegate_to: localhost
+    shell: git describe --always --tags
+    register: git_version
+  - set_fact:
+      domain_version: "{{ git_version.stdout }}"

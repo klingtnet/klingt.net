@@ -1,0 +1,81 @@
+- name: "Create group {{ caddy_group }}"
+  become: true
+  group:
+    name: "{{ caddy_group }}"
+- name: Create caddy user
+  become: true
+  user:
+    name: "{{ caddy_user }}"
+    comment: "Caddy run user"
+    append: true
+    group: "{{ caddy_group }}"
+    shell: /bin/false
+- name: Build caddy
+  command: make -C ./build/caddy
+  delegate_to: localhost
+- name: Install caddy
+  become: true
+  copy:
+    src: ./build/caddy/caddy
+    dest: "{{ caddy_path }}"
+    mode: 0755
+- name: Create caddy certificate directory
+  become: true
+  file:
+    name: "/home/{{ caddy_user }}/certs"
+    owner: "{{ caddy_user }}"
+    group: "{{ caddy_group }}"
+    state: directory
+    mode: 0700
+- name: Create caddy restic path
+  become: true
+  file:
+    name: "{{ caddy_restic_path }}"
+    owner: "{{ caddy_user }}"
+    group: "{{ caddy_group }}"
+    state: directory
+    mode: 0700
+- name: "Create {{ caddy_file_browser_root }} directory"
+  become: true
+  file:
+    name: "{{ caddy_file_browser_root }}/public"
+    owner: "{{ caddy_user }}"
+    group: "{{ caddy_group }}"
+    state: directory
+    mode: 0700
+- name: Create caddy configuration directory
+  become: true
+  file:
+    name: "/etc/caddy"
+    owner: "{{ caddy_user }}"
+    group: "{{ caddy_group }}"
+    state: directory
+    mode: 0700
+- name: Configure caddy
+  become: true
+  template:
+    src: "{{ item }}.tmpl"
+    dest: "/etc/caddy/{{ item }}"
+    owner: "{{ caddy_user }}"
+    group: "{{ caddy_group }}"
+    mode: 0600
+  with_items:
+    - Caddyfile
+    - common.caddy
+  notify:
+    - caddy-validate
+    - restart-caddy
+- name: Install caddy systemd unit
+  become: true
+  template:
+    src: caddy.service.tmpl
+    dest: /etc/systemd/system/caddy.service
+    mode: 0600
+- name: Start caddy
+  become: true
+  systemd:
+    daemon_reload: yes
+    name: caddy
+    state: started
+    enabled: true
+  notify: restart-caddy
