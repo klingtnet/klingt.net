@@ -7,18 +7,14 @@
 - hosts: all
   vars:
     user_name: alinz
-    user_password: ThisIsInsecure
     user_email: "{{ user_name }}@email-provider.com"
     domain: "{{ var_domain | default('klingt.net') }}"
     domain_version: unknown
-    db_password: ThisIsInsecure
-    gitea_db_password: ThisIsInsecure
-    gitea_admin_password: ThisIsInsecure
     caddy_email: "{{ user_email }}"
     caddy_restic_user: alinz
-    caddy_restic_password: ThisIsInsecure
     jupyter_password: 'sha1:7ba04f8b7db3:b647b05c2e317857828f9f4fc929b08d485f9c76'
-    grafana_password: ThisIsInsecure
+  vars_files:
+    - vault_vars.yml
   roles:
     - common
     - postgres
