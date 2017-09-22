@@ -1,0 +1,52 @@
+- name: "Create group {{jupyter_group }}"
+  become: true
+  group:
+    name: "{{jupyter_group }}"
+- name: "Create user {{jupyter_user }}"
+  become: true
+  user:
+    name: "{{jupyter_user }}"
+    comment: Jupyter run user"
+    append: true
+    group: "{{jupyter_group }}"
+    shell: /bin/false
+- name: Install Python3 PIP
+  become: true
+  apt:
+    name: python3-pip
+    state: latest
+- name: Install jupyter
+  become: true
+  become_user: "{{ jupyter_user }}"
+  command: pip3 install --user jupyter
+- name: Create jupyter config directory
+  become: true
+  file:
+    path: "/home/{{ jupyter_user }}//.jupyter"
+    owner: "{{ jupyter_user }}"
+    group: "{{ jupyter_group }}"
+    state: directory
+    mode: 0700
+- name: Install jupyter configuration
+  become: true
+  template:
+    src: jupyter_notebook_config.py.tmpl
+    dest: "/home/{{ jupyter_user }}/.jupyter/jupyter_notebook_config.py"
+    owner: "{{ jupyter_user }}"
+    group: "{{ jupyter_group }}"
+    mode: 0600
+  notify: restart-jupyter
+- name: Install jupyter systemd unit
+  become: true
+  template:
+    src: jupyter.service.tmpl
+    dest: /etc/systemd/system/jupyter.service
+    mode: 0600
+  notify: restart-jupyter
+- name: Start jupyter
+  become: true
+  systemd:
+    daemon_reload: yes
+    name: jupyter
+    state: started
+    enabled: true

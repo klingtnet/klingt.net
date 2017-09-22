@@ -1,0 +1,117 @@
+git.{{ domain }}:80 {
+    import common.caddy
+    redir https://git.{{ domain }}{uri}
+}
+git.{{ domain }}:443 {
+    import common.caddy
+    tls self_signed
+    proxy / localhost:{{ gitea_port }} {
+        transparent
+    }
+}
+
+pg.{{ domain }}:80 {
+    import common.caddy
+    redir https://pg.{{ domain }}{uri}
+}
+pg.{{ domain }}:443 {
+    import common.caddy
+    tls self_signed
+    basicauth / {{ user_name }} {{ user_password }}
+    proxy / localhost:{{ pgweb_port }} {
+        transparent
+    }
+}
+
+prometheus.{{ domain }}:80 {
+    import common.caddy
+    redir https://prometheus.{{ domain }}{uri}
+}
+prometheus.{{ domain }}:443 {
+    import common.caddy
+    tls self_signed
+    basicauth / {{ user_name }} {{ user_password }}
+    proxy / localhost:{{ prometheus_port }} {
+        transparent
+    }
+}
+
+jupyter.{{ domain }}:80 {
+    import common.caddy
+    redir https://jupyter.{{ domain }}{uri}
+}
+jupyter.{{ domain }}:443 {
+    import common.caddy
+    tls self_signed
+    basicauth / {{ user_name }} {{ user_password }}
+    proxy / localhost:{{ jupyter_port }} {
+        transparent
+    }
+}
+
+grafana.{{ domain }}:80 {
+    import common.caddy
+    redir https://grafana.{{ domain }}{uri}
+}
+grafana.{{ domain }}:443 {
+    import common.caddy
+    tls self_signed
+    basicauth / {{ user_name }} {{ user_password }}
+    proxy / localhost:{{ grafana_port }} {
+        transparent
+    }
+}
+
+restic.{{ domain }}:80 {
+    import common.caddy
+    redir https://restic.{{ domain }}{uri}
+}
+restic.{{ domain }}:443 {
+    import common.caddy
+    tls self_signed
+    basicauth / {{ caddy_restic_user }} {{ caddy_restic_password }}
+    restic / {{ caddy_restic_path }}
+}
+
+files.{{ domain }}:80 {
+    import common.caddy
+    redir https://files.{{ domain }}{uri}
+}
+files.{{ domain }}:443 {
+    import common.caddy
+    tls self_signed
+    basicauth / {{ user_name }} {{ user_password }}
+    root {{ caddy_file_browser_root }}/public
+    upload / {
+        to {{ caddy_file_browser_root }}/public
+        filenames_form NFC
+    }
+    mime {
+        # video/x-matroska is not supported in firefox
+        .mkv video/webm
+    }
+    browse
+}
+
+webdav.{{ domain }}:80 {
+    import common.caddy
+    redir https://webdav.{{ domain }}{uri}
+}
+webdav.{{ domain }}:443 {
+    import common.caddy
+    tls self_signed
+    basicauth / {{ user_name }} {{ user_password }}
+    webdav {
+        scope {{ caddy_file_browser_root }}
+    }
+}
+
+proxy.{{ domain }}:443 {
+    tls self_signed
+    log stdout
+    forwardproxy {
+        basicauth {{ user_name }} {{ user_password }}
+        hide_ip
+        serve_pac
+    }
+}

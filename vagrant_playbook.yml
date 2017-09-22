@@ -1,0 +1,7 @@
+---
+# This is an empty ansible playbook to satisfy Vagrant,
+# so one can start the VM without having to run the full deployment cycle each time.
+# The actual deployment is made through ansible-playbook via make after
+# the VM has started.
+hosts: all
+

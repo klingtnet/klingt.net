@@ -1,0 +1,27 @@
+diff --git a/caddy/caddymain/run.go b/caddy/caddymain/run.go
+index 7bfb587..d12721f 100644
+--- a/caddy/caddymain/run.go
++++ b/caddy/caddymain/run.go
+@@ -21,6 +21,22 @@ import (
+ 
+ 	"github.com/mholt/caddy/caddytls"
+ 	// This is where other plugins get plugged in (imported)
++
++	_ "github.com/SchumacherFM/mailout"
++	_ "github.com/caddyserver/forwardproxy"
++	_ "github.com/captncraig/caddy-realip"
++	_ "github.com/captncraig/cors"
++	_ "github.com/echocat/caddy-filter"
++	_ "github.com/hacdias/caddy-minify"
++	_ "github.com/hacdias/caddy-webdav"
++	_ "github.com/hacdias/filemanager"
++	_ "github.com/jung-kurt/caddy-cgi"
++	_ "github.com/miekg/caddy-prometheus"
++	_ "github.com/nicolasazrak/caddy-cache"
++	_ "github.com/pyed/ipfilter"
++	_ "github.com/restic/caddy"
++	_ "github.com/xuqingfeng/caddy-rate-limit"
++	_ "blitznote.com/src/caddy.upload"
+ )
+ 
+ func init() {

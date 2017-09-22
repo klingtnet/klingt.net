@@ -1,0 +1,7 @@
+- name: Restart pgweb
+  listen: restart-pgweb
+  become: true
+  systemd:
+    daemon_reload: yes
+    name: pgweb
+    state: restarted

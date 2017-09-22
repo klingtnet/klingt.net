@@ -1,0 +1,10 @@
+caddy_user: caddy
+caddy_group: caddy
+caddy_path: /usr/bin/caddy
+caddy_ca_url: https://acme-staging.api.letsencrypt.org/directory
+caddy_prometheus_port: 9180
+caddy_restic_path: "/home/{{ caddy_user }}/restic"
+#caddy_email: user@email-provider.com
+#caddy_restic_user: alinz
+#caddy_restic_password: password
+caddy_file_browser_root: "/var/caddy/files.{{ domain }}"
