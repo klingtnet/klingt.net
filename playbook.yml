@@ -1,8 +1,5 @@
 ---
 # TODOs
-# - reload services on change
-# - modularize
-# - store secrets encrypted
 # - cron for postgres backup (pg_dumpall | tar --use-compress-programm=pixz -cJf postgres-$(date foobar).tar.xz
 - hosts: all
   vars:
