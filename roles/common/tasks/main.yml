@@ -40,3 +40,9 @@
     groups: wheel
     # http://docs.ansible.com/ansible/user_module.html
     password: "{{ user_password }}"
+- name: Authorize SSH key
+  authorized_key:
+    user: "{{ user_name }}"
+    state: present
+    key: "{{ lookup('file', '~/.ssh/id_kn_rsa.pub') }}"
+  become: true
