@@ -8,6 +8,7 @@
     caddy_email: "{{ user_email }}"
     caddy_restic_user: alinz
     jupyter_password: 'sha1:7ba04f8b7db3:b647b05c2e317857828f9f4fc929b08d485f9c76'
+    web_root: /var/web
   vars_files:
     - vault_vars.yml
   roles:
@@ -18,6 +19,7 @@
     - caddy
     - prometheus
     - grafana
+    - klingt.net
   tasks:
   - name: Set version number
     delegate_to: localhost

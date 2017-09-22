@@ -1,3 +1,16 @@
+{{ domain }}:80,
+www.{{ domain }}:80 {
+    import common.caddy
+    redir https://www.{{ domain }}{uri}
+}
+
+{{ domain }}:443,
+www.{{ domain }}:443 {
+    import common.caddy
+    tls self_signed
+    root {{ web_root }}/{{ domain }}
+}
+
 git.{{ domain }}:80 {
     import common.caddy
     redir https://git.{{ domain }}{uri}
