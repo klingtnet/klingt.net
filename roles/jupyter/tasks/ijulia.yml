@@ -6,3 +6,13 @@
   command: julia --eval 'try if Pkg.installed("IJulia") == nothing Pkg.add("IJulia") end catch end'
   become: true
   become_user: "{{ jupyter_user }}"
+- name: Install plotting library
+  apt:
+    package:
+    - tcl
+    - gettext
+    - libcairo2
+    - libpango1.0-0
+    - libpython-all-dev
+    - python-matplotlib
+  become: true
