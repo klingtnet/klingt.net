@@ -19,14 +19,17 @@
   become: true
   become_user: "{{ jupyter_user }}"
   command: pip3 install --user jupyter
-- name: Create jupyter config directory
+- name: Create jupyter config and notebook directory
   become: true
   file:
-    path: "/home/{{ jupyter_user }}//.jupyter"
+    path: "{{ item }}"
     owner: "{{ jupyter_user }}"
     group: "{{ jupyter_group }}"
     state: directory
     mode: 0700
+  with_items:
+    - "/home/{{ jupyter_user }}//.jupyter"
+    - "{{ jupyter_notebook_dir }}"
 - name: Install jupyter configuration
   become: true
   template:
