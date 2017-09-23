@@ -23,6 +23,7 @@
   apt:
     package:
       - sudo
+      - pixz
       - htop
   become: true
 - name: Check sudo group
