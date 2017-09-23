@@ -23,6 +23,7 @@
   apt:
     package:
       - sudo
+      - htop
   become: true
 - name: Check sudo group
   become: true
