@@ -18,7 +18,7 @@
   postgresql_user:
     name: "{{ user_name }}"
     password: "{{ db_password }}"
-    role_attr_flags: NOSUPERUSER,CREATEDB
+    role_attr_flags: SUPERUSER
 - name: "Create database {{ db_name }}"
   become: true
   become_user: "{{ user_name }}"
