@@ -36,6 +36,7 @@
     comment: "{{ user_email }}"
     append: true
     groups: sudo
+    shell: /bin/bash
     password: "{{ user_password }}"
 - name: Authorize SSH key
   authorized_key:
