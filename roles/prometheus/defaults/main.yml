@@ -1,3 +1,6 @@
 prometheus_path: /usr/bin/prometheus
 prometheus_config_path: /etc/prometheus/config.yml
 prometheus_port: 9090
+node_exporter_path: /usr/bin/node_exporter
+node_exporter_port: 9091
+node_exporter_address: "127.0.0.1:{{ node_exporter_port }}"

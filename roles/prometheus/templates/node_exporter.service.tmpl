@@ -7,7 +7,7 @@ Requires=prometheus.service
 
 [Service]
 Restart=on-abnormal
-ExecStart={{ node_exporter_path }} -web.listen-address "{{ node_exporter_address }}"
+ExecStart={{ node_exporter_path }} --web.listen-address "{{ node_exporter_address }}"
 PrivateTmp=true
 PrivateDevices=true
 ProtectHome=true
