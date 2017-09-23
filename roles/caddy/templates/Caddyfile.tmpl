@@ -8,6 +8,7 @@ www.{{ domain }}:80 {
 www.{{ domain }}:443 {
     import common.caddy
     tls self_signed
+    markdown
     root {{ web_root }}/{{ domain }}
 }
 

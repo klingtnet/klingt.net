@@ -6,7 +6,7 @@
   become: true
 - name: Create index page
   template:
-    src: index.html.tmpl
+    src: index.md.tmpl
     dest: "{{ web_root }}/{{ domain }}/index.html"
     mode: 0644
   become: true
