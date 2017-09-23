@@ -50,3 +50,5 @@
     name: jupyter
     state: started
     enabled: true
+
+- import_tasks: ijulia.yml
