@@ -51,6 +51,14 @@
     group: "{{ caddy_group }}"
     state: directory
     mode: 0700
+- name: Template error pages
+  become: true
+  template:
+    src: 502.html.tmpl
+    dest: /etc/caddy/502.html
+    owner: "{{ caddy_user }}"
+    group: "{{ caddy_group }}"
+    mode: 0400
 - name: Configure caddy
   become: true
   template:
