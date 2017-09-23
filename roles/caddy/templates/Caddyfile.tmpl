@@ -69,7 +69,6 @@ grafana.{{ domain }}:80 {
 grafana.{{ domain }}:443 {
     import common.caddy
     tls self_signed
-    basicauth / {{ user_name }} {{ user_password }}
     proxy / localhost:{{ grafana_port }} {
         transparent
     }
