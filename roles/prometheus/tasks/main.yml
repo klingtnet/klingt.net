@@ -1,12 +1,16 @@
 - name: Build prometheus
   command: make -C ./build/prometheus
   delegate_to: localhost
+- name: "Create group {{ prometheus_group }}"
+  become: true
+  group:
+    name: "{{ prometheus_group }}"
 - name: "Create user {{ prometheus_user }}"
   user:
-    name: {{ prometheus_user }}
+    name: "{{ prometheus_user }}"
     comment: "Prometheus run user"
     append: true
-    group: {{ prometheus_group }}
+    group: "{{ prometheus_group }}"
     shell: /bin/false
   become: true
 - name: Install prometheus
@@ -31,6 +35,8 @@
   template:
     src: prometheus.yml.tmpl
     dest: /etc/prometheus/config.yml
+    owner: "{{ prometheus_user }}"
+    group: "{{ prometheus_group }}"
     mode: 0600
   notify: restart-prometheus
 - name: Install prometheus systemd unit
