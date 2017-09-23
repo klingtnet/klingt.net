@@ -6,6 +6,8 @@ Wants=network-online.target systemd-networkd-wait-online.service
 
 [Service]
 Restart=on-abnormal
+User={{ prometheus_user }}
+Group={{ prometheus_group }}
 ExecStart={{ prometheus_path }}\
     -web.listen-address "127.0.0.1:{{ prometheus_port }}"\
     -config.file {{ prometheus_config_path }}

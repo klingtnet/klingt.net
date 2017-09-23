@@ -1,18 +1,31 @@
 - name: Build prometheus
   command: make -C ./build/prometheus
   delegate_to: localhost
+- name: "Create user {{ prometheus_user }}"
+  user:
+    name: {{ prometheus_user }}
+    comment: "Prometheus run user"
+    append: true
+    group: {{ prometheus_group }}
+    shell: /bin/false
+  become: true
 - name: Install prometheus
   become: true
   copy:
     src: ./build/prometheus/prometheus
     dest: "{{ prometheus_path }}"
     mode: 0755
-- name: Create prometheus folder
+- name: Create prometheus folder paths
   become: true
   file:
-    path: /etc/prometheus
+    path: "{{ item }}"
     state: directory
+    owner: "{{ prometheus_user }}"
+    group: "{{ prometheus_group }}"
     mode: 0700
+  with_items:
+    - /etc/prometheus
+    - "{{ prometheus_storage_path }}"
 - name: Install prometheus configuration
   become: true
   template:
