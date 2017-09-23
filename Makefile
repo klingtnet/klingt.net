@@ -11,13 +11,11 @@ vm: playbook.yml Vagrantfile vagrant
 		--extra-vars='var_domain="klingt.vnet"'\
 		--private-key='./.vagrant/machines/default/virtualbox/private_key'\
 		--inventory-file='./.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory'\
-		--verbose\
 		playbook.yml
 
 klingt.net: playbook.yml Vagrantfile
 	ansible-playbook $(ANSIBLE_OPTS) $(ANSIBLE_EXTRA_OPTS)\
 		--vault-password-file='./vault.pass'\
-		--verbose\
 		playbook.yml
 
 vagrant:
