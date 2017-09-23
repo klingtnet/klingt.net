@@ -58,6 +58,7 @@ jupyter.{{ domain }}:443 {
     tls self_signed
     proxy / localhost:{{ jupyter_port }} {
         transparent
+        websocket
     }
 }
 
