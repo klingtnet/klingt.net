@@ -16,7 +16,13 @@
     mode: 0600
   notify: restart-journald
 - name: Update package index
-  apt: update_cache=yes package=sudo
+  apt:
+    update_cache: true
+  become: true
+- name: Install packages
+  apt:
+    package:
+      - sudo
   become: true
 - name: Check sudo group
   become: true
