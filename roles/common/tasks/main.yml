@@ -21,24 +21,21 @@
 - name: Check wheel group
   become: true
   group:
-    name: wheel
+    name: sudo
     state: present
-- name: Allow wheel to sudo (with password)
+- name: "Allow passwordless sudo for {{ user_name }}"
+  template:
+    src: sudoers.tmpl
+    dest: "/etc/sudoers.d/10-{{ user_name }}"
+    mode: 0444
   become: true
-  lineinfile:
-    dest: /etc/sudoers
-    state: present
-    backup: true
-    regexp: '^#\s*%wheel\s+ALL=\(ALL\)\s+ALL$'
-    line: '%wheel ALL=(ALL) ALL'
 - name: "Create user {{ user_name }}"
   become: true
   user:
     name: "{{ user_name }}"
     comment: "{{ user_email }}"
     append: true
-    groups: wheel
-    # http://docs.ansible.com/ansible/user_module.html
+    groups: sudo
     password: "{{ user_password }}"
 - name: Authorize SSH key
   authorized_key:
