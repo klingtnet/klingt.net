@@ -1,0 +1,8 @@
+- name: Install Julia
+  apt:
+    package: julia
+  become: true
+- name: Install IJulia
+  command: julia --print 'try Pkg.installed("IJulia") catch Pkg.add("IJulia") end'
+  become: true
+  become_user: "{{ jupyter_user }}"
