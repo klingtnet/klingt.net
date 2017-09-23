@@ -18,7 +18,7 @@
 - name: Update package index
   apt: update_cache=yes package=sudo
   become: true
-- name: Check wheel group
+- name: Check sudo group
   become: true
   group:
     name: sudo
