@@ -66,7 +66,7 @@
     dest: "/etc/caddy/{{ item }}"
     owner: "{{ caddy_user }}"
     group: "{{ caddy_group }}"
-    mode: 0600
+    mode: 0400
   with_items:
     - Caddyfile
     - common.caddy
