@@ -56,7 +56,6 @@ jupyter.{{ domain }}:80 {
 jupyter.{{ domain }}:443 {
     import common.caddy
     tls self_signed
-    basicauth / {{ user_name }} {{ user_password }}
     proxy / localhost:{{ jupyter_port }} {
         transparent
     }
