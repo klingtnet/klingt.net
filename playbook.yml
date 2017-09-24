@@ -3,6 +3,7 @@
   vars:
     user_name: alinz
     user_email: "{{ user_name }}@email-provider.com"
+    is_staging: "{{ var_staging | default(False) }}"
     domain: "{{ var_domain | default('klingt.net') }}"
     domain_version: unknown
     caddy_email: "{{ user_email }}"

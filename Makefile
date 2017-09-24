@@ -8,7 +8,7 @@ all: vm
 
 vm: playbook.yml Vagrantfile vagrant
 	ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook $(ANSIBLE_OPTS) $(ANSIBLE_EXTRA_OPTS)\
-		--extra-vars='var_domain="klingt.vnet"'\
+		--extra-vars='var_domain="klingt.vnet" var_staging=True'\
 		--private-key='./.vagrant/machines/default/virtualbox/private_key'\
 		--inventory-file='./.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory'\
 		playbook.yml
