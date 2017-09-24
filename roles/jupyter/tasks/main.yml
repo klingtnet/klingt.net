@@ -28,7 +28,7 @@
     state: directory
     mode: 0700
   with_items:
-    - "/home/{{ jupyter_user }}//.jupyter"
+    - "/home/{{ jupyter_user }}/.jupyter"
     - "{{ jupyter_notebook_dir }}"
 - name: Install jupyter configuration
   become: true
