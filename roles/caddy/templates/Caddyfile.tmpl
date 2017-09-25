@@ -7,7 +7,7 @@ www.{{ domain }}:80 {
 {{ domain }}:443,
 www.{{ domain }}:443 {
     import common.caddy
-    {% if is_staging %}tls self_signed
+    {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
     markdown
     root {{ web_root }}/{{ domain }}
@@ -19,7 +19,7 @@ git.{{ domain }}:80 {
 }
 git.{{ domain }}:443 {
     import common.caddy
-    {% if is_staging %}tls self_signed
+    {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
     proxy / localhost:{{ gitea_port }} {
         transparent
@@ -32,7 +32,7 @@ pg.{{ domain }}:80 {
 }
 pg.{{ domain }}:443 {
     import common.caddy
-    {% if is_staging %}tls self_signed
+    {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
     basicauth / {{ user_name }} {{ user_password }}
     proxy / localhost:{{ pgweb_port }} {
@@ -46,7 +46,7 @@ prometheus.{{ domain }}:80 {
 }
 prometheus.{{ domain }}:443 {
     import common.caddy
-    {% if is_staging %}tls self_signed
+    {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
     basicauth / {{ user_name }} {{ user_password }}
     proxy / localhost:{{ prometheus_port }} {
@@ -60,7 +60,7 @@ jupyter.{{ domain }}:80 {
 }
 jupyter.{{ domain }}:443 {
     import common.caddy
-    {% if is_staging %}tls self_signed
+    {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
     proxy / localhost:{{ jupyter_port }} {
         transparent
@@ -74,7 +74,7 @@ grafana.{{ domain }}:80 {
 }
 grafana.{{ domain }}:443 {
     import common.caddy
-    {% if is_staging %}tls self_signed
+    {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
     proxy / localhost:{{ grafana_port }} {
         transparent
@@ -87,7 +87,7 @@ restic.{{ domain }}:80 {
 }
 restic.{{ domain }}:443 {
     import common.caddy
-    {% if is_staging %}tls self_signed
+    {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
     basicauth / {{ caddy_restic_user }} {{ caddy_restic_password }}
     restic / {{ caddy_restic_path }}
@@ -99,7 +99,7 @@ files.{{ domain }}:80 {
 }
 files.{{ domain }}:443 {
     import common.caddy
-    {% if is_staging %}tls self_signed
+    {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
     basicauth / {{ user_name }} {{ user_password }}
     root {{ caddy_file_browser_root }}/public
@@ -120,7 +120,7 @@ webdav.{{ domain }}:80 {
 }
 webdav.{{ domain }}:443 {
     import common.caddy
-    {% if is_staging %}tls self_signed
+    {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
     basicauth / {{ user_name }} {{ user_password }}
     webdav {

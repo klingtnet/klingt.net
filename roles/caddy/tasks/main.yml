@@ -27,6 +27,18 @@
     group: "{{ caddy_group }}"
     state: directory
     mode: 0700
+- name: Install self-signed certificates
+  become: true
+  copy:
+    src: "{{ item }}"
+    dest: "/home/{{ caddy_user }}/certs/{{ item }}"
+    owner: "{{ caddy_user }}"
+    group: "{{ caddy_group }}"
+    mode: 0400
+  with_items:
+    - "{{ domain }}.key"
+    - "{{ domain }}.crt"
+  when: is_staging
 - name: Create caddy restic path
   become: true
   file:
