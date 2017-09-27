@@ -14,9 +14,9 @@ SSL_MODE = disable
 ROOT = /home/{{ gitea_user }}/gitea/repos
 
 [server]
-SSH_DOMAIN       = localhost
+SSH_DOMAIN       = {{ domain }}
 HTTP_PORT        = {{ gitea_port }}
-ROOT_URL         = http://localhost:{{ gitea_port }}/
+ROOT_URL         = https://git.{{ domain }}/
 DISABLE_SSH      = false
 SSH_PORT         = 22
 LFS_START_SERVER = false
