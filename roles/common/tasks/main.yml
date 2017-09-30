@@ -23,6 +23,7 @@
   apt:
     package:
       - sudo
+      - vim
       - pixz
       - htop
   become: true
