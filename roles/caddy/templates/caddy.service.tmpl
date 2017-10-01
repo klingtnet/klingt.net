@@ -20,7 +20,7 @@ ExecStart={{ caddy_path }}\
     -agree=true\
     -conf=/etc/caddy/Caddyfile\
     -email={{ caddy_email }}\
-    -ca='{{ caddy_ca_url }}'\
+{% if is_staging %} -ca='https://acme-staging.api.letsencrypt.org/directory'\{% endif %}
     -root=/var/tmp
 ExecReload=/bin/kill -USR1 $MAINPID
 
