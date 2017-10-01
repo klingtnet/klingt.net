@@ -4,9 +4,10 @@
     path: "{{ web_root }}/{{ domain }}"
     mode: 0755
   become: true
-- name: Create index page
-  template:
-    src: index.md.tmpl
-    dest: "{{ web_root }}/{{ domain }}/index.md"
-    mode: 0644
+- name: "Extract klingt.net backup"
+  unarchive:
+    src: kn-september-2017.tar.xz
+    dest: "{{ web_root }}/{{ domain }}"
+    group: "{{ caddy_group }}"
+    owner: "{{ caddy_user }}"
   become: true
