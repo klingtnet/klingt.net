@@ -17,14 +17,18 @@ _psql() {
 
 _caddy() {
     ssh ${domain} "sudo systemctl stop caddy"
+    local fname="backups/caddy-files-${timestamp}.tar.xz"
+    echo "Creating $fname ..."
     # backup 'restic files.${domain}' in a separate target
-    ssh ${domain} "sudo tar -C /home/caddy -cf - -- certs | pixz" > "backups/caddy-files-${timestamp}.tar.xz"
+    ssh ${domain} "sudo tar -C /home/caddy -cf - -- certs | pixz" > "$fname"
     ssh ${domain} "sudo systemctl start caddy"
 }
 
 _gitea() {
     ssh ${domain} "sudo systemctl stop gitea"
-    ssh ${domain} "sudo tar -C /home/gitea -cf - -- gitea | pixz" > "backups/gitea-files-${timestamp}.tar.xz"
+    local fname="backups/gitea-files-${timestamp}.tar.xz"
+    echo "Creating $fname ..."
+    ssh ${domain} "sudo tar -C /home/gitea -cf - -- gitea | pixz" > "$fname"
     _psql gitea $timestamp
     ssh ${domain} "sudo systemctl start gitea"
 }
@@ -37,13 +41,17 @@ _grafana() {
 
 _jupyter() {
     ssh ${domain} "sudo systemctl kill jupyter"
-    ssh ${domain} "sudo tar -C /home/jupyter -cf - -- notebooks .julia | pixz" > "backups/jupyter-files-${timestamp}.tar.xz"
+    local fname="backups/jupyter-files-${timestamp}.tar.xz"
+    echo "Creating $fname ..."
+    ssh ${domain} "sudo tar -C /home/jupyter -cf - -- notebooks .julia | pixz" > "$fname"
     ssh ${domain} "sudo systemctl start jupyter"
 }
 
 _prometheus() {
     ssh ${domain} "sudo systemctl kill prometheus"
-    ssh ${domain} "sudo tar -C /home/prometheus -cf - -- data | pixz" > "backups/prometheus-files-${timestamp}.tar.xz"
+    local fname="backups/prometheus-files-${timestamp}.tar.xz"
+    echo "Creating $fname ..."
+    ssh ${domain} "sudo tar -C /home/prometheus -cf - -- data | pixz" > "$fname"
     ssh ${domain} "sudo systemctl start prometheus"
 }
 
