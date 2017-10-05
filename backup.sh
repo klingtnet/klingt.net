@@ -6,7 +6,7 @@ set -euo pipefail
 [[ ! -e './backups' ]] && mkdir backups
 
 timestamp=$(date --iso-8601=seconds)
-domain=klingt.vnet
+domain=klingt.net
 
 _psql() {
     local database="$1"
