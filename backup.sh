@@ -71,6 +71,12 @@ case "$selection" in
     'prometheus')
         _prometheus
         ;;
+    'important')
+        _caddy
+        _gitea
+        _grafana
+        _prometheus
+        ;;
     ''|'all')
         _caddy
         _gitea
