@@ -17,7 +17,8 @@ _psql() {
 
 _caddy() {
     ssh ${domain} "sudo systemctl stop caddy"
-    ssh ${domain} "sudo tar -C /home/caddy -cf - -- certs restic files.${domain} | pixz" > "backups/caddy-files-${timestamp}.tar.xz"
+    # backup 'restic files.${domain}' in a separate target
+    ssh ${domain} "sudo tar -C /home/caddy -cf - -- certs | pixz" > "backups/caddy-files-${timestamp}.tar.xz"
     ssh ${domain} "sudo systemctl start caddy"
 }
 
