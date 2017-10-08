@@ -10,7 +10,7 @@ www.{{ domain }}:443 {
     {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
     cache {
-        default_max_age 1d
+        default_max_age 24h
     }
     root {{ web_root }}/{{ domain }}
 }
