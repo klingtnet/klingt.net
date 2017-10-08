@@ -102,10 +102,6 @@ files.{{ domain }}:443 {
     {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
     root {{ caddy_file_browser_root }}/public
-    upload / {
-        to {{ caddy_file_browser_root }}/public
-        filenames_form NFC
-    }
     mime {
         # video/x-matroska is not supported in firefox
         .mkv video/webm
