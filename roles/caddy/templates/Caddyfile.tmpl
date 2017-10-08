@@ -9,8 +9,9 @@ www.{{ domain }}:443 {
     import common.caddy
     {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
-    header /js Cache-Control "max-age=86400, public"
-    header /css Cache-Control "max-age=86400, public"
+    header /imgs    Cache-Control "max-age=2592000, public"
+    header /js      Cache-Control "max-age=2592000, public"
+    header /css     Cache-Control "max-age=2592000, public"
     cache {
         default_max_age 24h
     }
