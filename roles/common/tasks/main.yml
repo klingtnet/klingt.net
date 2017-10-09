@@ -1,3 +1,9 @@
+- name: Set version number
+  delegate_to: localhost
+  shell: git describe --always --tags
+  register: git_version
+- set_fact:
+    domain_version: "{{ git_version.stdout }}"
 - name: "Generate {{ locale }}"
   locale_gen:
     name: "{{ locale }}"
