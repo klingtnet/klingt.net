@@ -87,11 +87,15 @@ grafana.{{ domain }}:443 {
 }
 
 restic.{{ domain }}:80 {
-    import common.caddy
+    prometheus
+    header / X-klingt-net-version "{{ domain_version }}"
+    errors stderr
     redir https://restic.{{ domain }}{uri}
 }
 restic.{{ domain }}:443 {
-    import common.caddy
+    prometheus
+    header / X-klingt-net-version "{{ domain_version }}"
+    errors stderr
     {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
     basicauth / {{ caddy_restic_user }} {{ caddy_restic_password }}
