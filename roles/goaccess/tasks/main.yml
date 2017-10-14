@@ -1,0 +1,22 @@
+- name: Add goaccess repository
+  become: true
+  lineinfile:
+    create: true
+    path: /etc/apt/sources.list.d/goaccess.list
+    line: "deb http://deb.goaccess.io/ {{ ansible_lsb.codename }} main"
+- name: Download GPG key of goaccess repository
+  uri:
+    url: https://deb.goaccess.io/gnugpg.key
+    return_content: yes
+  register: goaccess_gpg
+- name: Add GPG key of goaccess repository
+  become: true
+  shell: "echo '{{ goaccess_gpg.content }}' | apt-key add -"
+- name: Update package index
+  apt:
+    update_cache: true
+  become: true
+- name: Install goaccess
+  apt:
+    package: goaccess
+  become: true
