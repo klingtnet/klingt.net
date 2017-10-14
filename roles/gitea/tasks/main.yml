@@ -8,13 +8,13 @@
     src: ./build/gitea/gitea
     dest: "{{ gitea_path }}"
     mode: 0755
+  notify: restart-gitea
 - name: Install gitea systemd unit
   become: true
   template:
     src: gitea.service.tmpl
     dest: /etc/systemd/system/gitea.service
     mode: 0600
-  notify: restart-gitea
 - name: "Create group {{ gitea_group }}"
   become: true
   group:
