@@ -1,0 +1,7 @@
+DATABASE_DRIVER=sqlite
+DATABASE_CONFIG=/home/{{ drone_user }}/drone.sqlite
+DRONE_HOST=https://ci.{{ domain }}
+DRONE_GITEA=true
+DRONE_GITEA_URL=https://git.{{ domain }}
+DRONE_SECRET={{ drone_secret }}
+GIN_MODE=release
