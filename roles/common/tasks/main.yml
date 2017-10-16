@@ -32,6 +32,10 @@
       - vim
       - pixz
       - htop
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
   become: true
 - name: Check sudo group
   become: true
