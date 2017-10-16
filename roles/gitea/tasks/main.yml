@@ -82,7 +82,7 @@
 - name: "Create gitea admin user {{ user_name }}"
   become: true
   become_user: gitea
-  command: "gitea admin create-user --name {{ user_name }} --password {{ gitea_admin_password }} --email {{ user_email }} --admin --config ./gitea/custom/conf/app.ini"
+  command: "gitea admin create-user --name {{ user_name }} --password {{ gitea_admin_password }} --email {{ user_email }} --admin --config /home/{{ gitea_user }}/gitea/custom/conf/app.ini"
   args:
     chdir: "/home/{{ gitea_user }}"
   when: gitea_admin_check.stdout.strip() == 'f'
