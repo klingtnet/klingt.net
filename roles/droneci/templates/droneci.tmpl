@@ -1,6 +1,6 @@
-DATABASE_DRIVER=sqlite
-DATABASE_CONFIG=/home/{{ drone_user }}/drone.sqlite
-DRONE_HOST=https://ci.{{ domain }}
+DRONE_DATABASE_DRIVER=postgres
+DRONE_DATABASE_DATASOURCE=postgres://{{ drone_user }}:{{ droneci_db_password }}@{{ postgres_host }}:{{ postgres_port }}/{{ droneci_db_name }}
+DRONE_HOST=ci.{{ domain }}
 DRONE_ADMIN={{ user_name }}
 DRONE_GITEA=true
 DRONE_GITEA_URL=https://git.{{ domain }}
