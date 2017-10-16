@@ -132,6 +132,21 @@ webdav.{{ domain }}:443 {
     }
 }
 
+docs.{{ domain }}:80 {
+    import common.caddy
+    redir https://docs.{{ domain }}{uri}
+}
+docs.{{ domain }}:443 {
+    import common.caddy
+    {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
+{% endif %}
+    rewrite /rustdoc {
+        regexp ^/(\w+)/?$
+        to /crate/{1}
+    }
+    redir https://docs.rs{rewrite_path}
+}
+
 proxy.{{ domain }}:443 {
     {% if is_staging %}tls self_signed
 {% endif %}
