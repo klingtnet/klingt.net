@@ -20,6 +20,19 @@
     group: "{{ drone_group }}"
     groups: docker
     shell: /bin/false
+- name: Create postgres user droneci
+  become: true
+  become_user: postgres
+  postgresql_user:
+    name: droneci
+    password: "{{ droneci_db_password }}"
+- name: "Create database {{ droneci_db_name }}"
+  become: true
+  become_user: "postgres"
+  postgresql_db:
+    name: "{{ droneci_db_name }}"
+    owner: "{{ drone_user }}"
+    state: present
 - name: Build droneci
   command: make -C ./build/droneci
   delegate_to: localhost
