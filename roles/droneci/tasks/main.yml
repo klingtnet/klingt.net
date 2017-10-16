@@ -1,3 +1,12 @@
+- name: Update package index
+  become: true
+  apt:
+    update_cache: true
+- name: Install docker
+  become: true
+  apt:
+    package:
+      - docker.io
 - name: "Create group {{ drone_group }}"
   become: true
   group:
@@ -9,16 +18,8 @@
     comment: "Drone CI run user"
     append: true
     group: "{{ drone_group }}"
+    groups: docker
     shell: /bin/false
-- name: Update package index
-  become: true
-  apt:
-    update_cache: true
-- name: Install docker
-  become: true
-  apt:
-    package:
-      - docker.io
 - name: Build droneci
   command: make -C ./build/droneci
   delegate_to: localhost
