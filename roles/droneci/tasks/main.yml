@@ -54,6 +54,7 @@
 - name: Build droneci
   command: make -C ./build/droneci
   delegate_to: localhost
+  notify: restart-drone-ci
 - name: Install droneci
   become: true
   copy:
@@ -69,6 +70,7 @@
     src: droneci.tmpl
     dest: /etc/default/droneci
     mode: 0644
+  notify: restart-drone-ci
 - name: Install systemd units
   become: true
   template:
@@ -78,6 +80,7 @@
   with_items:
     - drone-agent.service
     - drone-server.service
+  notify: restart-drone-ci
 - name: Start drone-server
   become: true
   systemd:
