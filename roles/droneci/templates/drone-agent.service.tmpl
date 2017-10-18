@@ -6,7 +6,7 @@ Wants=systemd-networkd-wait-online.service sshd.service
 
 [Service]
 Restart=on-abnormal
-Environment=DRONE_MAX_PROCS={{ ansible_processor_count }}
+Environment=DRONE_MAX_PROCS={{ ansible_processor_cores }}
 ExecStart=/usr/bin/drone-agent
 User={{ drone_user }}
 Group={{ drone_group }}
