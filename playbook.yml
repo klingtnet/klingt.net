@@ -1,5 +1,6 @@
 ---
 - hosts: all
+  gather_facts: false # see pre_tasks
   vars:
     user_name: alinz
     user_email: admin@klingt.net
@@ -22,3 +23,8 @@
     - caddy
     - klingt.net
     - goaccess
+  pre_tasks:
+    - name: Setup Python 2.x
+      become: true
+      raw: test -e /usr/bin/python2 || (apt -y update && apt install -y python-minimal)
+    - setup: # gather facts
