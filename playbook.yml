@@ -25,6 +25,5 @@
     - goaccess
   pre_tasks:
     - name: Setup Python 2.x
-      become: true
-      raw: test -e /usr/bin/python2 || (apt -y update && apt install -y python-minimal)
+      raw: test -e /usr/bin/python2 || (sudo apt -y update && sudo apt install -y python-minimal)
     - setup: # gather facts
