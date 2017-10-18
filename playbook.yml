@@ -16,8 +16,9 @@
     - postgres
     - gitea
     - jupyter
-    - caddy
     - prometheus
     - grafana
+    - droneci
+    - caddy
     - klingt.net
     - goaccess
