@@ -69,17 +69,22 @@
     src: droneci.tmpl
     dest: /etc/default/droneci
     mode: 0644
-- name: Install systemd unit of drone-server
+- name: Install systemd units
   become: true
   template:
-    src: drone-server.service.tmpl
-    dest: /etc/systemd/system/drone-server.service
+    src: "{{ item }}.tmpl"
+    dest: "/etc/systemd/system/{{ item }}"
     mode: 0600
+  with_items:
+    - drone-agent.service
+    - drone-server.service
 - name: Start drone-server
   become: true
   systemd:
     daemon_reload: yes
-    name: drone-server
+    name: "{{ item }}"
     state: started
     enabled: true
-  notify: restart-drone-server
+  with_items:
+    - drone-agent
+    - drone-server
