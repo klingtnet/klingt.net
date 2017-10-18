@@ -157,3 +157,24 @@ proxy.{{ domain }}:443 {
         serve_pac
     }
 }
+
+ci.{{ domain }}:80 {
+    prometheus
+    header / X-klingt-net-version "{{ domain_version }}"
+    errors stderr
+    redir https://ci.{{ domain }}{uri}
+}
+ci.{{ domain }}:443 {
+    prometheus
+    header / X-klingt-net-version "{{ domain_version }}"
+    errors stderr
+    {% if is_staging %}tls self_signed
+{% endif %}
+    gzip {
+        not /stream/
+    }
+    proxy / localhost:{{ drone_port }} {
+        websocket
+        transparent
+    }
+}
