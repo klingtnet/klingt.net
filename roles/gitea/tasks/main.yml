@@ -48,8 +48,8 @@
   become: true
   become_user: "postgres"
   postgresql_db:
-    name: gitea
-    owner: "{{ gitea_db_name }}"
+    owner: "{{ gitea_user }}"
+    name: "{{ gitea_db_name }}"
     state: present
 - name: Create gitea configuration
   become: true
