@@ -1,7 +1,10 @@
 DRONE_DATABASE_DRIVER=postgres
 DRONE_DATABASE_DATASOURCE=postgres://{{ drone_user }}:{{ droneci_db_password }}@{{ postgres_host }}:{{ postgres_port }}/{{ droneci_db_name }}
 DRONE_HOST=ci.{{ domain }}
-DRONE_ADMIN={{ user_name }}
+DRONE_ADMIN={{ user_name }},{{ github_username }}
 DRONE_GITEA=true
 DRONE_GITEA_URL=https://git.{{ domain }}
+DRONE_GITHUB=true
+DRONE_GITHUB_CLIENT={{ droneci_github_id }}
+DRONE_GITHUB_SECRET={{ droneci_github_secret }}
 GIN_MODE=release
