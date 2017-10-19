@@ -1,0 +1,5 @@
+pipeline:
+  test:
+    image: alpine
+    script:
+      - echo 'Hello, World!'
