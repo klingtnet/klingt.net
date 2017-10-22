@@ -119,11 +119,15 @@ files.{{ domain }}:443 {
 }
 
 webdav.{{ domain }}:80 {
-    import common.caddy
+    prometheus
+    header / X-klingt-net-version "{{ domain_version }}"
+    errors stderr
     redir https://webdav.{{ domain }}{uri}
 }
 webdav.{{ domain }}:443 {
-    import common.caddy
+    prometheus
+    header / X-klingt-net-version "{{ domain_version }}"
+    errors stderr
     {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
 {% endif %}
     basicauth / {{ user_name }} {{ user_password }}
