@@ -1,6 +1,6 @@
 .PHONY: clean
 
-VERSION		:=v0.8.1
+VERSION		:=v0.8.2
 DRONE_SRC	:=drone-src-$(VERSION)
 GOPATH		:=$(shell pwd)/$(DRONE_SRC)/.go
 

@@ -1,6 +1,6 @@
 .PHONY: clean
 
-VERSION:=0.14.0
+VERSION:=0.15.1
 GOPATH:=$(shell pwd)/.go
 
 all: node_exporter
