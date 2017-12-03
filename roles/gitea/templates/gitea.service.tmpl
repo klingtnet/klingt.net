@@ -6,7 +6,8 @@ Wants=network-online.target systemd-networkd-wait-online.service sshd.service
 
 [Service]
 Restart=on-abnormal
-ExecStart={{ gitea_path }} web --port {{ gitea_port }} --config /home/{{ gitea_user }}/gitea/custom/conf/app.ini
+Environment=GITEA_CUSTOM=/home/{{ gitea_user }}/gitea/custom
+ExecStart={{ gitea_path }} web --port {{ gitea_port }}
 User={{ gitea_user }}
 Group={{ gitea_group }}
 WorkingDirectory=/home/{{ gitea_user }}/gitea
