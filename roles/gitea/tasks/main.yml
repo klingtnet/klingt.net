@@ -37,7 +37,7 @@
   with_items:
     - repos
     - logs
-    - custom/conf
+    - data/conf
 - name: Create postgres user gitea
   become: true
   become_user: postgres
@@ -55,7 +55,7 @@
   become: true
   template:
     src: app.ini.tmpl
-    dest: /home/gitea/gitea/custom/conf/app.ini
+    dest: "/home/{{ gitea_user }}/gitea/data/conf/app.ini"
     mode: 0600
     owner: "{{ gitea_user }}"
   notify: restart-gitea
@@ -82,7 +82,7 @@
 - name: "Create gitea admin user {{ user_name }}"
   become: true
   become_user: gitea
-  command: "gitea admin create-user --name {{ user_name }} --password {{ gitea_admin_password }} --email {{ user_email }} --admin --config /home/{{ gitea_user }}/gitea/custom/conf/app.ini"
+  command: "gitea admin create-user --name {{ user_name }} --password {{ gitea_admin_password }} --email {{ user_email }} --admin --config /home/{{ gitea_user }}/gitea/data/conf/app.ini"
   args:
     chdir: "/home/{{ gitea_user }}"
   when: gitea_admin_check.stdout.strip() == 'f'
