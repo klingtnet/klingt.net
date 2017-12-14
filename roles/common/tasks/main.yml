@@ -32,6 +32,7 @@
       - vim
       - pixz
       - htop
+      - mosh
       - apt-transport-https
       - ca-certificates
       - curl
