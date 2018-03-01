@@ -1,6 +1,6 @@
 .PHONY: clean
 
-VERSION		:=v0.10.10
+VERSION		:=v0.10.11
 CADDY_SRC	:=caddy-src-$(VERSION)
 GOPATH		:=$(shell pwd)/$(CADDY_SRC)/.go
 
