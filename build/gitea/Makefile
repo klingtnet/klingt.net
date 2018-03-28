@@ -1,6 +1,6 @@
 .PHONY: clean
 
-VERSION				:=v1.3.3
+VERSION				:=v1.4.0
 GITEA_SRC			:=gitea-src-$(VERSION)
 GOPATH				:=$(shell pwd)/$(GITEA_SRC)/.go
 GITEA_BUILD_TAGS	:=bindata
