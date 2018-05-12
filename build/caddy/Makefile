@@ -1,6 +1,6 @@
 .PHONY: clean
 
-VERSION		:=v0.10.13
+VERSION		:=v0.11.0
 CADDY_SRC	:=caddy-src-$(VERSION)
 GOPATH		:=$(shell pwd)/$(CADDY_SRC)/.go
 
@@ -16,7 +16,8 @@ $(GOPATH): $(CADDY_SRC)
 
 patch: $(CADDY_SRC)
 	cd $(CADDY_SRC)\
-		&& git apply ../plugins.patch
+		&& git apply ../plugins.patch\
+		&& git apply ../disable-telemetry.patch
 
 $(CADDY_SRC):
 	git clone https://github.com/mholt/caddy.git $@
