@@ -16,7 +16,8 @@ $(GOPATH): $(CADDY_SRC)
 
 patch: $(CADDY_SRC)
 	cd $(CADDY_SRC)\
-		&& git apply ../plugins.patch
+		&& git apply ../plugins.patch\
+		&& git apply ../disable-telemetry.patch
 
 $(CADDY_SRC):
 	git clone https://github.com/mholt/caddy.git $@
