@@ -4,7 +4,7 @@ index 4c8adcb..abc5854 100644
 +++ b/caddy/caddymain/run.go
 @@ -37,6 +37,22 @@ import (
  
-	_ "github.com/mholt/caddy/caddyhttp" // plug in the HTTP server type
+ 	_ "github.com/mholt/caddy/caddyhttp" // plug in the HTTP server type
  	// This is where other plugins get plugged in (imported)
 +
 +	_ "github.com/SchumacherFM/mailout"
