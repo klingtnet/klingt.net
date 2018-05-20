@@ -19,6 +19,10 @@
   become: true
   become_user: "{{ jupyter_user }}"
   command: pip3 install --user jupyter
+- name: Install scientific Python stack
+  become: true
+  become_user: "{{ jupyter_user }}"
+  command: pip3 install --user numpy scipy sympy matplotlib
 - name: Create jupyter config and notebook directory
   become: true
   file:
