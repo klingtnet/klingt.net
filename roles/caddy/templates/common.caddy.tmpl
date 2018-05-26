@@ -1,5 +1,7 @@
 prometheus
-log / stdout {combined}
+log / stdout {combined} {
+    ipmask 255.255.0.0 ffff:ffff:ffff:ff00::
+}
 errors stderr {
     502 /etc/caddy/502.html
 }
