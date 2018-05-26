@@ -1,5 +1,5 @@
 - name: Build klingt.net
-  command: make -C ./build/klingt.net
+  command: make -B -C ./build/klingt.net
   delegate_to: localhost
 - name: "Create {{ web_root }}"
   file:
