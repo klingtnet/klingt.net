@@ -8,7 +8,7 @@ def read_template():
 
 
 def title_from_filename(fname: str) -> str:
-    return os.path.splitext(fname)[0].capitalize()
+    return os.path.splitext(fname)[0].replace('-', ' ').capitalize()
 
 
 def template_pages(pages: dict, template: str, dest_path: str):
