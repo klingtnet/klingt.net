@@ -37,6 +37,7 @@
       - ca-certificates
       - curl
       - software-properties-common
+      - unzip
   become: true
 - name: Check sudo group
   become: true
