@@ -1,4 +1,4 @@
-all: out out/assets
+all: out out/assets out/favicon.ico
 	@./template.py
 
 out:
@@ -6,3 +6,6 @@ out:
 
 out/assets: out
 	@cp -r assets out
+
+out/favicon.ico: out
+	@cp favicon.ico $@
