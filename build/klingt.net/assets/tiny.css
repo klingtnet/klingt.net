@@ -34,3 +34,8 @@ nav ul {
 nav ul li {
   margin: 0 0 .333em 0;
 }
+
+.logo {
+    width: 3em;
+    margin: 1.5em auto;
+}
