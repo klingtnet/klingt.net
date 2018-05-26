@@ -1,12 +1,15 @@
+- name: Build klingt.net
+  command: make -C ./build/klingt.net
+  delegate_to: localhost
 - name: "Create {{ web_root }}"
   file:
     state: directory
     path: "{{ web_root }}/{{ domain }}"
     mode: 0755
   become: true
-- name: "Extract klingt.net backup"
-  unarchive:
-    src: kn-september-2017.tar.xz
+- name: Copy templated website
+  copy:
+    src: ./build/klingt.net/out/
     dest: "{{ web_root }}/{{ domain }}"
     group: "{{ caddy_group }}"
     owner: "{{ caddy_user }}"
