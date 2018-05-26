@@ -8,11 +8,11 @@ def read_template():
 
 
 def title_from_filename(fname: str) -> str:
-    return os.path.splitext(fname)[0].replace('-', ' ').capitalize()
+    return os.path.splitext(fname)[0].replace('-', ' ')
 
 
 def template_pages(pages: dict, template: str, dest_path: str):
-    nav_item = '<li><a href="{item_href}">{item_text}</a></li>'
+    nav_item = '<li><a href="{item_href}" class="nav-item">{item_text}</a></li>'
     
     for page, text in pages.items():
         title = title_from_filename(page)

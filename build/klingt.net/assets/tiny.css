@@ -35,6 +35,10 @@ nav ul li {
   margin: 0 0 .333em 0;
 }
 
+.nav-item {
+    text-transform: capitalize;
+}
+
 .logo {
     width: 3em;
     margin: 1.5em auto;
