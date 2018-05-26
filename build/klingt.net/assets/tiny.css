@@ -18,7 +18,7 @@ a, a:link, a:visited, a:active, a:hover {
 @media (min-width:800px) {
   #content-wrapper {
     margin: 0 auto;
-    width: 60%;
+    width: 32em;
   }
 }
 
