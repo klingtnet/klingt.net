@@ -1,0 +1,31 @@
+body {
+  width: 100%;
+  margin: 2em 0;
+}
+
+a, a:link, a:visited, a:active, a:hover {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+#content-wrapper {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+}
+
+nav ul li {
+  margin: 0 0 .333em 0;
+}
