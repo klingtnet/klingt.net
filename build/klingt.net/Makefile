@@ -1,6 +1,6 @@
 all: template
 
-template: out static $(wildcard pages/*.html)
+template: out static $(wildcard pages/*.html) template.html
 	@./template.py
 
 serve: template
