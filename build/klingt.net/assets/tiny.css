@@ -18,7 +18,7 @@ a, a:link, a:visited, a:active, a:hover {
 @media (min-width:800px) {
   #content-wrapper {
     margin: 0 auto;
-    width: 60%;
+    width: 32em;
   }
 }
 
@@ -33,4 +33,19 @@ nav ul {
 
 nav ul li {
   margin: 0 0 .333em 0;
+  padding: .15em 0;
+}
+
+.nav-item {
+  text-transform: capitalize;
+}
+
+a.nav-item-deactivated {
+  color: lightseagreen;
+  pointer-events: none;
+}
+
+.logo {
+  width: 3em;
+  margin: 1.5em auto;
 }

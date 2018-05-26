@@ -8,16 +8,22 @@ def read_template():
 
 
 def title_from_filename(fname: str) -> str:
-    return os.path.splitext(fname)[0].capitalize()
+    return os.path.splitext(fname)[0].replace('-', ' ')
+
+
+def nav_item(page, current_page):
+    nav_item = '<li><a href="{item_href}" class="{classes}" disabled>{item_text}</a></li>'
+    a_classes = ['nav-item']
+    if page == current_page:
+        a_classes.append('nav-item-deactivated')
+    return nav_item.format(item_href=page, item_text=title_from_filename(page), classes=' '.join(a_classes))
 
 
 def template_pages(pages: dict, template: str, dest_path: str):
-    nav_item = '<li><a href="{item_href}">{item_text}</a></li>'
     
     for page, text in pages.items():
         title = title_from_filename(page)
-        other_pages = [ p for p in pages.keys() if p != page ]
-        nav = ''.join([ nav_item.format(item_href=p, item_text=title_from_filename(p)) for p in other_pages ])
+        nav = ''.join([ nav_item(p, page) for p in pages])
         templated_page = template.format(title=title, nav=nav, content=text)
         
         with open(os.path.join(dest_path, page), 'w') as f:
