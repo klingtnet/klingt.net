@@ -1,6 +1,6 @@
 .PHONY: clean
 
-VERSION=2.2.1
+VERSION=2.3.1
 
 all: prometheus
 
