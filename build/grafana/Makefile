@@ -1,6 +1,6 @@
 .PHONY: grafana clean
 
-VERSION:=5.2.2
+VERSION:=5.2.4
 
 all: grafana
 
