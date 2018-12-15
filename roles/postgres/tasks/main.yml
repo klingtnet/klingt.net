@@ -1,11 +1,8 @@
 - name: Install postgres
   become: true
   apt:
-    name: "{{ item }}"
+    name: ['postgresql', 'python-psycopg2']
     state: latest
-  with_items:
-    - postgresql
-    - python-psycopg2
 - name: Start postgres
   become: true
   systemd:

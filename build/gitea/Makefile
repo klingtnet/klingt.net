@@ -1,6 +1,6 @@
 .PHONY: clean
 
-VERSION				:=v1.5.2
+VERSION				:=v1.6.1
 GITEA_SRC			:=gitea-src-$(VERSION)
 GOPATH				:=$(shell pwd)/$(GITEA_SRC)/.go
 GITEA_BUILD_TAGS	:=bindata
@@ -17,7 +17,7 @@ $(GOPATH): $(GITEA_SRC)
 	ln -sf $(shell pwd)/$(GITEA_SRC) $(GOPATH)/src/code.gitea.io/gitea
 
 $(GOPATH)/bin/go-bindata: $(GOPATH)
-	go get github.com/jteeuwen/go-bindata/...
+	go get github.com/go-bindata/go-bindata/go-bindata
 
 $(GITEA_SRC):
 	git clone https://github.com/go-gitea/gitea.git $@

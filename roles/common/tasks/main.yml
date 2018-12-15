@@ -58,7 +58,7 @@
     append: true
     groups: sudo
     shell: /bin/bash
-    password: "{{ user_password }}"
+    password: "{{ user_password | password_hash('sha512') }}"
 - name: Authorize SSH key
   authorized_key:
     user: "{{ user_name }}"

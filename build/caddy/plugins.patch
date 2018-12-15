@@ -2,7 +2,7 @@ diff --git a/caddy/caddymain/run.go b/caddy/caddymain/run.go
 index e17fdde..8f8fbfc 100644
 --- a/caddy/caddymain/run.go
 +++ b/caddy/caddymain/run.go
-@@ -38,6 +38,22 @@ import (
+@@ -38,6 +38,21 @@ import (
  
  	_ "github.com/mholt/caddy/caddyhttp" // plug in the HTTP server type
  	// This is where other plugins get plugged in (imported)
@@ -13,7 +13,6 @@ index e17fdde..8f8fbfc 100644
 +	_ "github.com/captncraig/caddy-realip"
 +	_ "github.com/captncraig/cors"
 +	_ "github.com/echocat/caddy-filter"
-+	_ "github.com/filebrowser/caddy/filemanager"
 +	_ "github.com/hacdias/caddy-minify"
 +	_ "github.com/hacdias/caddy-webdav"
 +	_ "github.com/jung-kurt/caddy-cgi"
