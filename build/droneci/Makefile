@@ -11,7 +11,7 @@ drone-agent: $(DRONE_SRC) checkout-version $(GOPATH)
 	cp $(GOPATH)/bin/$@ $@
 
 drone-server: $(DRONE_SRC) checkout-version $(GOPATH)
-	cd $(DRONE_SRC) && go get -v github.com/drone/drone/cmd/drone-server
+	cd $(DRONE_SRC) && CGO_ENABLED=0 go get -v github.com/drone/drone/cmd/drone-server
 	cp $(GOPATH)/bin/$@ $@
 
 $(GOPATH): $(DRONE_SRC)
