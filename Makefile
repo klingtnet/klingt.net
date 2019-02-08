@@ -1,7 +1,7 @@
 .PHONY: vm vagrant clean clean-all
 
-APPS:=$(dir $(wildcard build/*/))
-ANSIBLE_OPTS:=
+APPS              :=$(dir $(wildcard build/*/))
+ANSIBLE_OPTS      :=
 ANSIBLE_EXTRA_OPTS:=
 
 all: vm
