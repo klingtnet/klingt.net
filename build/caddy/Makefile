@@ -1,18 +1,12 @@
 .PHONY: clean
 
-VERSION  :=v0.11.3
-CADDY_SRC:=caddy-src-$(VERSION)
-GOPATH   :=$(shell pwd)/$(CADDY_SRC)/.go
+VERSION		:=v1.0.0
+CADDY_SRC	:=caddy-src-$(VERSION)
 
 all: caddy
 
-caddy: $(CADDY_SRC) checkout-version patch $(GOPATH)
-	cd $(CADDY_SRC) && go get -v github.com/mholt/caddy/caddy
-	cp $(GOPATH)/bin/$@ $@
-
-$(GOPATH): $(CADDY_SRC)
-	mkdir -p $@/src/github.com/mholt
-	ln -sf $(shell pwd)/$(CADDY_SRC) $(GOPATH)/src/github.com/mholt/caddy
+caddy: $(CADDY_SRC) checkout-version patch
+	cd $(CADDY_SRC) && go build -o ../$@ github.com/mholt/caddy/caddy
 
 patch: $(CADDY_SRC)
 	cd $(CADDY_SRC)\
