@@ -1,16 +1,18 @@
 .PHONY: clean
 
-VERSION:=0.17.0
-GOPATH:=$(shell pwd)/.go
+VERSION				:=v0.18.0
+NODE_EXPORTER_SRC	:=node-exporter-src-$(VERSION)
 
 all: node_exporter
 	
-$(GOPATH):
-	mkdir -p $@
+node_exporter: $(NODE_EXPORTER_SRC) checkout-version
+	cd $(NODE_EXPORTER_SRC) && go build -o ../$@ .
 
-node_exporter: $(GOPATH)
-	go get -v github.com/prometheus/node_exporter
-	cp $(GOPATH)/bin/$@ $@
+$(NODE_EXPORTER_SRC):
+	git clone https://github.com/prometheus/node_exporter.git $@
+
+checkout-version: $(NODE_EXPORTER_SRC)
+	cd $(NODE_EXPORTER_SRC) && git checkout --force --quiet $(VERSION)
 
 clean:
 	rm -rf "node_exporter*" .go
