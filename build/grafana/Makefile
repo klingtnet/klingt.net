@@ -1,14 +1,23 @@
 .PHONY: grafana clean
 
-VERSION:=5.4.3
+VERSION		:=v6.2.0-beta1
+GRAFANA_SRC	:=grafana-src-$(VERSION)
 
 all: grafana
+	
+grafana: $(GRAFANA_SRC) checkout-version
+	cd $(GRAFANA_SRC) && go run build.go build
+	mkdir -p $@
+	cp -r $(GRAFANA_SRC)/bin/linux-amd64 $@/bin
+	cp -r $(GRAFANA_SRC)/conf $@/
+	cp -r $(GRAFANA_SRC)/public $@/
 
-grafana: grafana-$(VERSION)
-	ln -sfn $< $@
 
-grafana-$(VERSION):
-	curl -Lsf 'https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-$(VERSION).linux-amd64.tar.gz' | tar -xvzf -
+$(GRAFANA_SRC):
+	git clone https://github.com/grafana/grafana.git $@
+
+checkout-version: $(GRAFANA_SRC)
+	cd $(GRAFANA_SRC) && git checkout --force --quiet $(VERSION)
 
 clean:
 	rm -f "grafana*"
