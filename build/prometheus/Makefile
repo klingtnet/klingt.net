@@ -1,14 +1,20 @@
 .PHONY: clean
 
-VERSION:=2.7.1
+VERSION			:=v2.9.2
+PROMETHEUS_SRC	:=prometheus-src-$(VERSION)
 
 all: prometheus
+	
+prometheus: $(PROMETHEUS_SRC) checkout-version
+	cd $(PROMETHEUS_SRC) && go build -o ../$@ github.com/prometheus/prometheus/cmd/prometheus
+	cp -r $(PROMETHEUS_SRC)/documentation/examples/prometheus.yml $@.yml
 
-prometheus: prometheus-$(VERSION).linux-amd64.tar.gz
-	tar --strip-components 1 -xvf $< -- prometheus-$(VERSION).linux-amd64/$@ prometheus-$(VERSION).linux-amd64/$@.yml
+$(PROMETHEUS_SRC):
+	git clone https://github.com/prometheus/prometheus.git $@
 
-prometheus-$(VERSION).linux-amd64.tar.gz:
-	curl -Lsf 'https://github.com/prometheus/prometheus/releases/download/v$(VERSION)/prometheus-$(VERSION).linux-amd64.tar.gz' > $@
+checkout-version: $(PROMETHEUS_SRC)
+	cd $(PROMETHEUS_SRC) && git checkout --force --quiet $(VERSION)
 
 clean:
-	rm -f prometheus "prometheus-*.tar.gz"
+	rm -f "prometheus*"
+	rm -rf "prometheus-src*"
