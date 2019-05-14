@@ -3,3 +3,4 @@
 /vault.pass
 /*.retry
 /backups
+/build/**/*-src*/
