@@ -1,6 +1,6 @@
 .PHONY: grafana clean
 
-VERSION		:=v6.2.0-beta1
+VERSION		:=v6.3.2
 GRAFANA_SRC	:=grafana-src-$(VERSION)
 
 all: grafana
