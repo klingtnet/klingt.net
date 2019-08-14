@@ -1,6 +1,6 @@
 .PHONY: clean
 
-VERSION				:=v0.18.0
+VERSION				:=v0.18.1
 NODE_EXPORTER_SRC	:=node-exporter-src-$(VERSION)
 
 all: node_exporter
