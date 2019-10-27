@@ -19,7 +19,6 @@ _caddy() {
     ssh ${domain} "sudo systemctl stop caddy"
     local fname="backups/caddy-files-${timestamp}.tar.xz"
     echo "Creating $fname ..."
-    # backup 'restic files.${domain}' in a separate target
     ssh ${domain} "sudo tar -C /home/caddy -cf - -- certs | pixz" > "$fname"
     ssh ${domain} "sudo systemctl start caddy"
 }

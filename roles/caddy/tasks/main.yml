@@ -39,14 +39,6 @@
     - "{{ domain }}.key"
     - "{{ domain }}.crt"
   when: is_staging
-- name: Create caddy restic path
-  become: true
-  file:
-    name: "{{ caddy_restic_path }}"
-    owner: "{{ caddy_user }}"
-    group: "{{ caddy_group }}"
-    state: directory
-    mode: 0700
 - name: "Create {{ caddy_file_browser_root }} directory"
   become: true
   file:

@@ -8,7 +8,6 @@
     domain: "{{ var_domain | default('klingt.net') }}"
     domain_version: unknown
     caddy_email: "{{ user_email }}"
-    caddy_restic_user: alinz
     web_root: /var/web
   vars_files:
     - vault_vars.yml

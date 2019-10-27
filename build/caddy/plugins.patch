@@ -19,7 +19,6 @@ index e9ce689b..56a4b096 100644
 +	_ "github.com/miekg/caddy-prometheus"
 +	_ "github.com/nicolasazrak/caddy-cache"
 +	_ "github.com/pyed/ipfilter"
-+	_ "github.com/restic/caddy"
 +	_ "github.com/xuqingfeng/caddy-rate-limit"
  )
  
