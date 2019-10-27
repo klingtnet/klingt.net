@@ -16,5 +16,5 @@ checkout-version: $(PROMETHEUS_SRC)
 	cd $(PROMETHEUS_SRC) && git checkout --force --quiet $(VERSION)
 
 clean:
-	rm -f "prometheus*"
-	rm -rf "prometheus-src*"
+	rm -f prometheus*
+	rm -rf prometheus-src*

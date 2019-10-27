@@ -20,4 +20,4 @@ checkout-version: $(GRAFANA_SRC)
 	cd $(GRAFANA_SRC) && git checkout --force --quiet $(VERSION)
 
 clean:
-	rm -f "grafana*"
+	rm -rf grafana*
