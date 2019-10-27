@@ -1,12 +1,12 @@
 .PHONY: clean
 
-VERSION		:=v1.0.2
+VERSION		:=v1.0.3
 CADDY_SRC	:=caddy-src-$(VERSION)
 
 all: caddy
 
 caddy: $(CADDY_SRC) checkout-version patch
-	cd $(CADDY_SRC) && go build -o ../$@ github.com/mholt/caddy/caddy
+	cd $(CADDY_SRC) && GO111MODULE=on go build -o ../$@ github.com/caddyserver/caddy/caddy
 
 patch: $(CADDY_SRC)
 	cd $(CADDY_SRC)\
@@ -14,7 +14,7 @@ patch: $(CADDY_SRC)
 		&& git apply ../disable-telemetry.patch
 
 $(CADDY_SRC):
-	git clone https://github.com/mholt/caddy.git $@
+	git clone https://github.com/caddyserver/caddy.git $@
 
 checkout-version: $(CADDY_SRC)
 	cd $(CADDY_SRC) && git checkout --force --quiet $(VERSION)
