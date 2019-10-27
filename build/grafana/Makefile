@@ -1,12 +1,12 @@
 .PHONY: grafana clean
 
-VERSION		:=v6.3.2
+VERSION		:=v6.4.3
 GRAFANA_SRC	:=grafana-src-$(VERSION)
 
 all: grafana
 	
 grafana: $(GRAFANA_SRC) checkout-version
-	cd $(GRAFANA_SRC) && go run build.go build
+	cd $(GRAFANA_SRC) && git apply ../mod.patch && make build-server
 	mkdir -p $@
 	cp -r $(GRAFANA_SRC)/bin/linux-amd64 $@/bin
 	cp -r $(GRAFANA_SRC)/conf $@/
