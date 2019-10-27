@@ -18,7 +18,6 @@
     - jupyter
     - prometheus
     - grafana
-    - droneci
     - caddy
     - klingt.net
   pre_tasks:
