@@ -7,7 +7,6 @@ index e9ce689b..56a4b096 100644
  	_ "github.com/mholt/caddy/caddyhttp" // plug in the HTTP server type
  	// This is where other plugins get plugged in (imported)
 +
-+	_ "blitznote.com/src/caddy.upload"
 +	_ "github.com/SchumacherFM/mailout"
 +	_ "github.com/caddyserver/forwardproxy"
 +	_ "github.com/captncraig/caddy-realip"
