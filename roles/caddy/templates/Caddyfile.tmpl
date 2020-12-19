@@ -59,20 +59,6 @@ prometheus.{{ domain }}:443 {
     }
 }
 
-jupyter.{{ domain }}:80 {
-    import common.caddy
-    redir https://jupyter.{{ domain }}{uri}
-}
-jupyter.{{ domain }}:443 {
-    import common.caddy
-    {% if is_staging %}tls /home/{{ caddy_user }}/certs/{{ domain }}.crt /home/{{ caddy_user }}/certs/{{ domain }}.key
-{% endif %}
-    proxy / localhost:{{ jupyter_port }} {
-        transparent
-        websocket
-    }
-}
-
 grafana.{{ domain }}:80 {
     import common.caddy
     redir https://grafana.{{ domain }}{uri}

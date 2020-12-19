@@ -38,14 +38,6 @@ _grafana() {
     ssh ${domain} "sudo systemctl start grafana"
 }
 
-_jupyter() {
-    ssh ${domain} "sudo systemctl kill jupyter"
-    local fname="backups/jupyter-files-${timestamp}.tar.xz"
-    echo "Creating $fname ..."
-    ssh ${domain} "sudo tar -C /home/jupyter -cf - -- notebooks .julia | pixz" > "$fname"
-    ssh ${domain} "sudo systemctl start jupyter"
-}
-
 _prometheus() {
     ssh ${domain} "sudo systemctl kill prometheus"
     local fname="backups/prometheus-files-${timestamp}.tar.xz"
@@ -64,9 +56,6 @@ case "$selection" in
     'grafana')
         _grafana
         ;;
-    'jupyter')
-        _jupyter
-        ;;
     'prometheus')
         _prometheus
         ;;
@@ -80,7 +69,6 @@ case "$selection" in
         _caddy
         _gitea
         _grafana
-        _jupyter
         _prometheus
         ;;
 esac

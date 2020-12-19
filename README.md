@@ -23,7 +23,7 @@ The following list of services should be configured and deployed automatically:
 - [x] gitea
 - [x] prometheus
 - [x] grafana
-- [x] jupyter
+- [x] ~~jupyter~~
 - [x] postgres
 - [x] pgweb
 - [x] ~~netdata~~, node_exporter

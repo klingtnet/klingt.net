@@ -1,4 +1,0 @@
-jupyter_user: jupyter
-jupyter_group: jupyter
-jupyter_port: 10001
-jupyter_notebook_dir: "/home/{{ jupyter_user }}/notebooks"
