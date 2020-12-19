@@ -1,6 +1,6 @@
 .PHONY: clean
 
-VERSION			:=v2.11.1
+VERSION			:=v2.23.0
 PROMETHEUS_SRC	:=prometheus-src-$(VERSION)
 
 all: prometheus

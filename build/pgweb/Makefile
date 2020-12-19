@@ -1,6 +1,6 @@
 .PHONY: clean
 
-VERSION:=0.11.3
+VERSION:=0.11.7
 
 all: pgweb
 

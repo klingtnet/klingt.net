@@ -1,6 +1,6 @@
 .PHONY: clean
 
-VERSION		:=v1.0.3
+VERSION		:=v1.0.5
 CADDY_SRC	:=caddy-src-$(VERSION)
 
 all: caddy
